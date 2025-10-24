@@ -70,7 +70,7 @@ export const PostCard = memo(function PostCard({
             {textInfo.shouldTruncate && (
               <div className="mt-2 text-right pr-4">
                 <button className="text-gray-500 hover:text-gray-700 text-sm md:text-base">
-                  더 보기 → ({textInfo.lineCount}줄)
+                  더 보기 →
                 </button>
               </div>
             )}
