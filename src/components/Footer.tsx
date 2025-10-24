@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="border-t mt-8">
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* 회사 정보 */}
           <div className="space-y-4">
             <h3 className="font-semibold text-gray-900">Sidyyy</h3>
@@ -23,28 +23,6 @@ export function Footer() {
                 <CheckIcon className="w-5 h-5" />
               </a>
             </div>
-          </div>
-
-          {/* 서비스 */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-gray-900">서비스</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-gray-900">로그</a></li>
-              <li><a href="#" className="hover:text-gray-900">소셜링</a></li>
-              <li><a href="#" className="hover:text-gray-900">커뮤니티</a></li>
-              <li><a href="#" className="hover:text-gray-900">이벤트</a></li>
-            </ul>
-          </div>
-
-          {/* 지원 */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-gray-900">지원</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-gray-900">도움말</a></li>
-              <li><a href="#" className="hover:text-gray-900">문의하기</a></li>
-              <li><a href="#" className="hover:text-gray-900">FAQ</a></li>
-              <li><a href="#" className="hover:text-gray-900">피드백</a></li>
-            </ul>
           </div>
 
           {/* 법적 정보 */}
