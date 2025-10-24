@@ -7,22 +7,22 @@ function App() {
   // 샘플 데이터
   const posts = [
     {
-      author: "김시더",
-      content: "오늘도 새로운 도전을 시작했습니다! SYDE와 함께라서 더욱 즐거운 여정이 될 것 같아요. 여러분도 새로운 도전을 시작해보세요!",
+      author: "김시디",
+      content: "오늘도 새로운 도전을 시작했습니다! Sidyyy와 함께라서 더욱 즐거운 여정이 될 것 같아요. 여러분도 새로운 도전을 시작해보세요!",
       timestamp: "2시간 전",
       likes: 24,
       comments: 8
     },
     {
-      author: "이시더",
-      content: "주체적인 삶을 살아가는 것이 정말 중요하다고 생각해요. SYDE에서 만난 분들과의 대화가 항상 영감을 줍니다.",
+      author: "이시디",
+      content: "주체적인 삶을 살아가는 것이 정말 중요하다고 생각해요. Sidyyy에서 만난 분들과의 대화가 항상 영감을 줍니다.",
       timestamp: "5시간 전",
       likes: 18,
       comments: 12
     },
     {
-      author: "박시더",
-      content: "1200+명의 SYDER들과 함께하는 이 커뮤니티가 정말 소중해요. 모두 함께 성장해나가요!",
+      author: "박시디",
+      content: "1200+명의 Sidyyy들과 함께하는 이 커뮤니티가 정말 소중해요. 모두 함께 성장해나가요!",
       timestamp: "1일 전",
       likes: 35,
       comments: 15
@@ -39,7 +39,7 @@ function App() {
           <div className="flex-1 max-w-2xl">
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">로그</h2>
-              <p className="text-gray-600">SYDER들의 이야기를 확인해보세요</p>
+              <p className="text-gray-600">Sidyyy들의 이야기를 확인해보세요</p>
             </div>
             
             {/* 포스트 목록 */}

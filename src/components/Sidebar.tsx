@@ -23,13 +23,13 @@ export function Sidebar() {
       {/* SYDE 소개 */}
       <Card>
         <CardContent className="p-6">
-          <h3 className="font-bold text-gray-900 mb-4">We are SYDERS</h3>
+          <h3 className="font-bold text-gray-900 mb-4">We are Sidyyy</h3>
           <p className="text-gray-600 text-sm mb-4 leading-relaxed">
             주체적인 삶으로 가득한 세상,<br />
-            1200+명의 SYDER와 함께해요.
+            1200+명의 Sidyyy와 함께해요.
           </p>
           <button className="w-full bg-yellow-400 text-black py-2 px-4 rounded-lg font-medium hover:bg-yellow-500 transition-colors">
-            SYDE 시작하기
+            Sidyyy 시작하기
           </button>
         </CardContent>
       </Card>
@@ -44,7 +44,7 @@ export function Sidebar() {
             <a href="#" className="block text-gray-600 hover:text-gray-900">개인정보처리방침</a>
           </div>
           <div className="mt-6 pt-4 border-t border-gray-200">
-            <p className="text-xs text-gray-500">© 2025 SYDE. All rights reserved.</p>
+            <p className="text-xs text-gray-500">© 2025 Sidyyy. All rights reserved.</p>
             <p className="text-xs text-gray-500 mt-1">사업자정보</p>
           </div>
         </CardContent>
