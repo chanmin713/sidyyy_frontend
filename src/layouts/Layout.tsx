@@ -1,7 +1,6 @@
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { RightSidebar } from '../components/RightSidebar'
-import { MobileNavigation } from '../components/MobileNavigation'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -25,9 +24,6 @@ export function Layout({ children }: LayoutProps) {
       </div>
       
       <Footer />
-      
-      {/* 모바일 하단 네비게이션 */}
-      <MobileNavigation />
     </div>
   )
 }
