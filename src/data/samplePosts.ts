@@ -3,6 +3,7 @@ export interface Post {
   title: string
   timestamp: string
   content: string
+  hashtags: string[]
   likes: number
   comments: number
   shares: number
@@ -29,9 +30,8 @@ export const samplePosts: Post[] = [
 • 모바일 반응형
 
 처음엔 정말 어려웠는데, 이제 보니 정말 뿌듯해요!
-다음 프로젝트는 뭘 만들까요? 🤔
-
-#첫프로젝트 #React #TypeScript #할일관리`,
+다음 프로젝트는 뭘 만들까요? 🤔`,
+    hashtags: ["첫프로젝트", "React", "TypeScript", "할일관리"],
     likes: 12,
     comments: 7,
     shares: 2,
@@ -53,9 +53,8 @@ export const samplePosts: Post[] = [
 아직 학습 중이지만 정말 만족스럽습니다!
 
 혹시 App Router 사용해보신 분들 있나요?
-꿀팁 있으면 공유해주세요! 🙏
-
-#NextJS #AppRouter #블로그 #개발일지`,
+꿀팁 있으면 공유해주세요! 🙏`,
+    hashtags: ["NextJS", "AppRouter", "블로그", "개발일지"],
     likes: 8,
     comments: 4,
     shares: 1,
@@ -81,9 +80,8 @@ Docker 사용 후:
 Docker Compose로 프론트엔드, 백엔드, DB를 한 번에 띄우니까
 정말 편하네요! 
 
-Docker 처음 사용하시는 분들도 금방 익숙해질 거예요 👍
-
-#Docker #DevOps #개발환경 #팀개발`,
+Docker 처음 사용하시는 분들도 금방 익숙해질 거예요 👍`,
+    hashtags: ["Docker", "DevOps", "개발환경", "팀개발"],
     likes: 18,
     comments: 9,
     shares: 5,
@@ -450,9 +448,8 @@ Web3 개발 경험 있으신 분들
     title: "오늘의 코딩 일지",
     timestamp: "3시간 전",
     content: `오늘은 React Hook을 공부했어요!
-useState와 useEffect 정말 유용하네요 😊
-
-#React #Hook #공부`,
+useState와 useEffect 정말 유용하네요 😊`,
+    hashtags: ["React", "Hook", "공부"],
     likes: 5,
     comments: 2,
     shares: 1,
@@ -467,9 +464,8 @@ useState와 useEffect 정말 유용하네요 😊
 fix: 버그 수정
 style: 코드 스타일 변경
 
-이제 커밋 메시지가 깔끔해졌어요! ✨
-
-#Git #커밋 #컨벤션`,
+이제 커밋 메시지가 깔끔해졌어요! ✨`,
+    hashtags: ["Git", "커밋", "컨벤션"],
     likes: 8,
     comments: 3,
     shares: 2,

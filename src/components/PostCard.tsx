@@ -6,6 +6,7 @@ interface PostCardProps {
   title: string
   timestamp: string
   content: string
+  hashtags: string[]
   likes: number
   comments: number
   shares: number
@@ -20,6 +21,7 @@ export function PostCard({
   title, 
   timestamp, 
   content, 
+  hashtags,
   likes, 
   comments, 
   shares, 
@@ -89,6 +91,19 @@ export function PostCard({
             )}
           </div>
         </div>
+        
+        {/* 해시태그 */}
+        {hashtags && hashtags.length > 0 && (
+          <div className="px-[44px] py-2">
+            <div className="flex flex-wrap gap-1">
+              {hashtags.map((hashtag, index) => (
+                <span key={index} className="text-xs text-blue-600 hover:text-blue-800 cursor-pointer">
+                  #{hashtag}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
         
         {hasImage && (
           <div className="relative w-full mt-3 rounded-md overflow-hidden bg-blue-100" style={{ aspectRatio: '16 / 9' }}>

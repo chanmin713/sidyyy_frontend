@@ -9,10 +9,10 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white">
       <Header />
       
-      <div className="max-w-6xl mx-auto flex-1 w-full">
+      <div className="max-w-6xl mx-auto h-full">
         <main className="flex justify-center gap-x-8 pb-3 md:px-5 md:pb-5">
           {/* 중앙 콘텐츠 */}
           <div className="w-full lg:w-3/5 pb-20 md:pb-24 bg-white px-6 md:px-8">

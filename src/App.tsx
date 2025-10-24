@@ -19,6 +19,7 @@ function App() {
               title={post.title}
               timestamp={post.timestamp}
               content={post.content}
+              hashtags={post.hashtags}
               likes={post.likes}
               comments={post.comments}
               shares={post.shares}
