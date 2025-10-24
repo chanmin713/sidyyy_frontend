@@ -7,7 +7,7 @@ export function DesktopHeader() {
   const [hoveredTab, setHoveredTab] = useState<string | null>(null)
 
   return (
-    <header className="border-b bg-white sticky top-0 z-50">
+    <header className="border-b bg-white fixed top-0 left-0 right-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-4">
         {/* 상단: 로고 + 네비게이션/검색창 + 아이콘들 */}
         <div className="flex items-center justify-between">
