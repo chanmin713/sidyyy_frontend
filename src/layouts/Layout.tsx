@@ -15,7 +15,7 @@ export function Layout({ children }: LayoutProps) {
       <div className="max-w-6xl mx-auto">
           <main className="flex justify-center gap-x-8 md:px-5 pt-[69px]">
           {/* 중앙 콘텐츠 */}
-          <div className="w-full lg:w-3/5 bg-white px-6 md:px-8">
+          <div className="w-full lg:w-2/3 bg-white px-6 md:px-8">
             {children}
           </div>
           
