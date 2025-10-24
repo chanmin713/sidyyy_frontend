@@ -63,7 +63,6 @@ export function Footer() {
         <div className="mt-8 pt-6">
           <div className="text-center text-sm text-gray-500">
             <p>© 2025. Sidyyy. All rights reserved.</p>
-            <p className="mt-2">Made with ❤️ by Sidyyy Team</p>
           </div>
         </div>
       </div>
