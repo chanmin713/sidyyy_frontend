@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header className="border-b bg-white">
-      <div className="container mx-auto px-4 py-4">
+      <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* 왼쪽: Sidyyy 로고 */}
           <div className="flex items-center">
