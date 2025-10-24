@@ -1,7 +1,6 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { LeftSidebar } from '@/components/LeftSidebar'
-import { RightSidebar } from '@/components/RightSidebar'
 import { PostInput } from '@/components/PostInput'
 import { PostCard } from '@/components/PostCard'
 
@@ -97,7 +96,7 @@ collectui.com → 카테고리별 정리, 검색 편함
           <LeftSidebar />
           
           {/* 중앙 피드 */}
-          <div className="w-full md:w-4/5 lg:w-3/5 border-x border-gray-200">
+          <div className="w-full md:w-4/5 border-r border-gray-200">
             <div className="space-y-6">
               <PostInput />
               
@@ -120,9 +119,6 @@ collectui.com → 카테고리별 정리, 검색 편함
               </div>
             </div>
           </div>
-          
-          {/* 오른쪽 사이드바 */}
-          <RightSidebar />
         </main>
       </div>
       
