@@ -12,6 +12,10 @@ export interface Post {
   category?: string;
   projectLikes?: number;
   projectLogo?: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  tags?: string[];
 }
 
 // PostCard 관련 타입

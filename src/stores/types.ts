@@ -26,10 +26,8 @@ export interface SearchState {
 
 // UI 상태 타입
 export interface UIState {
-  theme: 'light' | 'dark';
   sidebarOpen: boolean;
   mobileMenuOpen: boolean;
-  setTheme: (theme: 'light' | 'dark') => void;
   setSidebarOpen: (open: boolean) => void;
   setMobileMenuOpen: (open: boolean) => void;
   toggleSidebar: () => void;

@@ -6,7 +6,7 @@ import {
   HeartIcon,
   ChatBubbleIcon,
 } from '@radix-ui/react-icons';
-import { Dropdown } from '@/components/ui/dropdown';
+import { Dropdown } from '@/components/ui/navigation/dropdown';
 import { ProfileSection } from '@/components/common/ProfileSection';
 import { Post } from '@/types';
 import {
@@ -37,7 +37,7 @@ export const PostContent = memo(function PostContent({
   const projectLogNumber = getProjectLogNumber(post.id, post.category);
 
   // 이미지가 포함된 콘텐츠 렌더링
-  const contentWithImages = renderContentWithImages(post.content, '300px');
+  const contentWithImages = renderContentWithImages(post.content);
   return (
     <article className='bg-white rounded-lg border border-gray-200 p-6'>
       {/* 프로젝트 제목과 날짜 */}

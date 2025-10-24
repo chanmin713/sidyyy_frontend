@@ -7,10 +7,12 @@ export interface ProjectProperties {
   name: string;
   description: string;
   creator: string;
+  author: string;
   participants: string[];
   githubUrl?: string;
   deployUrl?: string;
   status: ProjectStatus;
+  category: string;
   createdAt: string;
   updatedAt: string;
   tags: string[];

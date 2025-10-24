@@ -30,6 +30,10 @@ export const samplePosts: Post[] = [
     projectLikes: 42,
     projectLogo: 'VercelLogoIcon',
     hashtags: ['웹성능', '최적화', 'Lighthouse', 'CoreWebVitals'],
+    title: '웹사이트 성능 최적화 프로젝트 완료',
+    createdAt: '2024-01-15T10:00:00Z',
+    updatedAt: '2024-01-15T10:00:00Z',
+    tags: ['웹성능', '최적화', 'Lighthouse', 'CoreWebVitals'],
   },
 
   // TaskFlow 프로젝트
@@ -58,6 +62,10 @@ export const samplePosts: Post[] = [
     category: 'DevTools',
     projectLikes: 16,
     projectLogo: 'GitHubLogoIcon',
+    title: 'TaskFlow 할일 관리 앱 완성',
+    createdAt: '2024-01-20T14:30:00Z',
+    updatedAt: '2024-01-20T14:30:00Z',
+    tags: ['첫프로젝트', 'React', 'TypeScript', '할일관리'],
   },
 
   // WebPortfolio 프로젝트
@@ -90,6 +98,10 @@ export const samplePosts: Post[] = [
     projectLikes: 24,
     projectLogo: 'InstagramLogoIcon',
     hashtags: ['포트폴리오', 'React', 'ThreeJS', '웹개발'],
+    title: '개인 포트폴리오 웹사이트 완성',
+    createdAt: '2024-01-18T09:15:00Z',
+    updatedAt: '2024-01-18T09:15:00Z',
+    tags: ['포트폴리오', 'React', 'ThreeJS', '웹개발'],
   },
 
   // DockerEnv 프로젝트
@@ -120,6 +132,10 @@ Docker Compose로 프론트엔드, 백엔드, DB를 한 번에 띄우니까
     category: 'TechBlog',
     projectLikes: 8,
     projectLogo: 'NotionLogoIcon',
+    title: 'Docker 개발환경 구축 가이드',
+    createdAt: '2024-01-16T16:45:00Z',
+    updatedAt: '2024-01-16T16:45:00Z',
+    tags: ['Docker', 'DevOps', '개발환경', '팀개발'],
   },
 
   // CatDogAI 프로젝트
@@ -150,6 +166,10 @@ Docker Compose로 프론트엔드, 백엔드, DB를 한 번에 띄우니까
     projectLikes: 35,
     projectLogo: 'DiscordLogoIcon',
     hashtags: ['머신러닝', 'TensorFlow', 'CNN', '이미지분류'],
+    title: '고양이와 개 구분 AI 모델 개발',
+    createdAt: '2024-01-14T13:30:00Z',
+    updatedAt: '2024-01-14T13:30:00Z',
+    tags: ['머신러닝', 'TensorFlow', 'CNN', '이미지분류'],
   },
 
   // MobileApp 프로젝트
@@ -183,6 +203,10 @@ Flutter:
     projectLikes: 18,
     projectLogo: 'GitHubLogoIcon',
     hashtags: ['ReactNative', 'Flutter', '모바일개발', '크로스플랫폼'],
+    title: '크로스플랫폼 모바일 앱 개발 경험',
+    createdAt: '2024-01-10T08:45:00Z',
+    updatedAt: '2024-01-10T08:45:00Z',
+    tags: ['ReactNative', 'Flutter', '모바일개발', '크로스플랫폼'],
   },
 
   // AuthSystem 프로젝트
@@ -213,6 +237,10 @@ Flutter:
     projectLikes: 28,
     projectLogo: 'NotionLogoIcon',
     hashtags: ['JWT', '인증', '보안', '토큰'],
+    title: 'JWT 인증 시스템 구현 완료',
+    createdAt: '2024-01-12T11:20:00Z',
+    updatedAt: '2024-01-12T11:20:00Z',
+    tags: ['JWT', '인증', '보안', '토큰'],
   },
 
   // LeetCode100 프로젝트
@@ -244,5 +272,9 @@ Flutter:
     projectLikes: 6,
     projectLogo: 'VercelLogoIcon',
     hashtags: ['알고리즘', 'LeetCode', '코딩테스트', '자료구조'],
+    title: 'LeetCode 100문제 풀이 완료',
+    createdAt: '2024-01-08T15:20:00Z',
+    updatedAt: '2024-01-08T15:20:00Z',
+    tags: ['알고리즘', 'LeetCode', '코딩테스트', '자료구조'],
   },
 ];

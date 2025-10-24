@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { HamburgerMenuIcon, PaperPlaneIcon } from '@radix-ui/react-icons';
-import { NotificationDropdown } from '../ui/notification-dropdown';
+import { NotificationDropdown } from '../ui/feedback/notification-dropdown';
 import { useUI } from '@/stores';
 
 export function MobileHeader() {
@@ -28,7 +28,7 @@ export function MobileHeader() {
   };
 
   return (
-    <header className='border-b bg-white fixed top-0 left-0 right-0 z-50'>
+    <header className='border-b bg-white border-gray-200 fixed top-0 left-0 right-0 z-50'>
       <div className='max-w-6xl mx-auto px-4 py-4 h-[69px] flex items-center'>
         {/* 상단: 로고 + 아이콘들 */}
         <div className='w-full'>
@@ -48,7 +48,7 @@ export function MobileHeader() {
               <NotificationDropdown />
               <button
                 onClick={() => navigate('/message')}
-                className='w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors group'
+                className='w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group'
                 title='메시지'
                 aria-label='메시지'
               >

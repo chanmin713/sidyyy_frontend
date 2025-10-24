@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { PersonIcon, PaperPlaneIcon } from '@radix-ui/react-icons';
-import { NotificationDropdown } from '../ui/notification-dropdown';
+import { NotificationDropdown } from '../ui/feedback/notification-dropdown';
+import { AccessibleButton } from '../ui/forms/accessible-button';
+import { KEYBOARD_KEYS, isActionKey } from '@/utils/accessibility';
 
 export function DesktopHeader() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTab] = useState('');
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
 
   // 현재 경로에 따라 활성 탭 설정
@@ -25,8 +27,11 @@ export function DesktopHeader() {
       case '/member':
         setActiveTab('member');
         break;
+      case '/':
+        setActiveTab('');
+        break;
       default:
-        setActiveTab('home');
+        setActiveTab('');
     }
   }, [location.pathname]);
 
@@ -49,16 +54,16 @@ export function DesktopHeader() {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent, tab: string) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+    if (isActionKey(e)) {
       e.preventDefault();
       handleTabClick(tab);
-    } else if (e.key === 'ArrowRight') {
+    } else if (e.key === KEYBOARD_KEYS.ARROW_RIGHT) {
       e.preventDefault();
       const tabs = ['home', 'project', 'recruit', 'member'];
       const currentIndex = tabs.indexOf(tab);
       const nextTab = tabs[(currentIndex + 1) % tabs.length];
       handleTabClick(nextTab);
-    } else if (e.key === 'ArrowLeft') {
+    } else if (e.key === KEYBOARD_KEYS.ARROW_LEFT) {
       e.preventDefault();
       const tabs = ['home', 'project', 'recruit', 'member'];
       const currentIndex = tabs.indexOf(tab);
@@ -68,18 +73,20 @@ export function DesktopHeader() {
   };
 
   return (
-    <header className='border-b bg-white fixed top-0 left-0 right-0 z-50'>
+    <header className='border-b bg-white border-gray-200 fixed top-0 left-0 right-0 z-50'>
       <div className='max-w-6xl mx-auto px-4 py-4 h-[69px] flex items-center'>
         {/* 상단: 로고 + 네비게이션/검색창 + 아이콘들 */}
         <div className='flex items-center justify-between w-full'>
           {/* 왼쪽: Sidyyy 로고 */}
           <div className='flex items-center'>
-            <button
+            <AccessibleButton
               onClick={() => navigate('/')}
+              variant='ghost'
               className='text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors'
+              ariaLabel='Sidyyy 홈페이지로 이동'
             >
               Sidyyy
-            </button>
+            </AccessibleButton>
           </div>
 
           {/* 중앙: 탭 네비게이션 */}
@@ -90,25 +97,29 @@ export function DesktopHeader() {
               className='flex bg-gray-50 rounded-lg p-1 shadow-sm relative animate-in fade-in-0 slide-in-from-top-2 duration-500'
             >
               {/* 움직이는 흰색 배경 */}
-              <div
-                className={`absolute top-1 bottom-1 bg-white rounded-md shadow-sm transition-all duration-500 ease-out ${
-                  hoveredTab === 'home'
-                    ? 'left-1 w-[calc(25%-0.25rem)]'
-                    : hoveredTab === 'project'
-                      ? 'left-[calc(25%+0.25rem)] w-[calc(25%-0.25rem)]'
-                      : hoveredTab === 'recruit'
-                        ? 'left-[calc(50%+0.25rem)] w-[calc(25%-0.25rem)]'
-                        : hoveredTab === 'member'
-                          ? 'left-[calc(75%+0.25rem)] w-[calc(25%-0.25rem)]'
-                          : activeTab === 'home'
-                            ? 'left-1 w-[calc(25%-0.25rem)]'
-                            : activeTab === 'project'
-                              ? 'left-[calc(25%+0.25rem)] w-[calc(25%-0.25rem)]'
-                              : activeTab === 'recruit'
-                                ? 'left-[calc(50%+0.25rem)] w-[calc(25%-0.25rem)]'
-                                : 'left-[calc(75%+0.25rem)] w-[calc(25%-0.25rem)]'
-                }`}
-              />
+              {(hoveredTab || activeTab) && (
+                <div
+                  className={`absolute top-1 bottom-1 bg-white rounded-md shadow-sm transition-all duration-500 ease-out ${
+                    hoveredTab === 'home'
+                      ? 'left-1 w-[calc(25%-0.25rem)]'
+                      : hoveredTab === 'project'
+                        ? 'left-[calc(25%+0.25rem)] w-[calc(25%-0.25rem)]'
+                        : hoveredTab === 'recruit'
+                          ? 'left-[calc(50%+0.25rem)] w-[calc(25%-0.25rem)]'
+                          : hoveredTab === 'member'
+                            ? 'left-[calc(75%+0.25rem)] w-[calc(25%-0.25rem)]'
+                            : activeTab === 'home'
+                              ? 'left-1 w-[calc(25%-0.25rem)]'
+                              : activeTab === 'project'
+                                ? 'left-[calc(25%+0.25rem)] w-[calc(25%-0.25rem)]'
+                                : activeTab === 'recruit'
+                                  ? 'left-[calc(50%+0.25rem)] w-[calc(25%-0.25rem)]'
+                                  : activeTab === 'member'
+                                    ? 'left-[calc(75%+0.25rem)] w-[calc(25%-0.25rem)]'
+                                    : 'hidden'
+                  }`}
+                />
+              )}
 
               <button
                 role='tab'
@@ -184,25 +195,25 @@ export function DesktopHeader() {
           {/* 오른쪽: 아이콘들 */}
           <div className='flex items-center gap-4'>
             <NotificationDropdown />
-            <button
+            <AccessibleButton
               onClick={() => navigate('/message')}
-              className='w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group'
-              title='메시지'
-              aria-label='메시지'
+              variant='ghost'
+              className='w-8 h-8 p-0 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group'
+              ariaLabel='메시지'
             >
               <PaperPlaneIcon className='w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300' />
-            </button>
-            <button
+            </AccessibleButton>
+            <AccessibleButton
               onClick={() => {
                 console.log('프로필 버튼 클릭됨');
                 navigate('/profile');
               }}
-              className='w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group'
-              title='마이페이지'
-              aria-label='마이페이지'
+              variant='ghost'
+              className='w-8 h-8 p-0 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group'
+              ariaLabel='프로필'
             >
               <PersonIcon className='w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300' />
-            </button>
+            </AccessibleButton>
           </div>
         </div>
       </div>

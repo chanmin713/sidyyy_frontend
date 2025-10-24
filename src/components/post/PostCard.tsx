@@ -8,7 +8,9 @@ import {
   renderContentWithImages,
 } from '@/utils';
 import { ProfileSection } from '@/components/common/ProfileSection';
+import { AccessibleButton } from '@/components/ui/forms/accessible-button';
 import { useNavigation } from '@/hooks';
+import { LAYOUT } from '@/constants';
 
 export const PostCard = memo(function PostCard({
   author,
@@ -61,7 +63,7 @@ export const PostCard = memo(function PostCard({
 
   // 이미지가 포함된 콘텐츠 렌더링
   const contentWithImages = useMemo(
-    () => renderContentWithImages(textInfo.truncatedText, '200px'),
+    () => renderContentWithImages(textInfo.truncatedText),
     [textInfo.truncatedText]
   );
   return (
@@ -72,19 +74,25 @@ export const PostCard = memo(function PostCard({
         {/* 프로젝트 제목과 시간 */}
         <div className='flex items-center justify-between mb-3'>
           {category && (
-            <button
+            <AccessibleButton
               onClick={handleProjectClick}
+              variant='ghost'
               className='text-left hover:underline group'
+              ariaLabel={`${category} 프로젝트 로그 ${projectLogNumber}번 보기`}
             >
               <h2 className='text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors flex items-center gap-2'>
                 <ProjectLogo className='w-5 h-5' />
                 {category} #{projectLogNumber}
               </h2>
-            </button>
+            </AccessibleButton>
           )}
-          <span className='text-sm text-gray-500 flex-shrink-0'>
+          <time
+            className='text-sm text-gray-500 flex-shrink-0'
+            dateTime={timestamp}
+            aria-label={`작성 시간: ${timestamp}`}
+          >
             {timestamp}
-          </span>
+          </time>
         </div>
 
         {/* 작성자 정보 */}
@@ -93,8 +101,17 @@ export const PostCard = memo(function PostCard({
         </div>
 
         <div
-          className='cursor-pointer py-1 pl-card-padding mt-2'
+          className='cursor-pointer py-1 px-4 mt-2'
           onClick={handlePostClick}
+          role='button'
+          tabIndex={0}
+          aria-label={`포스트 상세 보기: ${content.substring(0, 50)}...`}
+          onKeyDown={e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              handlePostClick();
+            }
+          }}
         >
           <div className='mb-3'>
             <div className='relative'>
@@ -113,15 +130,18 @@ export const PostCard = memo(function PostCard({
             </div>
             {textInfo.shouldTruncate && (
               <div className='mt-2 text-right'>
-                <button
+                <AccessibleButton
+                  variant='ghost'
+                  size='sm'
                   className='text-gray-500 text-xs'
-                  onClick={e => {
+                  onClick={(e: React.MouseEvent) => {
                     e.stopPropagation();
                     handlePostClick();
                   }}
+                  ariaLabel='포스트 전체 내용 보기'
                 >
                   더 보기 →
-                </button>
+                </AccessibleButton>
               </div>
             )}
           </div>
@@ -129,7 +149,7 @@ export const PostCard = memo(function PostCard({
 
         {/* 해시태그 */}
         {hashtags && hashtags.length > 0 && (
-          <div className='px-card-padding py-2'>
+          <div className='px-4 py-2'>
             <div className='flex flex-wrap gap-1'>
               {hashtags.map((hashtag, index) => (
                 <span
@@ -151,24 +171,34 @@ export const PostCard = memo(function PostCard({
           </div>
         )}
 
-        <div className='flex items-center gap-8 text-xs md:text-sm text-muted-foreground px-card-padding pt-2'>
-          <button className='flex items-center gap-1 rounded-md p-2 -m-2 bg-transparent hover:bg-red-100 group disabled:opacity-50'>
+        <div className='flex items-center gap-8 text-xs md:text-sm text-muted-foreground px-4 pt-2'>
+          <AccessibleButton
+            variant='ghost'
+            size='sm'
+            className='flex items-center gap-1 rounded-md p-2 -m-2 bg-transparent hover:bg-red-100 group disabled:opacity-50'
+            ariaLabel={`좋아요 ${likes}개`}
+          >
             <HeartIcon className='w-icon-sm h-icon-sm text-muted-foreground group-hover:text-red-500' />
             <span className='group-hover:text-red-500'>{likes}</span>
-          </button>
-          <button
+          </AccessibleButton>
+          <AccessibleButton
+            variant='ghost'
+            size='sm'
             className='flex items-center gap-1 rounded-md p-2 -m-2 bg-transparent hover:bg-green-100 hover:text-green-500'
-            onClick={e => {
+            onClick={(e: React.MouseEvent) => {
               e.stopPropagation();
               handleCommentClick();
             }}
+            ariaLabel={`댓글 ${comments}개 보기`}
           >
             <ChatBubbleIcon className='w-icon-sm h-icon-sm' />
             <span>{comments}</span>
-          </button>
+          </AccessibleButton>
         </div>
       </div>
-      {!isLast && <div className='border-b border-gray-200 mt-6'></div>}
+      {!isLast && (
+        <div className={`${LAYOUT.DIVIDER} ${LAYOUT.DIVIDER_MARGIN}`}></div>
+      )}
     </div>
   );
 });

@@ -33,7 +33,7 @@ export function Layout({ children }: LayoutProps) {
           isWritePage ||
           isProjectDetail
             ? 'max-w-7xl mx-auto'
-            : 'max-w-6xl mx-auto'
+            : 'max-w-7xl mx-auto'
         }
       >
         <main
