@@ -7,13 +7,13 @@ export function Footer() {
         <div className="flex flex-col items-center text-center">
           <p className="text-sm text-gray-500 mb-4">© 2025. Sidyyy</p>
           <div className="flex justify-center gap-4">
-            <a target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline text-sm" href="#">
+            <a target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700 text-sm" href="#">
               <ChatBubbleIcon className="w-6 h-6" />
             </a>
-            <a target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline text-sm" href="#">
+            <a target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700 text-sm" href="#">
               <InstagramLogoIcon className="w-6 h-6" />
             </a>
-            <a target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline text-sm" href="#">
+            <a target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700 text-sm" href="#">
               <CheckIcon className="w-6 h-6" />
             </a>
           </div>
