@@ -5,9 +5,6 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* 왼쪽: Sidyyy 로고 */}
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center mr-3">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
             <h1 className="text-2xl font-bold text-gray-900">Sidyyy</h1>
           </div>
 
