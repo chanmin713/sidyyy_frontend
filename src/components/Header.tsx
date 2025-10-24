@@ -1,3 +1,5 @@
+import { PersonIcon } from '@radix-ui/react-icons'
+
 export function Header() {
   return (
     <header className="border-b bg-white">
@@ -17,9 +19,7 @@ export function Header() {
           {/* 오른쪽: 유저 프로필 */}
           <div className="flex items-center">
             <button className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors border-2 border-gray-300">
-              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-              </svg>
+              <PersonIcon className="w-6 h-6 text-gray-600" />
             </button>
           </div>
         </div>
