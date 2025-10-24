@@ -1,4 +1,5 @@
 import { Header } from '@/components/Header'
+import { Footer } from '@/components/Footer'
 import { LeftSidebar } from '@/components/LeftSidebar'
 import { RightSidebar } from '@/components/RightSidebar'
 import { PostInput } from '@/components/PostInput'
@@ -124,6 +125,8 @@ collectui.com → 카테고리별 정리, 검색 편함
           <RightSidebar />
         </main>
       </div>
+      
+      <Footer />
     </div>
   )
 }
