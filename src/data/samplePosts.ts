@@ -49,5 +49,31 @@ _
     comments: 0,
     shares: 0,
     bookmarks: 0
+  },
+  {
+    author: "김개발",
+    title: "",
+    subtitle: "프론트엔드 개발자",
+    timestamp: "1일 전",
+    content: `🎨 오늘 드디어 사이드 프로젝트 첫 배포 완료!
+
+3개월 동안 틈틈이 만든 "코드 스니펫 관리 도구"가 드디어 세상에 나왔어요.
+
+주요 기능:
+• 코드 스니펫 저장/검색
+• 태그 기반 분류
+• 다크모드 지원
+• 마크다운 지원
+
+아직 부족한 점이 많지만, 첫 배포라서 정말 설레네요! 
+
+혹시 사용해보시고 피드백 주시면 정말 감사하겠습니다 🙏
+
+링크: codesnippet.dev`,
+    likes: 8,
+    comments: 3,
+    shares: 1,
+    bookmarks: 2,
+    hasImage: true
   }
 ]
