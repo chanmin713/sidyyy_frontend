@@ -19,7 +19,7 @@ export function Header() {
 
           {/* 오른쪽: 유저 프로필 */}
           <div className="flex items-center">
-            <button className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors border-2 border-gray-300">
+            <button className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition-colors">
               <PersonIcon className="w-6 h-6 text-gray-600" />
             </button>
           </div>
