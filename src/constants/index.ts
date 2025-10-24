@@ -15,15 +15,6 @@ export const FILTER_OPTIONS = {
   FOLLOWING: 'following' as const
 } as const
 
-// 애니메이션 상수
-export const ANIMATIONS = {
-  DURATION_FAST: 'duration-150',
-  DURATION_NORMAL: 'duration-300',
-  DURATION_SLOW: 'duration-500',
-  EASE_OUT: 'ease-out',
-  EASE_IN: 'ease-in',
-} as const
-
 // 레이아웃 상수
 export const LAYOUT = {
   MAX_WIDTH: 'max-w-4xl',
