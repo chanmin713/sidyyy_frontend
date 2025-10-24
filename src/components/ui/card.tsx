@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react';
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -9,15 +9,15 @@ const Card = React.forwardRef<
     className={`rounded-lg border shadow-sm ${className || ''}`}
     {...props}
   />
-))
-Card.displayName = "Card"
+));
+Card.displayName = 'Card';
 
 const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div ref={ref} className={`p-6 ${className || ''}`} {...props} />
-))
-CardContent.displayName = "CardContent"
+));
+CardContent.displayName = 'CardContent';
 
-export { Card, CardContent }
+export { Card, CardContent };

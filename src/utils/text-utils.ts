@@ -7,8 +7,9 @@
  * @param text - 줄 수를 계산할 텍스트
  * @returns 줄 수
  */
-export function getLineCount(text: string): number {
-  return text.split('\n').length
+export function getLineCount(text: string | undefined): number {
+  if (!text) return 0;
+  return text.split('\n').length;
 }
 
 /**
@@ -17,8 +18,11 @@ export function getLineCount(text: string): number {
  * @param maxLines - 최대 줄 수 (기본값: 10)
  * @returns 줄 수 초과 여부
  */
-export function shouldTruncateText(text: string, maxLines: number = 10): boolean {
-  return getLineCount(text) > maxLines
+export function shouldTruncateText(
+  text: string | undefined,
+  maxLines: number = 10
+): boolean {
+  return getLineCount(text) > maxLines;
 }
 
 /**
@@ -27,16 +31,25 @@ export function shouldTruncateText(text: string, maxLines: number = 10): boolean
  * @param maxLines - 최대 줄 수 (기본값: 10)
  * @returns 잘린 텍스트와 원본 텍스트
  */
-export function truncateText(text: string, maxLines: number = 10) {
-  const lines = text.split('\n')
-  const shouldTruncate = lines.length > maxLines
-  
+export function truncateText(text: string | undefined, maxLines: number = 10) {
+  if (!text) {
+    return {
+      originalText: '',
+      truncatedText: '',
+      shouldTruncate: false,
+      lineCount: 0,
+      maxLines,
+    };
+  }
+
+  const lines = text.split('\n');
+  const shouldTruncate = lines.length > maxLines;
+
   return {
     originalText: text,
     truncatedText: shouldTruncate ? lines.slice(0, maxLines).join('\n') : text,
     shouldTruncate,
     lineCount: lines.length,
-    maxLines
-  }
+    maxLines,
+  };
 }
-

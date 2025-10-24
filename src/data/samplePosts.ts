@@ -1,10 +1,12 @@
-import type { Post } from '@/types'
+import type { Post } from '@/types';
 
 export const samplePosts: Post[] = [
+  // WebOptimizer 프로젝트 (3개 로그)
   {
-    id: "1",
-    author: "최성능",
-    timestamp: "2주 전",
+    id: '1',
+    author: '최성능',
+    authorRole: 'PO',
+    timestamp: '2주 전',
     content: `웹사이트 성능 최적화 프로젝트를 완료했어요!
 
 ⚡ 최적화 방법:
@@ -27,13 +29,64 @@ export const samplePosts: Post[] = [
 #웹성능 #최적화 #Lighthouse #CoreWebVitals`,
     likes: 26,
     comments: 19,
-    category: "WebOptimizer",
-    hashtags: ["웹성능", "최적화", "Lighthouse", "CoreWebVitals"]
+    category: 'WebOptimizer',
+    projectLikes: 42,
+    projectLogo: 'VercelLogoIcon',
+    hashtags: ['웹성능', '최적화', 'Lighthouse', 'CoreWebVitals'],
   },
   {
-    id: "2",
-    author: "김개발",
-    timestamp: "1일 전",
+    id: '2',
+    author: '최성능',
+    authorRole: 'PO',
+    timestamp: '1주 전',
+    content: `WebOptimizer 프로젝트의 두 번째 로그입니다!
+
+오늘은 Core Web Vitals 개선에 집중했어요.
+LCP를 2.1초에서 0.8초로 줄였습니다! 🎉
+
+주요 개선사항:
+• 이미지 lazy loading 적용
+• Critical CSS 인라인화
+• JavaScript 번들 최적화
+
+다음 목표는 CLS 점수 개선이에요!`,
+    likes: 15,
+    comments: 8,
+    category: 'WebOptimizer',
+    projectLikes: 42,
+    projectLogo: 'VercelLogoIcon',
+    hashtags: ['CoreWebVitals', 'LCP', '성능최적화'],
+  },
+  {
+    id: '3',
+    author: '최성능',
+    authorRole: 'PO',
+    timestamp: '3일 전',
+    content: `WebOptimizer 프로젝트 마지막 로그!
+
+CLS 점수를 0.15에서 0.05로 개선했습니다! 🚀
+
+최종 결과:
+• LCP: 0.8초
+• FID: 45ms
+• CLS: 0.05
+• Lighthouse: 98점
+
+프로젝트 완료! 다음은 뭘 할까요?`,
+    likes: 32,
+    comments: 12,
+    category: 'WebOptimizer',
+    projectLikes: 42,
+    projectLogo: 'VercelLogoIcon',
+    hashtags: ['완료', 'CLS', 'Lighthouse98점'],
+  },
+
+  // TaskFlow 프로젝트 (2개 로그)
+  {
+    id: '4',
+    author: '김개발',
+    authorRole: '백엔드 개발자',
+    timestamp: '1일 전',
     content: `3개월 동안 틈틈이 만든 "할일 관리 앱"이 드디어 완성됐어요!
 
 📱 프로젝트명: TaskFlow
@@ -48,44 +101,75 @@ export const samplePosts: Post[] = [
 
 처음엔 정말 어려웠는데, 이제 보니 정말 뿌듯해요!
 다음 프로젝트는 뭘 만들까요? 🤔`,
-    hashtags: ["첫프로젝트", "React", "TypeScript", "할일관리"],
+    hashtags: ['첫프로젝트', 'React', 'TypeScript', '할일관리'],
     likes: 12,
     comments: 7,
-    category: "TaskFlow"
+    category: 'TaskFlow',
+    projectLikes: 16,
+    projectLogo: 'GitHubLogoIcon',
   },
   {
-    id: "3",
-    author: "박게임",
-    timestamp: "5일 전",
-    content: `처음으로 완성한 게임을 출시했어요!
+    id: '5',
+    author: '김개발',
+    authorRole: '백엔드 개발자',
+    timestamp: '12시간 전',
+    content: `TaskFlow 프로젝트 업데이트!
 
-🎮 게임 특징:
-• 2D 픽셀 아트 스타일
-• 5개 스테이지, 3개 보스
-• 모바일 터치 컨트롤 지원
+사용자 피드백을 반영해서 새로운 기능을 추가했어요:
+• 다크모드 지원
+• 키보드 단축키
+• 할일 템플릿 기능
 
-🛠️ 개발 과정:
-• Unity 2D 물리 엔진 활용
-• C# 스크립팅
-• Google Play Console 출시
+사용자들이 정말 좋아해주네요! 😊`,
+    likes: 8,
+    comments: 3,
+    category: 'TaskFlow',
+    projectLikes: 16,
+    projectLogo: 'GitHubLogoIcon',
+    hashtags: ['업데이트', '다크모드', '피드백'],
+  },
 
-게임 개발은 정말 어려워요...
-하지만 플레이어들의 반응을 보면
-모든 고생이 사라져요! ✨
+  // WebPortfolio 프로젝트 (1개 로그)
+  {
+    id: '6',
+    author: '박포트폴리오',
+    authorRole: '프론트엔드 개발자',
+    timestamp: '5일 전',
+    content: `개인 포트폴리오 웹사이트를 완성했어요!
 
-인디게임 개발자분들
-마케팅 꿀팁 있으면 알려주세요! 🎯
+💻 웹사이트 특징:
+• 반응형 디자인 (모바일/태블릿/데스크톱)
+• 다크모드 지원
+• 애니메이션과 인터랙션 풍부
+• 3D 요소와 파티클 효과
 
-#게임개발 #Unity #인디게임 #2D`,
+🛠️ 기술 스택:
+• React + TypeScript
+• Three.js (3D 그래픽)
+• Framer Motion (애니메이션)
+• Tailwind CSS
+
+처음엔 3D 라이브러리가 어려웠는데
+이제 보니 정말 멋진 결과가 나왔어요! ✨
+
+포트폴리오 제작 경험 있으신 분들
+피드백 부탁드려요! 🎯
+
+#포트폴리오 #React #ThreeJS #웹개발`,
     likes: 23,
     comments: 16,
-    category: "PixelJump",
-    hashtags: ["게임개발", "Unity", "인디게임", "2D"]
+    category: 'WebPortfolio',
+    projectLikes: 24,
+    projectLogo: 'InstagramLogoIcon',
+    hashtags: ['포트폴리오', 'React', 'ThreeJS', '웹개발'],
   },
+
+  // DockerEnv 프로젝트 (2개 로그)
   {
-    id: "4",
-    author: "이백엔드",
-    timestamp: "4일 전",
+    id: '7',
+    author: '이백엔드',
+    authorRole: 'DevOps 엔지니어',
+    timestamp: '4일 전',
     content: `팀에서 Docker를 도입한 후 개발환경이 정말 편해졌어요!
 
 이전에는:
@@ -102,15 +186,43 @@ Docker Compose로 프론트엔드, 백엔드, DB를 한 번에 띄우니까
 정말 편하네요! 
 
 Docker 처음 사용하시는 분들도 금방 익숙해질 거예요 👍`,
-    hashtags: ["Docker", "DevOps", "개발환경", "팀개발"],
+    hashtags: ['Docker', 'DevOps', '개발환경', '팀개발'],
     likes: 18,
     comments: 9,
-    category: "DockerEnv"
+    category: 'DockerEnv',
+    projectLikes: 8,
+    projectLogo: 'NotionLogoIcon',
   },
   {
-    id: "5",
-    author: "강머신러닝",
-    timestamp: "2주 전",
+    id: '8',
+    author: '이백엔드',
+    authorRole: 'DevOps 엔지니어',
+    timestamp: '2일 전',
+    content: `DockerEnv 프로젝트 두 번째 로그!
+
+Kubernetes로 컨테이너 오케스트레이션을 도입했어요.
+이제 스케일링이 정말 쉬워졌습니다! 🚀
+
+주요 개선사항:
+• 자동 스케일링 설정
+• 헬스체크 구현
+• 로그 수집 시스템 구축
+
+다음은 모니터링 시스템을 구축할 예정이에요!`,
+    likes: 14,
+    comments: 6,
+    category: 'DockerEnv',
+    projectLikes: 8,
+    projectLogo: 'NotionLogoIcon',
+    hashtags: ['Kubernetes', '오케스트레이션', '스케일링'],
+  },
+
+  // CatDogAI 프로젝트 (1개 로그)
+  {
+    id: '9',
+    author: '강머신러닝',
+    authorRole: 'AI 연구원',
+    timestamp: '2주 전',
     content: `고양이와 개를 구분하는 모델을 만들어봤어요!
 
 🤖 모델 학습 과정:
@@ -132,23 +244,33 @@ ML 경험 있으신 분들
 #머신러닝 #TensorFlow #CNN #이미지분류`,
     likes: 25,
     comments: 18,
-    category: "CatDogAI",
-    hashtags: ["머신러닝", "TensorFlow", "CNN", "이미지분류"]
+    category: 'CatDogAI',
+    projectLikes: 35,
+    projectLogo: 'DiscordLogoIcon',
+    hashtags: ['머신러닝', 'TensorFlow', 'CNN', '이미지분류'],
   },
+
+  // DailyCoding 프로젝트 (1개 로그)
   {
-    id: "6",
-    author: "김짧은글",
-    timestamp: "2시간 전",
+    id: '10',
+    author: '김짧은글',
+    authorRole: '프론트엔드 개발자',
+    timestamp: '2시간 전',
     content: `오늘도 열심히 코딩했어요! 💪`,
-    hashtags: ["일상", "코딩"],
+    hashtags: ['일상', '코딩'],
     likes: 3,
     comments: 1,
-    category: "DailyCoding"
+    category: 'DailyCoding',
+    projectLikes: 3,
+    projectLogo: 'GitHubLogoIcon',
   },
+
+  // MobileApp 프로젝트 (1개 로그)
   {
-    id: "7",
-    author: "정모바일",
-    timestamp: "1주 전",
+    id: '11',
+    author: '정모바일',
+    authorRole: '모바일 개발자',
+    timestamp: '1주 전',
     content: `React Native와 Flutter를 각각 6개월씩 사용해봤는데,
 솔직한 후기를 공유해드릴게요!
 
@@ -172,27 +294,37 @@ Flutter:
 #ReactNative #Flutter #모바일개발 #크로스플랫폼`,
     likes: 22,
     comments: 15,
-    category: "MobileApp",
-    hashtags: ["ReactNative", "Flutter", "모바일개발", "크로스플랫폼"]
+    category: 'MobileApp',
+    projectLikes: 18,
+    projectLogo: 'GitHubLogoIcon',
+    hashtags: ['ReactNative', 'Flutter', '모바일개발', '크로스플랫폼'],
   },
+
+  // FlexboxGuide 프로젝트 (1개 로그)
   {
-    id: "8",
-    author: "박간단",
-    timestamp: "4시간 전",
+    id: '12',
+    author: '박간단',
+    authorRole: 'UI/UX 디자이너',
+    timestamp: '4시간 전',
     content: `flexbox로 가운데 정렬할 때:
 justify-content: center;
 align-items: center;
 
 이거 하나면 끝! ✨`,
-    hashtags: ["CSS", "팁"],
+    hashtags: ['CSS', '팁'],
     likes: 7,
     comments: 2,
-    category: "FlexboxGuide"
+    category: 'FlexboxGuide',
+    projectLikes: 12,
+    projectLogo: 'FigmaLogoIcon',
   },
+
+  // AuthSystem 프로젝트 (1개 로그)
   {
-    id: "9",
-    author: "윤보안",
-    timestamp: "1주 전",
+    id: '13',
+    author: '윤보안',
+    authorRole: '보안 엔지니어',
+    timestamp: '1주 전',
     content: `JWT를 사용한 인증 시스템을 만들어봤어요!
 
 🔐 JWT의 장점:
@@ -214,13 +346,18 @@ align-items: center;
 #JWT #인증 #보안 #토큰`,
     likes: 19,
     comments: 10,
-    category: "AuthSystem",
-    hashtags: ["JWT", "인증", "보안", "토큰"]
+    category: 'AuthSystem',
+    projectLikes: 28,
+    projectLogo: 'NotionLogoIcon',
+    hashtags: ['JWT', '인증', '보안', '토큰'],
   },
+
+  // LeetCode100 프로젝트 (1개 로그)
   {
-    id: "10",
-    author: "이알고리즘",
-    timestamp: "6일 전",
+    id: '14',
+    author: '이알고리즘',
+    authorRole: '알고리즘 엔지니어',
+    timestamp: '6일 전',
     content: `드디어 LeetCode 100문제를 풀었어요!
 
 📈 성장 과정:
@@ -243,7 +380,9 @@ align-items: center;
 #알고리즘 #LeetCode #코딩테스트 #자료구조`,
     likes: 21,
     comments: 13,
-    category: "LeetCode100",
-    hashtags: ["알고리즘", "LeetCode", "코딩테스트", "자료구조"]
-  }
-]
+    category: 'LeetCode100',
+    projectLikes: 6,
+    projectLogo: 'VercelLogoIcon',
+    hashtags: ['알고리즘', 'LeetCode', '코딩테스트', '자료구조'],
+  },
+];
