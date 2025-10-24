@@ -36,8 +36,7 @@ export const samplePosts: Post[] = [
     likes: 12,
     comments: 7,
     shares: 2,
-    bookmarks: 5,
-    hasImage: true
+    bookmarks: 5
   },
   {
     author: "박코딩",
