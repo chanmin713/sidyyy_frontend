@@ -19,13 +19,13 @@ export function Footer() {
 
           {/* 링크들 */}
           <div className="flex flex-wrap justify-center md:justify-end items-center gap-2 sm:gap-3 text-xs text-gray-600">
-            <a href="#" className="hover:text-gray-900 px-2 py-1">문의하기</a>
+            <a href="#" className="hover:text-gray-900 px-2 py-0.5">문의하기</a>
             <span className="text-gray-400">|</span>
-            <a href="#" className="hover:text-gray-900 px-2 py-1">이용약관</a>
+            <a href="#" className="hover:text-gray-900 px-2 py-0.5">이용약관</a>
             <span className="text-gray-400">|</span>
-            <a href="#" className="hover:text-gray-900 px-2 py-1">개인정보처리방침</a>
+            <a href="#" className="hover:text-gray-900 px-2 py-0.5">개인정보처리방침</a>
             <span className="text-gray-400">|</span>
-            <a href="#" className="hover:text-gray-900 px-2 py-1">서비스 소개</a>
+            <a href="#" className="hover:text-gray-900 px-2 py-0.5">서비스 소개</a>
           </div>
         </div>
 
