@@ -16,14 +16,14 @@ export function DesktopHeader() {
 
           {/* 중앙: 탭 네비게이션 또는 검색창 */}
           {!isSearchOpen ? (
-            <div className="flex bg-gray-50 rounded-lg p-1">
-              <button className="py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-md shadow-sm">
+            <div className="flex bg-gray-50 rounded-lg p-1 shadow-sm">
+              <button className="py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-md shadow-sm transition-all duration-200 hover:shadow-md hover:scale-105">
                 피드
               </button>
-              <button className="py-2 px-4 text-sm font-medium text-gray-500 hover:text-gray-700">
+              <button className="py-2 px-4 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-white hover:rounded-md hover:shadow-sm transition-all duration-200 hover:scale-105">
                 프로젝트
               </button>
-              <button className="py-2 px-4 text-sm font-medium text-gray-500 hover:text-gray-700">
+              <button className="py-2 px-4 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-white hover:rounded-md hover:shadow-sm transition-all duration-200 hover:scale-105">
                 모집
               </button>
             </div>
@@ -38,9 +38,9 @@ export function DesktopHeader() {
                 />
                 <button
                   onClick={() => setIsSearchOpen(false)}
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 w-6 h-6 flex items-center justify-center hover:bg-gray-200 rounded transition-colors"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 w-6 h-6 flex items-center justify-center hover:bg-gray-200 rounded transition-all duration-200 hover:scale-110 group"
                 >
-                  <Cross2Icon className="w-4 h-4 text-gray-500" />
+                  <Cross2Icon className="w-4 h-4 text-gray-500 group-hover:text-gray-700 transition-colors duration-200" />
                 </button>
               </div>
             </div>
@@ -50,12 +50,12 @@ export function DesktopHeader() {
           <div className="flex items-center gap-4">
             <button 
               onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors"
+              className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-200 hover:scale-110 hover:shadow-sm group"
             >
-              <MagnifyingGlassIcon className="w-5 h-5 text-gray-600" />
+              <MagnifyingGlassIcon className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-200" />
             </button>
-            <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors">
-              <PersonIcon className="w-5 h-5 text-gray-600" />
+            <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-200 hover:scale-110 hover:shadow-sm group">
+              <PersonIcon className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-200" />
             </button>
           </div>
         </div>

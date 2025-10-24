@@ -29,3 +29,4 @@ export function TabSwitcher({ activeTab, onTabChange }: TabSwitcherProps) {
     </div>
   )
 }
+
