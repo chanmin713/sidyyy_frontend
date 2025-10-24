@@ -97,26 +97,6 @@ export function RightSidebar() {
           </CardContent>
         </Card>
 
-        {/* 최근 활동 */}
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="font-semibold text-gray-900 mb-4">⚡ 최근 활동</h3>
-            <div className="space-y-3">
-              <div className="text-sm">
-                <p className="text-gray-900">새로운 프로젝트가 등록되었습니다</p>
-                <p className="text-xs text-gray-500">2시간 전</p>
-              </div>
-              <div className="text-sm">
-                <p className="text-gray-900">커뮤니티 이벤트가 시작되었습니다</p>
-                <p className="text-xs text-gray-500">5시간 전</p>
-              </div>
-              <div className="text-sm">
-                <p className="text-gray-900">새로운 멤버가 가입했습니다</p>
-                <p className="text-xs text-gray-500">1일 전</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   )
