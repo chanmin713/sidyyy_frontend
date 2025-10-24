@@ -33,7 +33,7 @@ export function SearchButton({
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className={`w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 group hover:bg-gray-100 hover:shadow-sm ${className}`}
+        className="w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 group hover:bg-gray-100 hover:shadow-sm"
       >
         <MagnifyingGlassIcon className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300" />
       </button>

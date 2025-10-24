@@ -87,6 +87,7 @@ export function PostList() {
             <div className="flex items-center gap-1 ml-auto">
               <SearchButton 
                 onSearch={(query) => setSearchQuery(query)}
+                className="min-w-96"
               />
             <Dropdown
               trigger={
