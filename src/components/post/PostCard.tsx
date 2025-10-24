@@ -68,7 +68,7 @@ export const PostCard = memo(function PostCard({
                   )}
             </div>
             {textInfo.shouldTruncate && (
-              <div className="mt-2 text-right pr-4">
+              <div className="mt-2 text-right pr-8">
                 <button className="text-gray-500 hover:text-gray-700 text-xs">
                   더 보기 →
                 </button>
