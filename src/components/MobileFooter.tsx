@@ -29,7 +29,7 @@ export function MobileFooter() {
         </div>
 
         {/* 저작권 */}
-        <div className="mt-3">
+        <div className="mt-6">
           <div className="text-center text-xs text-gray-500">
             <p>© 2025. Sidyyy. All rights reserved.</p>
           </div>
