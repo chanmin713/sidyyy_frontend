@@ -1,4 +1,5 @@
 import { useState, useMemo, useCallback } from 'react';
+
 import { PostCard } from '@/components/post/PostCard';
 import { samplePosts } from '@/data/samplePosts';
 import { MixerHorizontalIcon } from '@radix-ui/react-icons';

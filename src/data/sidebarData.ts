@@ -16,6 +16,24 @@ export interface Member {
   initial: string;
 }
 
+export interface PopularLog {
+  id: string;
+  title: string;
+  author: string;
+  likes: number;
+  comments: number;
+  category: string;
+}
+
+export interface PopularRecruit {
+  id: string;
+  title: string;
+  company: string;
+  position: string;
+  applicants: number;
+  deadline: string;
+}
+
 export const popularProjects: Project[] = [
   {
     id: '1',
@@ -69,5 +87,75 @@ export const recommendedMembers: Member[] = [
     name: '박스타트업',
     role: '스타트업 창업자',
     initial: '박',
+  },
+];
+
+export const popularLogs: PopularLog[] = [
+  {
+    id: '1',
+    title: 'React 18의 새로운 기능들',
+    author: '김개발',
+    likes: 42,
+    comments: 8,
+    category: '프론트엔드',
+  },
+  {
+    id: '2',
+    title: 'TypeScript 고급 타입 활용법',
+    author: '이타입',
+    likes: 38,
+    comments: 12,
+    category: '프론트엔드',
+  },
+  {
+    id: '3',
+    title: 'Next.js 14 App Router 마이그레이션',
+    author: '박넥스트',
+    likes: 35,
+    comments: 6,
+    category: '프론트엔드',
+  },
+  {
+    id: '4',
+    title: 'Node.js 성능 최적화 팁',
+    author: '최백엔드',
+    likes: 29,
+    comments: 15,
+    category: '백엔드',
+  },
+];
+
+export const popularRecruits: PopularRecruit[] = [
+  {
+    id: '1',
+    title: '프론트엔드 개발자 모집',
+    company: '테크스타트업',
+    position: '시니어 프론트엔드',
+    applicants: 24,
+    deadline: '2024-02-15',
+  },
+  {
+    id: '2',
+    title: '풀스택 개발자 구인',
+    company: '핀테크회사',
+    position: '풀스택 개발자',
+    applicants: 18,
+    deadline: '2024-02-20',
+  },
+  {
+    id: '3',
+    title: 'UI/UX 디자이너 채용',
+    company: '디자인에이전시',
+    position: '시니어 디자이너',
+    applicants: 12,
+    deadline: '2024-02-18',
+  },
+  {
+    id: '4',
+    title: '백엔드 개발자 모집',
+    company: '클라우드서비스',
+    position: '백엔드 개발자',
+    applicants: 16,
+    deadline: '2024-02-25',
   },
 ];

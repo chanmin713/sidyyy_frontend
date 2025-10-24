@@ -15,6 +15,7 @@ export function Layout({ children }: LayoutProps) {
   const isHomePage = location.pathname === '/';
   const isMessagePage = location.pathname === '/message';
   const isProfilePage = location.pathname === '/profile';
+  const isMemberPage = location.pathname === '/member';
   const isPostDetail = location.pathname.startsWith('/post/');
   const isWritePage = location.pathname === '/write';
   const isProjectDetail = location.pathname.startsWith('/project/');
@@ -60,8 +61,8 @@ export function Layout({ children }: LayoutProps) {
       {/* 맨 위로 버튼 */}
       <ScrollToTopButton />
 
-      {/* 플로팅 로그 쓰기 버튼 (모바일만) */}
-      <FloatingWriteButton />
+      {/* 플로팅 로그 쓰기 버튼 (모바일만, 멤버 페이지 제외) */}
+      {!isMemberPage && <FloatingWriteButton />}
     </div>
   );
 }
