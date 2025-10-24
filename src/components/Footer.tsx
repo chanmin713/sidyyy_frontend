@@ -27,12 +27,9 @@ export function Footer() {
 
           {/* 법적 정보 */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-gray-900">법적 정보</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li><a href="#" className="hover:text-gray-900">이용약관</a></li>
               <li><a href="#" className="hover:text-gray-900">개인정보처리방침</a></li>
-              <li><a href="#" className="hover:text-gray-900">쿠키 정책</a></li>
-              <li><a href="#" className="hover:text-gray-900">청소년보호정책</a></li>
             </ul>
           </div>
         </div>
