@@ -109,7 +109,7 @@ export function PostList() {
                 {/* 정렬 옵션 */}
                 <div className="mb-4">
                   <h3 className="text-sm font-semibold text-gray-900 mb-3">정렬</h3>
-                  <ToggleGroup<SortOption> value={sortBy} onValueChange={setSortBy} className="justify-center">
+                  <ToggleGroup<SortOption> value={sortBy} onValueChange={setSortBy}>
                     <ToggleBackground 
                       value={sortBy} 
                       currentValue={sortBy} 

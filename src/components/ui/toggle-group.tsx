@@ -23,7 +23,7 @@ interface ToggleItemProps<T = string> {
 
 export function ToggleItem<T = string>({ children, className = '' }: ToggleItemProps<T>) {
   return (
-    <div className={`flex-1 flex ${className}`}>
+    <div className={`flex-1 flex justify-center ${className}`}>
       {children}
     </div>
   )
@@ -75,11 +75,11 @@ export function ToggleBackground<T = string>({ value, currentValue, hoveredValue
     if (isHovered || isActive) {
       // 첫 번째 항목 (all, latest 등)
       if (targetValue === 'all' || targetValue === 'latest') {
-        return 'left-1 w-[calc(50%-0.25rem)]'
+        return 'left-0.5 w-[calc(50%-0.125rem)]'
       } 
       // 두 번째 항목 (following, popular 등)
       else if (targetValue === 'following' || targetValue === 'popular') {
-        return 'left-[calc(50%+0.25rem)] w-[calc(50%-0.25rem)]'
+        return 'left-[50%] w-[calc(50%-0.125rem)]'
       }
     }
     return ''
@@ -87,7 +87,7 @@ export function ToggleBackground<T = string>({ value, currentValue, hoveredValue
 
   return (
     <div 
-      className={`absolute top-1 bottom-1 bg-blue-500 rounded-md shadow-sm transition-all duration-500 ease-out ${getPosition()} ${className}`}
+      className={`absolute top-0.5 bottom-0.5 bg-blue-500 rounded-md shadow-sm transition-all duration-500 ease-out ${getPosition()} ${className}`}
     />
   )
 }
