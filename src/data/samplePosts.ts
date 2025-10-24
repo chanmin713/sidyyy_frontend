@@ -1,13 +1,4 @@
-export interface Post {
-  author: string
-  timestamp: string
-  content: string
-  hashtags?: string[]
-  likes: number
-  comments: number
-  hasImage?: boolean
-  category?: string
-}
+import type { Post } from '@/types'
 
 export const samplePosts: Post[] = [
   {
