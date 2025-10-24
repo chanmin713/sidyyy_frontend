@@ -12,7 +12,7 @@ export function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <div className="max-w-6xl mx-auto min-h-screen pt-20">
+      <div className="max-w-6xl mx-auto min-h-screen">
         <main className="flex justify-center gap-x-8 pb-3 md:px-5 md:pb-5 min-h-[calc(100vh-140px)]">
           {/* 중앙 콘텐츠 */}
           <div className="w-full lg:w-3/5 bg-white px-6 md:px-8">
