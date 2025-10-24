@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card'
 export function LeftSidebar() {
   return (
     <div className="hidden md:block w-1/5 sticky top-[70px] self-start h-screen">
-      <div className="flex flex-col items-center p-4 rounded-lg bg-card text-center">
+      <div className="flex flex-col items-center p-4 rounded-lg text-center">
         <div className="w-14 h-14 bg-black rounded-full mb-4 flex items-center justify-center">
           <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>

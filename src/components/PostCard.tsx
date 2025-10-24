@@ -27,7 +27,7 @@ export function PostCard({
 }: PostCardProps) {
   return (
     <div className="px-4">
-      <div className="rounded-lg bg-card flex flex-col">
+      <div className="rounded-lg flex flex-col">
         <div className="flex items-start justify-between">
           <div className="flex items-start">
             <div className="flex-shrink-0">
@@ -70,7 +70,7 @@ export function PostCard({
             }}>
               {content}
             </p>
-            <button className="text-gray-500 hover:text-gray-700 text-sm md:text-base absolute bottom-0 right-0 bg-card pl-4">
+            <button className="text-gray-500 hover:text-gray-700 text-sm md:text-base absolute bottom-0 right-0 pl-4">
               ...더 보기
             </button>
           </div>
