@@ -10,6 +10,7 @@ interface PostCardProps {
   bookmarks: number
   hasImage?: boolean
   isLast?: boolean
+  isFirst?: boolean
   category?: string
 }
 
@@ -23,6 +24,7 @@ export function PostCard({
   bookmarks,
   hasImage = false,
   isLast = false,
+  isFirst = false,
   category
 }: PostCardProps) {
   // 실제 줄 수로 판단 (줄바꿈 개수 기준)

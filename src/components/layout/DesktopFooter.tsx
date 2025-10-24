@@ -1,7 +1,7 @@
 
 export function DesktopFooter() {
   return (
-    <footer className="border-t mt-8 sticky bottom-0 bg-white z-40">
+    <footer className="border-t bg-white z-40">
       <div className="max-w-6xl mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* 왼쪽: 브랜드 정보 */}

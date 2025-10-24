@@ -3,7 +3,7 @@ import { samplePosts } from '@/data/samplePosts'
 
 export function PostList() {
   return (
-    <div className="w-full max-w-2xl mx-auto space-y-0">
+    <div className="w-full max-w-2xl mx-auto">
       {samplePosts.map((post, index) => (
         <PostCard
           key={index}
@@ -15,6 +15,7 @@ export function PostList() {
           comments={post.comments}
           bookmarks={post.bookmarks}
           hasImage={post.hasImage}
+          isFirst={index === 0}
           isLast={index === samplePosts.length - 1}
           category={post.category}
         />
