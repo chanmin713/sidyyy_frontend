@@ -16,7 +16,7 @@ export function Footer() {
 
           {/* 오른쪽: 링크들 */}
           <div className="flex flex-col justify-center">
-            <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+            <div className="flex flex-wrap gap-6 text-sm text-gray-600">
               <a href="#" className="hover:text-gray-900">문의하기</a>
               <a href="#" className="hover:text-gray-900">이용약관</a>
               <a href="#" className="hover:text-gray-900">개인정보처리방침</a>
