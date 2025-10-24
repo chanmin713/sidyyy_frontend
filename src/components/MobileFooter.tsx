@@ -3,7 +3,7 @@ import React from 'react'
 export function MobileFooter() {
   return (
     <footer className="border-t mt-8">
-      <div className="max-w-6xl mx-auto px-4 py-4">
+      <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex flex-col gap-6">
           {/* 브랜드 정보 */}
           <div className="text-left px-2">
