@@ -1,11 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Layout } from '@/layouts/Layout'
-import { PostList } from '@/components/post/PostList'
+import { HomePage } from '@/pages/HomePage'
+import { PostDetailPage } from '@/pages/PostDetailPage'
 
 function App() {
   return (
-    <Layout>
-      <PostList />
-    </Layout>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/post/:id" element={<PostDetailPage />} />
+        </Routes>
+      </Layout>
+    </Router>
   )
 }
 

@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from 'react'
-import { PostCard } from './PostCard'
+import { PostCard } from '@/components/post/PostCard'
 import { samplePosts } from '@/data/samplePosts'
 import { MixerHorizontalIcon } from '@radix-ui/react-icons'
 import { Dropdown } from '@/components/ui/dropdown'
@@ -10,7 +10,7 @@ import { SearchButton } from '@/components/ui/search-button'
 import { CATEGORIES, SORT_OPTIONS, FILTER_OPTIONS, LAYOUT } from '@/constants'
 import type { SortOption, FilterOption } from '@/types'
 
-export function PostList() {
+export function HomePage() {
   const [sortBy, setSortBy] = useState<SortOption>(SORT_OPTIONS.POPULAR)
   const [filterBy, setFilterBy] = useState<FilterOption>(FILTER_OPTIONS.ALL)
   const [hoveredFilter, setHoveredFilter] = useState<string | null>(null)
@@ -197,7 +197,8 @@ export function PostList() {
       <div className="px-container-padding">
         {filteredPosts.map((post, index) => (
           <PostCard
-            key={index}
+            key={post.id}
+            id={post.id}
             author={post.author}
             timestamp={post.timestamp}
             content={post.content}

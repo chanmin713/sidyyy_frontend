@@ -2,6 +2,7 @@ import type { Post } from '@/types'
 
 export const samplePosts: Post[] = [
   {
+    id: "1",
     author: "최성능",
     timestamp: "2주 전",
     content: `웹사이트 성능 최적화 프로젝트를 완료했어요!
@@ -30,6 +31,7 @@ export const samplePosts: Post[] = [
     hashtags: ["웹성능", "최적화", "Lighthouse", "CoreWebVitals"]
   },
   {
+    id: "2",
     author: "김개발",
     timestamp: "1일 전",
     content: `3개월 동안 틈틈이 만든 "할일 관리 앱"이 드디어 완성됐어요!
@@ -52,6 +54,7 @@ export const samplePosts: Post[] = [
     category: "TaskFlow"
   },
   {
+    id: "3",
     author: "박게임",
     timestamp: "5일 전",
     content: `처음으로 완성한 게임을 출시했어요!
@@ -80,6 +83,7 @@ export const samplePosts: Post[] = [
     hashtags: ["게임개발", "Unity", "인디게임", "2D"]
   },
   {
+    id: "4",
     author: "이백엔드",
     timestamp: "4일 전",
     content: `팀에서 Docker를 도입한 후 개발환경이 정말 편해졌어요!
@@ -104,6 +108,7 @@ Docker 처음 사용하시는 분들도 금방 익숙해질 거예요 👍`,
     category: "DockerEnv"
   },
   {
+    id: "5",
     author: "강머신러닝",
     timestamp: "2주 전",
     content: `고양이와 개를 구분하는 모델을 만들어봤어요!
@@ -131,6 +136,7 @@ ML 경험 있으신 분들
     hashtags: ["머신러닝", "TensorFlow", "CNN", "이미지분류"]
   },
   {
+    id: "6",
     author: "김짧은글",
     timestamp: "2시간 전",
     content: `오늘도 열심히 코딩했어요! 💪`,
@@ -140,6 +146,7 @@ ML 경험 있으신 분들
     category: "DailyCoding"
   },
   {
+    id: "7",
     author: "정모바일",
     timestamp: "1주 전",
     content: `React Native와 Flutter를 각각 6개월씩 사용해봤는데,
@@ -169,6 +176,7 @@ Flutter:
     hashtags: ["ReactNative", "Flutter", "모바일개발", "크로스플랫폼"]
   },
   {
+    id: "8",
     author: "박간단",
     timestamp: "4시간 전",
     content: `flexbox로 가운데 정렬할 때:
@@ -182,6 +190,7 @@ align-items: center;
     category: "FlexboxGuide"
   },
   {
+    id: "9",
     author: "윤보안",
     timestamp: "1주 전",
     content: `JWT를 사용한 인증 시스템을 만들어봤어요!
@@ -209,6 +218,7 @@ align-items: center;
     hashtags: ["JWT", "인증", "보안", "토큰"]
   },
   {
+    id: "10",
     author: "이알고리즘",
     timestamp: "6일 전",
     content: `드디어 LeetCode 100문제를 풀었어요!

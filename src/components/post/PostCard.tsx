@@ -1,5 +1,6 @@
 import { memo, useMemo } from 'react'
-import { PersonIcon, HeartIcon, ChatBubbleIcon, Share2Icon } from '@radix-ui/react-icons'
+import { useNavigate } from 'react-router-dom'
+import { PersonIcon, HeartIcon, ChatBubbleIcon } from '@radix-ui/react-icons'
 import type { PostCardProps } from '@/types'
 import { truncateText } from '@/utils/text-utils'
 
@@ -13,12 +14,21 @@ export const PostCard = memo(function PostCard({
   hasImage = false,
   isLast = false,
   isFirst = false,
-  category
+  category,
+  id
 }: PostCardProps) {
+  const navigate = useNavigate()
+  
   // 텍스트 줄 수 판단 및 자르기 - 성능 최적화
   const textInfo = useMemo(() => {
     return truncateText(content, 10)
   }, [content])
+
+  const handlePostClick = () => {
+    if (id) {
+      navigate(`/post/${id}`)
+    }
+  }
   return (
     <div className={`${isFirst ? 'pt-6 pb-4' : 'py-4'} ${isLast ? 'mb-6' : ''}`}>
       <div className="rounded-lg flex flex-col">
@@ -51,7 +61,11 @@ export const PostCard = memo(function PostCard({
           )}
         </div>
         
-        <div className="cursor-pointer py-1 pl-card-padding" style={{ marginTop: '-12px' }}>
+        <div 
+          className="cursor-pointer py-1 pl-card-padding" 
+          style={{ marginTop: '-12px' }}
+          onClick={handlePostClick}
+        >
           <div className="mb-3">
             <div className="relative">
                   <p className="text-sm md:text-base whitespace-pre-wrap" style={{ 
@@ -69,7 +83,13 @@ export const PostCard = memo(function PostCard({
             </div>
             {textInfo.shouldTruncate && (
               <div className="mt-2 text-right">
-                <button className="text-gray-500 hover:text-gray-700 text-xs">
+                <button 
+                  className="text-gray-500 text-xs"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    handlePostClick()
+                  }}
+                >
                   더 보기 →
                 </button>
               </div>
@@ -98,17 +118,20 @@ export const PostCard = memo(function PostCard({
           </div>
         )}
         
-        <div className="flex justify-between items-center text-xs md:text-sm text-muted-foreground px-card-padding pt-2">
+        <div className="flex items-center gap-8 text-xs md:text-sm text-muted-foreground px-card-padding pt-2">
           <button className="flex items-center gap-1 rounded-md p-2 -m-2 bg-transparent hover:bg-red-100 group disabled:opacity-50">
             <HeartIcon className="w-icon-sm h-icon-sm text-muted-foreground group-hover:text-red-500" />
             <span className="group-hover:text-red-500">{likes}</span>
           </button>
-          <button className="flex items-center gap-1 rounded-md p-2 -m-2 bg-transparent hover:bg-green-100 hover:text-green-500">
+          <button 
+            className="flex items-center gap-1 rounded-md p-2 -m-2 bg-transparent hover:bg-green-100 hover:text-green-500"
+            onClick={(e) => {
+              e.stopPropagation()
+              handlePostClick()
+            }}
+          >
             <ChatBubbleIcon className="w-icon-sm h-icon-sm" />
             <span>{comments}</span>
-          </button>
-          <button className="flex items-center gap-1 rounded-md p-2 -m-2 bg-transparent hover:bg-blue-100 hover:text-blue-500">
-            <Share2Icon className="w-icon-sm h-icon-sm" />
           </button>
         </div>
       </div>

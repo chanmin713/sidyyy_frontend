@@ -6,6 +6,7 @@ export interface BaseProps {
 
 // 포스트 관련 타입
 export interface Post {
+  id: string
   author: string
   timestamp: string
   content: string
@@ -18,6 +19,7 @@ export interface Post {
 
 // PostCard 관련 타입
 export interface PostCardData {
+  id: string
   author: string
   timestamp: string
   content: string
@@ -61,6 +63,25 @@ export interface SearchProps {
   onSearch: (query: string) => void
   placeholder?: string
   className?: string
+}
+
+// 댓글 관련 타입
+export interface Comment {
+  id: string
+  author: string
+  content: string
+  timestamp: string
+  likes: number
+  replies?: Reply[]
+}
+
+// 답글 관련 타입
+export interface Reply {
+  id: string
+  author: string
+  content: string
+  timestamp: string
+  likes: number
 }
 
 // 알림 관련 타입
