@@ -66,7 +66,7 @@ export function PostCard({
               }}>
                 {content}
               </p>
-              <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
             </div>
             <div className="mt-2 text-right pr-4">
               <button className="text-gray-500 hover:text-gray-700 text-sm md:text-base">
