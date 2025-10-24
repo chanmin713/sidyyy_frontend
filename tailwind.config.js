@@ -60,6 +60,24 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      spacing: {
+        'card-padding': 'var(--card-padding)',
+        'container-padding': 'var(--container-padding)',
+        'header-padding': 'var(--header-padding)',
+        'header-height': 'var(--header-height)',
+      },
+      width: {
+        'icon-sm': 'var(--icon-sm)',
+        'icon-md': 'var(--icon-md)',
+        'icon-lg': 'var(--icon-lg)',
+        'avatar': 'var(--avatar-size)',
+      },
+      height: {
+        'icon-sm': 'var(--icon-sm)',
+        'icon-md': 'var(--icon-md)',
+        'icon-lg': 'var(--icon-lg)',
+        'avatar': 'var(--avatar-size)',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

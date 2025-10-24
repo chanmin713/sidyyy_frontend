@@ -15,24 +15,18 @@ export const FILTER_OPTIONS = {
   FOLLOWING: 'following' as const
 } as const
 
-// UI 상수
-export const SPACING = {
-  CARD_PADDING: 'px-[44px]',
-  CONTAINER_PADDING: 'px-6',
-  HEADER_PADDING: 'py-3',
-  HEADER_HEIGHT: 'h-16'
+// 애니메이션 상수
+export const ANIMATIONS = {
+  DURATION_FAST: 'duration-150',
+  DURATION_NORMAL: 'duration-300',
+  DURATION_SLOW: 'duration-500',
+  EASE_OUT: 'ease-out',
+  EASE_IN: 'ease-in',
 } as const
 
-export const COLORS = {
-  PRIMARY: 'text-gray-900',
-  SECONDARY: 'text-gray-500',
-  MUTED: 'text-muted-foreground',
-  HOVER: 'hover:text-gray-900'
-} as const
-
-export const SIZES = {
-  ICON_SM: 'w-4 h-4',
-  ICON_MD: 'w-5 h-5',
-  ICON_LG: 'w-6 h-6',
-  AVATAR: 'w-9 h-9'
+// 레이아웃 상수
+export const LAYOUT = {
+  MAX_WIDTH: 'max-w-4xl',
+  CONTAINER_CENTER: 'mx-auto',
+  STICKY_TOP: 'top-[69px]',
 } as const

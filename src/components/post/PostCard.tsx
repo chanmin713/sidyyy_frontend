@@ -1,7 +1,6 @@
 import { memo, useMemo } from 'react'
 import { PersonIcon, HeartIcon, ChatBubbleIcon, Share2Icon } from '@radix-ui/react-icons'
 import type { PostCardProps } from '@/types'
-import { SPACING, COLORS, SIZES } from '@/constants'
 
 export const PostCard = memo(function PostCard({ 
   author, 
@@ -26,16 +25,16 @@ export const PostCard = memo(function PostCard({
         <div className="flex items-start justify-between">
           <div className="flex items-start flex-1">
             <div className="flex-shrink-0">
-              <div className={`${SIZES.AVATAR} rounded-full flex items-center justify-center mr-2 border-2 border-gray-300`}>
-                <PersonIcon className={`${SIZES.ICON_MD} ${COLORS.SECONDARY}`} />
+              <div className="w-avatar h-avatar rounded-full flex items-center justify-center mr-2 border-2 border-gray-300">
+                <PersonIcon className="w-icon-md h-icon-md text-gray-500" />
               </div>
             </div>
             <div className="flex-grow min-w-0 overflow-hidden">
                   <div className="flex items-baseline gap-1 overflow-hidden">
                     <div className="flex-shrink-0">
                       <div className="flex items-center gap-1">
-                        <p className={`font-semibold ${COLORS.HOVER} text-sm md:text-base`}>{author}</p>
-                        <p className={`text-xs ${COLORS.MUTED} flex-shrink-0`}>·&nbsp;&nbsp;{timestamp}</p>
+                        <p className="font-semibold hover:underline text-sm md:text-base">{author}</p>
+                        <p className="text-xs text-muted-foreground flex-shrink-0">·&nbsp;&nbsp;{timestamp}</p>
                       </div>
                     </div>
                   </div>
@@ -52,7 +51,7 @@ export const PostCard = memo(function PostCard({
           )}
         </div>
         
-        <div className={`cursor-pointer py-1 ${SPACING.CARD_PADDING}`} style={{ marginTop: '-12px' }}>
+        <div className="cursor-pointer py-1 px-card-padding" style={{ marginTop: '-12px' }}>
           <div className="mb-3">
             <div className="relative">
                   <p className="text-sm md:text-base whitespace-pre-wrap" style={{ 
@@ -80,7 +79,7 @@ export const PostCard = memo(function PostCard({
         
         {/* 해시태그 */}
         {hashtags && hashtags.length > 0 && (
-          <div className={`${SPACING.CARD_PADDING} py-2`}>
+          <div className="px-card-padding py-2">
             <div className="flex flex-wrap gap-1">
               {hashtags.map((hashtag, index) => (
                 <span key={index} className="text-xs text-blue-600 hover:text-blue-800 cursor-pointer">
@@ -99,17 +98,17 @@ export const PostCard = memo(function PostCard({
           </div>
         )}
         
-        <div className={`flex justify-between items-center text-xs md:text-sm ${COLORS.MUTED} ${SPACING.CARD_PADDING} pt-2`}>
+        <div className="flex justify-between items-center text-xs md:text-sm text-muted-foreground px-card-padding pt-2">
           <button className="flex items-center gap-1 rounded-md p-2 -m-2 bg-transparent hover:bg-red-100 group disabled:opacity-50">
-            <HeartIcon className={`${SIZES.ICON_SM} ${COLORS.MUTED} group-hover:text-red-500`} />
+            <HeartIcon className="w-icon-sm h-icon-sm text-muted-foreground group-hover:text-red-500" />
             <span className="group-hover:text-red-500">{likes}</span>
           </button>
           <button className="flex items-center gap-1 rounded-md p-2 -m-2 bg-transparent hover:bg-green-100 hover:text-green-500">
-            <ChatBubbleIcon className={SIZES.ICON_SM} />
+            <ChatBubbleIcon className="w-icon-sm h-icon-sm" />
             <span>{comments}</span>
           </button>
           <button className="flex items-center gap-1 rounded-md p-2 -m-2 bg-transparent hover:bg-blue-100 hover:text-blue-500">
-            <Share2Icon className={SIZES.ICON_SM} />
+            <Share2Icon className="w-icon-sm h-icon-sm" />
           </button>
         </div>
       </div>

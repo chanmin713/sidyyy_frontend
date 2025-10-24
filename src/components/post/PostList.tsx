@@ -7,7 +7,7 @@ import { ToggleGroup, ToggleItem, ToggleButton, ToggleBackground } from '@/compo
 import { CheckboxGroup, CheckboxItem } from '@/components/ui/checkbox-group'
 import { IconButton } from '@/components/ui/icon-button'
 import { SearchButton } from '@/components/ui/search-button'
-import { CATEGORIES, SORT_OPTIONS, FILTER_OPTIONS, SPACING } from '@/constants'
+import { CATEGORIES, SORT_OPTIONS, FILTER_OPTIONS, LAYOUT } from '@/constants'
 import type { SortOption, FilterOption } from '@/types'
 
 export function PostList() {
@@ -68,10 +68,10 @@ export function PostList() {
   }, [])
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className={`w-full ${LAYOUT.MAX_WIDTH} ${LAYOUT.CONTAINER_CENTER}`}>
       {/* 정렬 및 필터 탭 */}
-      <div className="sticky top-[69px] bg-white border-b border-gray-100 z-40">
-        <div className={`${SPACING.CONTAINER_PADDING} ${SPACING.HEADER_PADDING} ${SPACING.HEADER_HEIGHT} flex items-center`}>
+      <div className={`sticky ${LAYOUT.STICKY_TOP} bg-white border-b border-gray-100 z-40`}>
+        <div className="px-container-padding py-header-padding h-header-height flex items-center">
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center gap-3">
             {/* 필터 탭 */}
@@ -194,7 +194,7 @@ export function PostList() {
       </div>
 
       {/* 포스트 목록 */}
-      <div className={SPACING.CONTAINER_PADDING}>
+      <div className="px-container-padding">
         {filteredPosts.map((post, index) => (
           <PostCard
             key={index}
