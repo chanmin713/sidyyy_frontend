@@ -1,15 +1,12 @@
-import { Card, CardContent } from '@/components/ui/card'
 import { PersonIcon, HeartIcon, ChatBubbleIcon, Share2Icon, BookmarkIcon } from '@radix-ui/react-icons'
 
 interface PostCardProps {
   author: string
-  title: string
   timestamp: string
   content: string
   hashtags?: string[]
   likes: number
   comments: number
-  shares: number
   bookmarks: number
   hasImage?: boolean
   isLast?: boolean
@@ -18,13 +15,11 @@ interface PostCardProps {
 
 export function PostCard({ 
   author, 
-  title, 
   timestamp, 
   content, 
   hashtags,
   likes, 
   comments, 
-  shares, 
   bookmarks,
   hasImage = false,
   isLast = false,

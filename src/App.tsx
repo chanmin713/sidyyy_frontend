@@ -1,5 +1,5 @@
 import { Layout } from '@/layouts/Layout'
-import { PostList } from '@/components/PostList'
+import { PostList } from '@/components/post/PostList'
 
 function App() {
   return (

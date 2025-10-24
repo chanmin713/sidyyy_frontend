@@ -1,7 +1,7 @@
-import { Header } from '../components/Header'
-import { Footer } from '../components/Footer'
-import { RightSidebar } from '../components/RightSidebar'
-import { ScrollToTopButton } from '../components/ScrollToTopButton'
+import { Header } from '../components/layout/Header'
+import { Footer } from '../components/layout/Footer'
+import { RightSidebar } from '../components/layout/RightSidebar'
+import { ScrollToTopButton } from '../components/common/ScrollToTopButton'
 
 interface LayoutProps {
   children: React.ReactNode
