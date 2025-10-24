@@ -183,7 +183,8 @@ Flutter:
     likes: 20,
     comments: 12,
     shares: 6,
-    bookmarks: 14
+    bookmarks: 14,
+    category: "데이터"
   },
   {
     author: "송클라우드",
@@ -212,7 +213,8 @@ Flutter:
     likes: 16,
     comments: 6,
     shares: 4,
-    bookmarks: 11
+    bookmarks: 11,
+    category: "클라우드"
   },
   {
     author: "윤보안",
@@ -241,7 +243,8 @@ Flutter:
     likes: 19,
     comments: 10,
     shares: 5,
-    bookmarks: 13
+    bookmarks: 13,
+    category: "보안"
   },
   {
     author: "강머신러닝",
@@ -270,7 +273,8 @@ ML 경험 있으신 분들
     likes: 25,
     comments: 18,
     shares: 9,
-    bookmarks: 20
+    bookmarks: 20,
+    category: "AI/ML"
   },
   {
     author: "조블록체인",
@@ -299,7 +303,8 @@ Web3 개발 경험 있으신 분들
     likes: 14,
     comments: 7,
     shares: 3,
-    bookmarks: 8
+    bookmarks: 8,
+    category: "블록체인"
   },
   {
     author: "김테스트",
@@ -329,7 +334,8 @@ Web3 개발 경험 있으신 분들
     likes: 17,
     comments: 9,
     shares: 4,
-    bookmarks: 12
+    bookmarks: 12,
+    category: "테스트"
   },
   {
     author: "박게임",
@@ -359,7 +365,8 @@ Web3 개발 경험 있으신 분들
     likes: 23,
     comments: 16,
     shares: 7,
-    bookmarks: 19
+    bookmarks: 19,
+    category: "게임"
   },
   {
     author: "이알고리즘",
@@ -389,7 +396,8 @@ Web3 개발 경험 있으신 분들
     likes: 21,
     comments: 13,
     shares: 6,
-    bookmarks: 17
+    bookmarks: 17,
+    category: "알고리즘"
   },
   {
     author: "정오픈소스",
@@ -419,7 +427,8 @@ Web3 개발 경험 있으신 분들
     likes: 19,
     comments: 11,
     shares: 5,
-    bookmarks: 15
+    bookmarks: 15,
+    category: "오픈소스"
   },
   {
     author: "최성능",
@@ -449,7 +458,8 @@ Web3 개발 경험 있으신 분들
     likes: 26,
     comments: 19,
     shares: 8,
-    bookmarks: 22
+    bookmarks: 22,
+    category: "성능"
   },
   {
     author: "박짧은글",
@@ -463,7 +473,8 @@ useState와 useEffect 정말 유용하네요 😊
     likes: 5,
     comments: 2,
     shares: 1,
-    bookmarks: 3
+    bookmarks: 3,
+    category: "일지"
   },
   {
     author: "김간단",
@@ -480,7 +491,8 @@ style: 코드 스타일 변경
     likes: 8,
     comments: 3,
     shares: 2,
-    bookmarks: 6
+    bookmarks: 6,
+    category: "팁"
   },
   {
     author: "이한줄",
@@ -493,6 +505,7 @@ style: 코드 스타일 변경
     likes: 12,
     comments: 4,
     shares: 1,
-    bookmarks: 8
+    bookmarks: 8,
+    category: "팁"
   }
 ]
