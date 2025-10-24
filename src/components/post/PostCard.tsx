@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react'
 import { PersonIcon, HeartIcon, ChatBubbleIcon, Share2Icon } from '@radix-ui/react-icons'
 import type { PostCardProps } from '@/types'
-import { truncateText } from '@/lib/text-utils'
+import { truncateText } from '@/utils/text-utils'
 
 export const PostCard = memo(function PostCard({ 
   author, 
