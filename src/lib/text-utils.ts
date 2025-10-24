@@ -40,31 +40,3 @@ export function truncateText(text: string, maxLines: number = 10) {
   }
 }
 
-/**
- * 텍스트의 단어 수를 계산합니다
- * @param text - 단어 수를 계산할 텍스트
- * @returns 단어 수
- */
-export function getWordCount(text: string): number {
-  return text.trim().split(/\s+/).filter(word => word.length > 0).length
-}
-
-/**
- * 텍스트의 문자 수를 계산합니다 (공백 제외)
- * @param text - 문자 수를 계산할 텍스트
- * @returns 문자 수
- */
-export function getCharacterCount(text: string): number {
-  return text.replace(/\s/g, '').length
-}
-
-/**
- * 텍스트가 읽기 시간을 추정합니다 (분당 200단어 기준)
- * @param text - 읽기 시간을 추정할 텍스트
- * @returns 읽기 시간 (분)
- */
-export function getReadingTime(text: string): number {
-  const wordCount = getWordCount(text)
-  const wordsPerMinute = 200
-  return Math.ceil(wordCount / wordsPerMinute)
-}
