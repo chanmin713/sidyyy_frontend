@@ -108,12 +108,28 @@ export const PostContent = memo(function PostContent({
 }: PostContentProps) {
   return (
     <article className='bg-white rounded-lg border border-gray-200 p-6'>
+      {/* 프로젝트 제목과 날짜 */}
+      {post.category && (
+        <div className='mb-4 flex items-center justify-between'>
+          <button
+            onClick={onProjectClick}
+            className='text-left hover:underline'
+          >
+            <h1 className='text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-3'>
+              {getProjectLogo(post.projectLogo)}
+              {post.category} #{getProjectLogNumber(post.id, post.category)}
+            </h1>
+          </button>
+          <span className='text-sm text-gray-500'>{post.timestamp}</span>
+        </div>
+      )}
+
       {/* 작성자 정보와 더보기 메뉴 */}
       <div className='flex items-start justify-between mb-4'>
         <ProfileSection
           author={post.author}
           authorRole={post.authorRole}
-          size='lg'
+          size='md'
         />
 
         {/* 더보기 메뉴 */}
@@ -147,22 +163,6 @@ export const PostContent = memo(function PostContent({
           </div>
         </Dropdown>
       </div>
-
-      {/* 프로젝트 제목과 날짜 */}
-      {post.category && (
-        <div className='mb-4 flex items-center justify-between'>
-          <button
-            onClick={onProjectClick}
-            className='text-left hover:underline'
-          >
-            <h1 className='text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-3'>
-              {getProjectLogo(post.projectLogo)}
-              {post.category} #{getProjectLogNumber(post.id, post.category)}
-            </h1>
-          </button>
-          <span className='text-sm text-gray-500'>{post.timestamp}</span>
-        </div>
-      )}
 
       {/* 글 본문 */}
       <div className='mb-6'>

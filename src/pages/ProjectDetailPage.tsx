@@ -1,15 +1,7 @@
-import { memo, useMemo, useState, useEffect } from 'react';
+import { memo, useMemo, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import {
-  ArrowLeftIcon,
-  HeartIcon,
-  ChatBubbleIcon,
-} from '@radix-ui/react-icons';
+import { ArrowLeftIcon } from '@radix-ui/react-icons';
 import { sampleProjects } from '@/data/sampleProjects';
-import { sampleProjectComments } from '@/data/sampleProjectComments';
-import { ProjectPropertiesPanel } from '@/components/project/ProjectPropertiesPanel';
-import { ProjectInteractions } from '@/components/project/ProjectInteractions';
-import { ProjectComments } from '@/components/project/ProjectComments';
 
 export const ProjectDetailPage = memo(function ProjectDetailPage() {
   const { projectName } = useParams<{ projectName: string }>();
@@ -23,34 +15,13 @@ export const ProjectDetailPage = memo(function ProjectDetailPage() {
     return sampleProjects.find(p => p.name === decodedProjectName);
   }, [decodedProjectName]);
 
-  // 해당 프로젝트의 댓글들
-  const projectComments = useMemo(() => {
-    return project ? sampleProjectComments[project.id] || [] : [];
-  }, [project]);
-
   // 페이지 로드 시 맨 위로 스크롤
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [projectName]);
 
-  const [showComments, setShowComments] = useState(false);
-
   const handleBackClick = () => {
     navigate(-1);
-  };
-
-  const handleCommentClick = () => {
-    setShowComments(!showComments);
-  };
-
-  const handleAddComment = (content: string) => {
-    console.log('새 댓글:', content);
-    // 실제 구현에서는 API 호출
-  };
-
-  const handleReply = (commentId: string, content: string) => {
-    console.log('답글:', commentId, content);
-    // 실제 구현에서는 API 호출
   };
 
   if (!decodedProjectName || !project) {
@@ -75,7 +46,7 @@ export const ProjectDetailPage = memo(function ProjectDetailPage() {
 
   return (
     <div className='min-h-screen bg-white'>
-      <div className='max-w-7xl mx-auto px-4 py-8'>
+      <div className='max-w-4xl mx-auto px-4 py-8'>
         {/* 헤더 */}
         <div className='mb-8'>
           <button
@@ -86,45 +57,11 @@ export const ProjectDetailPage = memo(function ProjectDetailPage() {
             <span>돌아가기</span>
           </button>
 
-          <div className='bg-white rounded-lg border border-gray-200 p-6'>
-            <h1 className='text-3xl font-bold text-gray-900 mb-2'>
+          <div className='text-center py-20'>
+            <h1 className='text-4xl font-bold text-gray-900 mb-4'>
               {project.name}
             </h1>
-            <div className='flex items-center gap-6 text-sm text-gray-500'>
-              <div className='flex items-center gap-1'>
-                <HeartIcon className='w-4 h-4 text-red-400' />
-                <span>{project.likes}개 좋아요</span>
-              </div>
-              <div className='flex items-center gap-1'>
-                <ChatBubbleIcon className='w-4 h-4 text-blue-400' />
-                <span>{project.comments}개 댓글</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 메인 콘텐츠 */}
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
-          {/* 프로젝트 속성 패널 */}
-          <div className='lg:col-span-1'>
-            <ProjectPropertiesPanel project={project} />
-            <ProjectInteractions
-              project={project}
-              onComment={handleCommentClick}
-            />
-          </div>
-
-          {/* 댓글 섹션 */}
-          <div className='lg:col-span-2'>
-            {showComments && (
-              <div className='bg-white rounded-lg border border-gray-200 p-6'>
-                <ProjectComments
-                  comments={projectComments}
-                  onAddComment={handleAddComment}
-                  onReply={handleReply}
-                />
-              </div>
-            )}
+            <p className='text-lg text-gray-600'>{project.description}</p>
           </div>
         </div>
       </div>

@@ -1,23 +1,14 @@
 import { Card, CardContent } from '@/components/ui/card';
 import {
-  ArrowUpIcon,
   GitHubLogoIcon,
   FigmaLogoIcon,
   NotionLogoIcon,
   DiscordLogoIcon,
   StarFilledIcon,
-  PersonIcon,
   Pencil1Icon,
-  HeartIcon,
-  ChatBubbleIcon,
   CalendarIcon,
 } from '@radix-ui/react-icons';
-import {
-  popularProjects,
-  recommendedMembers,
-  popularLogs,
-  popularRecruits,
-} from '@/data/sidebarData';
+import { popularProjects } from '@/data/sidebarData';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 // 아이콘 매핑 함수
@@ -103,16 +94,19 @@ export function RightSidebar() {
               <StarFilledIcon className='w-4 h-4 text-orange-500' />
               인기 프로젝트
             </h3>
-            <div className='space-y-4'>
-              {popularProjects.map(project => {
+            <div className='space-y-3'>
+              {popularProjects.slice(0, 5).map(project => {
                 const IconComponent = getIcon(project.icon);
                 return (
                   <div
                     key={project.id}
                     className='flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group'
+                    onClick={() =>
+                      navigate(`/project/${encodeURIComponent(project.name)}`)
+                    }
                   >
-                    <div className='w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-200'>
-                      <IconComponent className='w-6 h-6 text-gray-700 group-hover:text-gray-900 transition-colors duration-200' />
+                    <div className='w-8 h-8 flex items-center justify-center group-hover:scale-110 transition-transform duration-200'>
+                      <IconComponent className='w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors duration-200' />
                     </div>
                     <div className='flex-1 min-w-0'>
                       <h4 className='font-medium text-gray-900 text-sm group-hover:text-gray-700 transition-colors duration-200'>
@@ -122,10 +116,6 @@ export function RightSidebar() {
                         {project.description}
                       </p>
                     </div>
-                    <div className='flex items-center text-xs text-gray-400 group-hover:text-gray-600 transition-colors duration-200'>
-                      <span>{project.stats}</span>
-                      <ArrowUpIcon className='w-3 h-3 ml-1 text-green-500 group-hover:text-green-600 transition-colors duration-200' />
-                    </div>
                   </div>
                 );
               })}
@@ -133,131 +123,6 @@ export function RightSidebar() {
             <div className='mt-3 text-right'>
               <button
                 onClick={() => navigate('/project')}
-                className='text-xs text-gray-500 hover:text-gray-700'
-              >
-                더보기 →
-              </button>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* 추천 멤버 */}
-        <Card>
-          <CardContent className='p-6'>
-            <h3 className='font-semibold text-gray-900 mb-4 flex items-center gap-2'>
-              <PersonIcon className='w-4 h-4 text-blue-500' />
-              추천 멤버
-            </h3>
-            <div className='space-y-3'>
-              {recommendedMembers.map(member => (
-                <div
-                  key={member.id}
-                  className='flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group'
-                >
-                  <div className='w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center group-hover:border-gray-400 transition-colors duration-200'>
-                    <span className='text-gray-600 text-xs font-medium group-hover:text-gray-800 transition-colors duration-200'>
-                      {member.initial}
-                    </span>
-                  </div>
-                  <div className='flex-1 min-w-0'>
-                    <h4 className='font-medium text-gray-900 text-sm group-hover:text-gray-700 transition-colors duration-200'>
-                      {member.name}
-                    </h4>
-                    <p className='text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-200'>
-                      {member.role}
-                    </p>
-                  </div>
-                  <button className='text-xs text-blue-500 hover:text-blue-700 transition-colors duration-200'>
-                    팔로우
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div className='mt-3 text-right'>
-              <button
-                onClick={() => navigate('/member')}
-                className='text-xs text-gray-500 hover:text-gray-700'
-              >
-                더보기 →
-              </button>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* 인기 로그 */}
-        <Card>
-          <CardContent className='p-6'>
-            <h3 className='font-semibold text-gray-900 mb-4 flex items-center gap-2'>
-              <Pencil1Icon className='w-4 h-4 text-blue-500' />
-              인기 로그
-            </h3>
-            <div className='space-y-3'>
-              {popularLogs.map(log => (
-                <div
-                  key={log.id}
-                  className='p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group'
-                  onClick={() => navigate(`/post/${log.id}`)}
-                >
-                  <h4 className='font-medium text-gray-900 text-sm group-hover:text-gray-700 transition-colors duration-200 mb-1'>
-                    {log.title}
-                  </h4>
-                  <p className='text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-200 mb-2'>
-                    {log.author} · {log.category}
-                  </p>
-                  <div className='flex items-center gap-3 text-xs text-gray-400 group-hover:text-gray-600 transition-colors duration-200'>
-                    <div className='flex items-center gap-1'>
-                      <HeartIcon className='w-3 h-3' />
-                      <span>{log.likes}</span>
-                    </div>
-                    <div className='flex items-center gap-1'>
-                      <ChatBubbleIcon className='w-3 h-3' />
-                      <span>{log.comments}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className='mt-3 text-right'>
-              <button
-                onClick={() => navigate('/log')}
-                className='text-xs text-gray-500 hover:text-gray-700'
-              >
-                더보기 →
-              </button>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* 인기 모집글 */}
-        <Card>
-          <CardContent className='p-6'>
-            <h3 className='font-semibold text-gray-900 mb-4 flex items-center gap-2'>
-              <CalendarIcon className='w-4 h-4 text-green-500' />
-              인기 모집글
-            </h3>
-            <div className='space-y-3'>
-              {popularRecruits.map(recruit => (
-                <div
-                  key={recruit.id}
-                  className='p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group'
-                  onClick={() => navigate(`/recruit/${recruit.id}`)}
-                >
-                  <h4 className='font-medium text-gray-900 text-sm group-hover:text-gray-700 transition-colors duration-200 mb-1'>
-                    {recruit.title}
-                  </h4>
-                  <p className='text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-200 mb-2'>
-                    {recruit.company} · {recruit.position}
-                  </p>
-                  <div className='flex items-center justify-between text-xs text-gray-400 group-hover:text-gray-600 transition-colors duration-200'>
-                    <span>{recruit.applicants}명 지원</span>
-                    <span>~{recruit.deadline}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className='mt-3 text-right'>
-              <button
-                onClick={() => navigate('/recruit')}
                 className='text-xs text-gray-500 hover:text-gray-700'
               >
                 더보기 →

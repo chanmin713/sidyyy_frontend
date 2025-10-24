@@ -37,34 +37,70 @@ export interface PopularRecruit {
 export const popularProjects: Project[] = [
   {
     id: '1',
-    name: '플레이포켓',
-    description: '게임 가격 비교 서비스',
+    name: 'Sidyyy',
+    description: '개발자 커뮤니티 플랫폼',
     icon: 'GitHubLogoIcon',
     stats: '2.1k',
     trend: 'up',
   },
   {
     id: '2',
-    name: '디자인 가이드',
-    description: 'UI/UX 레퍼런스 모음',
+    name: 'DevTools',
+    description: '개발자 도구 모음',
     icon: 'FigmaLogoIcon',
     stats: '1.8k',
     trend: 'up',
   },
   {
     id: '3',
-    name: '맥북 가이드',
-    description: '개발자용 맥북 추천',
+    name: 'CodeShare',
+    description: '코드 공유 플랫폼',
     icon: 'NotionLogoIcon',
     stats: '1.5k',
     trend: 'up',
   },
   {
     id: '4',
-    name: '스타트업 로드맵',
-    description: '창업 가이드북',
+    name: 'TechBlog',
+    description: '기술 블로그 플랫폼',
     icon: 'DiscordLogoIcon',
     stats: '1.2k',
+    trend: 'up',
+  },
+  {
+    id: '5',
+    name: 'Sidyyy',
+    description:
+      '개발자 커뮤니티 플랫폼입니다. 개발자들이 프로젝트를 공유하고 협업할 수 있는 공간을 제공합니다.',
+    icon: 'GitHubLogoIcon',
+    stats: '2.4k',
+    trend: 'up',
+  },
+  {
+    id: '6',
+    name: 'DevTools',
+    description:
+      '개발자 도구 모음 프로젝트입니다. 다양한 개발 도구들을 한 곳에서 관리하고 공유할 수 있습니다.',
+    icon: 'FigmaLogoIcon',
+    stats: '1.9k',
+    trend: 'up',
+  },
+  {
+    id: '7',
+    name: 'CodeShare',
+    description:
+      '코드 공유 플랫폼입니다. 개발자들이 코드 스니펫을 공유하고 학습할 수 있는 커뮤니티입니다.',
+    icon: 'NotionLogoIcon',
+    stats: '1.6k',
+    trend: 'up',
+  },
+  {
+    id: '8',
+    name: 'TechBlog',
+    description:
+      '기술 블로그 플랫폼입니다. 개발자들이 기술 경험과 지식을 공유할 수 있는 블로그 서비스입니다.',
+    icon: 'DiscordLogoIcon',
+    stats: '1.3k',
     trend: 'up',
   },
 ];

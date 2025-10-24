@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { PersonIcon } from '@radix-ui/react-icons';
 
 interface ProfileSectionProps {
@@ -14,6 +15,11 @@ export const ProfileSection = memo(function ProfileSection({
   size = 'md',
   className = '',
 }: ProfileSectionProps) {
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    navigate(`/user/${encodeURIComponent(author)}`);
+  };
   const getSizeStyles = () => {
     switch (size) {
       case 'sm':
@@ -51,6 +57,7 @@ export const ProfileSection = memo(function ProfileSection({
 
   return (
     <div
+      onClick={handleProfileClick}
       className={`inline-flex items-center gap-3 group hover:bg-gray-50 rounded-lg px-2 py-1 transition-colors cursor-pointer ${className}`}
     >
       <div

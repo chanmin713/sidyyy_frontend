@@ -150,7 +150,10 @@ export function DesktopHeader() {
               <PaperPlaneIcon className='w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300' />
             </button>
             <button
-              onClick={() => navigate('/profile')}
+              onClick={() => {
+                console.log('프로필 버튼 클릭됨');
+                navigate('/profile');
+              }}
               className='w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group'
               title='마이페이지'
               aria-label='마이페이지'
