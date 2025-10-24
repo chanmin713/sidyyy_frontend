@@ -1,6 +1,4 @@
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
-import { LeftSidebar } from '@/components/LeftSidebar'
+import { Layout } from '@/components/Layout'
 import { PostInput } from '@/components/PostInput'
 import { PostCard } from '@/components/PostCard'
 
@@ -87,43 +85,29 @@ collectui.com → 카테고리별 정리, 검색 편함
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
-      
-      <div className="max-w-6xl mx-auto h-full">
-        <main className="flex justify-center gap-x-5 pb-3 md:px-5 md:pb-5">
-          {/* 왼쪽 사이드바 */}
-          <LeftSidebar />
-          
-          {/* 중앙 피드 */}
-          <div className="w-full md:w-4/5">
-            <div className="space-y-6">
-              <PostInput />
-              
-              <div className="w-full max-w-2xl mx-auto space-y-4 pb-4">
-                {posts.map((post, index) => (
-                  <PostCard
-                    key={index}
-                    author={post.author}
-                    title={post.title}
-                    subtitle={post.subtitle}
-                    timestamp={post.timestamp}
-                    content={post.content}
-                    likes={post.likes}
-                    comments={post.comments}
-                    shares={post.shares}
-                    bookmarks={post.bookmarks}
-                    hasImage={post.hasImage}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </main>
+    <Layout>
+      <div className="space-y-6">
+        <PostInput />
+        
+        <div className="w-full max-w-2xl mx-auto space-y-4 pb-4">
+          {posts.map((post, index) => (
+            <PostCard
+              key={index}
+              author={post.author}
+              title={post.title}
+              subtitle={post.subtitle}
+              timestamp={post.timestamp}
+              content={post.content}
+              likes={post.likes}
+              comments={post.comments}
+              shares={post.shares}
+              bookmarks={post.bookmarks}
+              hasImage={post.hasImage}
+            />
+          ))}
+        </div>
       </div>
-      
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 
