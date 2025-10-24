@@ -16,7 +16,7 @@ export function DesktopHeader() {
           </div>
 
           {/* 중앙: 탭 네비게이션 또는 검색창 */}
-          <div className="flex-1 max-w-md mx-8">
+          <div className="flex-1 max-w-2xl mx-8">
             {!isSearchOpen ? (
               <div className="flex bg-gray-50 rounded-xl p-1.5 shadow-sm relative animate-in fade-in-0 slide-in-from-top-2 duration-300">
                 {/* 움직이는 흰색 배경 */}
