@@ -1,5 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card'
-import { ArrowUpIcon } from '@radix-ui/react-icons'
+import { ArrowUpIcon, GamepadIcon, PaletteIcon, LaptopIcon, RocketIcon } from '@radix-ui/react-icons'
 
 export function RightSidebar() {
   return (
@@ -12,7 +12,7 @@ export function RightSidebar() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">P</span>
+                  <GamepadIcon className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-medium text-gray-900 text-sm">플레이포켓</h4>
@@ -26,7 +26,7 @@ export function RightSidebar() {
               
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">D</span>
+                  <PaletteIcon className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-medium text-gray-900 text-sm">디자인 가이드</h4>
@@ -40,7 +40,7 @@ export function RightSidebar() {
               
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">M</span>
+                  <LaptopIcon className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-medium text-gray-900 text-sm">맥북 가이드</h4>
@@ -54,7 +54,7 @@ export function RightSidebar() {
               
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-rose-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">S</span>
+                  <RocketIcon className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-medium text-gray-900 text-sm">스타트업 로드맵</h4>
