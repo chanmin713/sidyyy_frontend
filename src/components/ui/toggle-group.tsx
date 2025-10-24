@@ -23,7 +23,7 @@ interface ToggleItemProps<T = string> {
 
 export function ToggleItem<T = string>({ children, className = '' }: ToggleItemProps<T>) {
   return (
-    <div className={`flex-1 ${className}`}>
+    <div className={`flex-1 flex ${className}`}>
       {children}
     </div>
   )

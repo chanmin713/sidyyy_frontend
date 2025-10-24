@@ -49,7 +49,7 @@ export function PostList() {
       {/* 정렬 및 필터 탭 */}
       <div className="sticky top-[69px] bg-white border-b border-gray-100 z-40">
         <div className="px-6 py-3 h-16 flex items-center">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between w-full">
             <div className="flex items-center gap-3">
             {/* 필터 탭 */}
             <ToggleGroup<'all' | 'following'> value={filterBy} onValueChange={setFilterBy}>
@@ -84,7 +84,7 @@ export function PostList() {
             </div>
 
             {/* 검색 버튼과 필터 아이콘 */}
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 ml-auto">
               <SearchButton 
                 onSearch={(query) => setSearchQuery(query)}
               />
