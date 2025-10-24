@@ -30,6 +30,7 @@ export function PostCard({
 }: PostCardProps) {
   // 10줄 이상인지 확인 (대략 300자 이상)
   const shouldShowMoreButton = content.length > 300
+  console.log('Post:', title, 'Length:', content.length, 'Should show more:', shouldShowMoreButton)
   return (
     <div>
       <div className="rounded-lg flex flex-col">
@@ -66,11 +67,11 @@ export function PostCard({
           <div className="mb-3">
             <div className="relative">
                   <p className="text-sm md:text-base whitespace-pre-wrap" style={{ 
-                    display: '-webkit-box', 
-                    WebkitLineClamp: 10, 
+                    display: shouldShowMoreButton ? '-webkit-box' : 'block',
+                    WebkitLineClamp: shouldShowMoreButton ? 10 : 'none', 
                     WebkitBoxOrient: 'vertical', 
                     overflow: 'hidden', 
-                    maxHeight: '15rem' 
+                    maxHeight: shouldShowMoreButton ? '15rem' : 'none'
                   }}>
                     {content}
                   </p>
