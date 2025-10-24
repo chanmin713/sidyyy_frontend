@@ -56,15 +56,18 @@ export function PostCard({
         
         <div className="cursor-pointer py-1 pl-[44px]" style={{ marginTop: '-12px' }}>
           <div className="mb-3">
-            <p className="text-sm md:text-base whitespace-pre-wrap" style={{ 
-              display: '-webkit-box', 
-              WebkitLineClamp: 12, 
-              WebkitBoxOrient: 'vertical', 
-              overflow: 'hidden', 
-              maxHeight: '18rem' 
-            }}>
-              {content}
-            </p>
+            <div className="relative">
+              <p className="text-sm md:text-base whitespace-pre-wrap" style={{ 
+                display: '-webkit-box', 
+                WebkitLineClamp: 15, 
+                WebkitBoxOrient: 'vertical', 
+                overflow: 'hidden', 
+                maxHeight: '22rem' 
+              }}>
+                {content}
+              </p>
+              <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+            </div>
             <div className="mt-2 text-right pr-4">
               <button className="text-gray-500 hover:text-gray-700 text-sm md:text-base">
                 더 보기 →
