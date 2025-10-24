@@ -16,11 +16,11 @@ export function Footer() {
 
           {/* 연락처 및 법적 정보 */}
           <div className="space-y-4">
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-gray-900">문의하기</a></li>
-              <li><a href="#" className="hover:text-gray-900">이용약관</a></li>
-              <li><a href="#" className="hover:text-gray-900">개인정보처리방침</a></li>
-            </ul>
+            <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+              <a href="#" className="hover:text-gray-900">문의하기</a>
+              <a href="#" className="hover:text-gray-900">이용약관</a>
+              <a href="#" className="hover:text-gray-900">개인정보처리방침</a>
+            </div>
           </div>
         </div>
 
