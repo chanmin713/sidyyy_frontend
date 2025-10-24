@@ -13,6 +13,7 @@ interface PostCardProps {
   bookmarks: number
   hasImage?: boolean
   isLast?: boolean
+  showMoreButton?: boolean
 }
 
 export function PostCard({ 
@@ -26,7 +27,8 @@ export function PostCard({
   shares, 
   bookmarks,
   hasImage = false,
-  isLast = false
+  isLast = false,
+  showMoreButton = true
 }: PostCardProps) {
   return (
     <div>
@@ -68,11 +70,13 @@ export function PostCard({
               </p>
               <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
             </div>
-            <div className="mt-2 text-right pr-4">
-              <button className="text-gray-500 hover:text-gray-700 text-sm md:text-base">
-                더 보기 →
-              </button>
-            </div>
+            {showMoreButton && (
+              <div className="mt-2 text-right pr-4">
+                <button className="text-gray-500 hover:text-gray-700 text-sm md:text-base">
+                  더 보기 →
+                </button>
+              </div>
+            )}
           </div>
         </div>
         
