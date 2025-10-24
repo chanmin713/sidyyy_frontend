@@ -1,7 +1,6 @@
 export interface Post {
   author: string
   title: string
-  subtitle: string
   timestamp: string
   content: string
   likes: number
@@ -16,7 +15,6 @@ export const samplePosts: Post[] = [
   {
     author: "김개발",
     title: "드디어 첫 사이드 프로젝트 완성! 🎉",
-    subtitle: "프론트엔드 개발자",
     timestamp: "1일 전",
     content: `3개월 동안 틈틈이 만든 "할일 관리 앱"이 드디어 완성됐어요!
 
@@ -43,7 +41,6 @@ export const samplePosts: Post[] = [
   {
     author: "박코딩",
     title: "Next.js 14 App Router로 블로그 만들기",
-    subtitle: "풀스택 개발자",
     timestamp: "2일 전",
     content: `Next.js 14의 새로운 App Router로 개인 블로그를 만들어봤어요!
 
@@ -68,7 +65,6 @@ export const samplePosts: Post[] = [
   {
     author: "이백엔드",
     title: "Docker로 개발환경 통일하기",
-    subtitle: "백엔드 개발자",
     timestamp: "4일 전",
     content: `팀에서 Docker를 도입한 후 개발환경이 정말 편해졌어요!
 
@@ -97,7 +93,6 @@ Docker 처음 사용하시는 분들도 금방 익숙해질 거예요 👍
   {
     author: "정모바일",
     title: "React Native vs Flutter, 6개월 사용 후기",
-    subtitle: "모바일 개발자",
     timestamp: "1주 전",
     content: `React Native와 Flutter를 각각 6개월씩 사용해봤는데,
 솔직한 후기를 공유해드릴게요!
@@ -129,7 +124,6 @@ Flutter:
   {
     author: "최디자인",
     title: "Figma에서 코드로, 디자인 시스템 구축기",
-    subtitle: "UI/UX 디자이너",
     timestamp: "3일 전",
     content: `디자인 시스템을 처음 구축해봤는데 정말 신기해요!
 
@@ -159,7 +153,6 @@ Flutter:
   {
     author: "한데이터",
     title: "Python으로 데이터 분석 자동화하기",
-    subtitle: "데이터 분석가",
     timestamp: "5일 전",
     content: `매일 반복되는 데이터 분석 작업을 자동화해봤어요!
 
@@ -189,7 +182,6 @@ Flutter:
   {
     author: "송클라우드",
     title: "AWS Lambda로 서버리스 API 만들기",
-    subtitle: "클라우드 엔지니어",
     timestamp: "6일 전",
     content: `서버 관리 없이 API를 만들어봤는데 정말 편해요!
 
@@ -219,7 +211,6 @@ Flutter:
   {
     author: "윤보안",
     title: "JWT 토큰으로 인증 시스템 구축하기",
-    subtitle: "보안 엔지니어",
     timestamp: "1주 전",
     content: `JWT를 사용한 인증 시스템을 만들어봤어요!
 
@@ -249,7 +240,6 @@ Flutter:
   {
     author: "강머신러닝",
     title: "TensorFlow로 이미지 분류 모델 만들기",
-    subtitle: "ML 엔지니어",
     timestamp: "2주 전",
     content: `고양이와 개를 구분하는 모델을 만들어봤어요!
 
@@ -279,7 +269,6 @@ ML 경험 있으신 분들
   {
     author: "조블록체인",
     title: "Solidity로 첫 스마트 컨트랙트 작성하기",
-    subtitle: "블록체인 개발자",
     timestamp: "3주 전",
     content: `이더리움 스마트 컨트랙트를 처음 작성해봤어요!
 
@@ -309,7 +298,6 @@ Web3 개발 경험 있으신 분들
   {
     author: "김테스트",
     title: "Jest와 Cypress로 테스트 자동화 구축하기",
-    subtitle: "QA 엔지니어",
     timestamp: "4일 전",
     content: `프로젝트에 테스트 자동화를 도입해봤어요!
 
@@ -340,7 +328,6 @@ Web3 개발 경험 있으신 분들
   {
     author: "박게임",
     title: "Unity로 2D 플랫포머 게임 만들기",
-    subtitle: "게임 개발자",
     timestamp: "5일 전",
     content: `처음으로 완성한 게임을 출시했어요!
 
@@ -371,7 +358,6 @@ Web3 개발 경험 있으신 분들
   {
     author: "이알고리즘",
     title: "LeetCode 100문제 달성 후기",
-    subtitle: "알고리즘 연구원",
     timestamp: "6일 전",
     content: `드디어 LeetCode 100문제를 풀었어요!
 
@@ -402,7 +388,6 @@ Web3 개발 경험 있으신 분들
   {
     author: "정오픈소스",
     title: "GitHub 오픈소스 첫 기여하기",
-    subtitle: "오픈소스 기여자",
     timestamp: "1주 전",
     content: `처음으로 오픈소스에 기여해봤어요!
 
@@ -433,7 +418,6 @@ Web3 개발 경험 있으신 분들
   {
     author: "최성능",
     title: "웹사이트 로딩 속도 3초→0.5초 최적화",
-    subtitle: "성능 엔지니어",
     timestamp: "2주 전",
     content: `웹사이트 성능 최적화 프로젝트를 완료했어요!
 
@@ -464,7 +448,6 @@ Web3 개발 경험 있으신 분들
   {
     author: "박짧은글",
     title: "오늘의 코딩 일지",
-    subtitle: "개발자",
     timestamp: "3시간 전",
     content: `오늘은 React Hook을 공부했어요!
 useState와 useEffect 정말 유용하네요 😊
@@ -497,7 +480,6 @@ style: 코드 스타일 변경
   {
     author: "이한줄",
     title: "오늘의 발견",
-    subtitle: "백엔드 개발자",
     timestamp: "1일 전",
     content: `console.log() 대신 console.table()을 사용하면 객체를 표 형태로 볼 수 있어요! 
 

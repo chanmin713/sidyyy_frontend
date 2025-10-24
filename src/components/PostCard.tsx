@@ -4,7 +4,6 @@ import { PersonIcon, HeartIcon, ChatBubbleIcon, Share2Icon, BookmarkIcon } from 
 interface PostCardProps {
   author: string
   title: string
-  subtitle: string
   timestamp: string
   content: string
   likes: number
@@ -20,7 +19,6 @@ interface PostCardProps {
 export function PostCard({ 
   author, 
   title, 
-  subtitle, 
   timestamp, 
   content, 
   likes, 
@@ -43,17 +41,14 @@ export function PostCard({
               </div>
             </div>
             <div className="flex-grow min-w-0 overflow-hidden">
-              <div className="flex items-baseline gap-1 overflow-hidden">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center gap-1">
-                    <p className="font-semibold hover:underline text-sm md:text-base">{author}</p>
+                  <div className="flex items-baseline gap-1 overflow-hidden">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center gap-1">
+                        <p className="font-semibold hover:underline text-sm md:text-base">{author}</p>
+                        <p className="text-xs text-muted-foreground flex-shrink-0">·&nbsp;&nbsp;{timestamp}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                {subtitle && (
-                  <p className="text-xs text-muted-foreground flex-grow min-w-0 truncate">{subtitle}</p>
-                )}
-                <p className="text-xs text-muted-foreground flex-shrink-0">·&nbsp;&nbsp;{timestamp}</p>
-              </div>
             </div>
           </div>
           

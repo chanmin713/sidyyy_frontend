@@ -16,12 +16,11 @@ function App() {
             // 15줄 이상인지 확인 (대략 500자 이상)
             const shouldShowMoreButton = post.content.length > 500
             return (
-              <PostCard
-                key={index}
-                author={post.author}
-                title={post.title}
-                subtitle={post.subtitle}
-                timestamp={post.timestamp}
+                  <PostCard
+                    key={index}
+                    author={post.author}
+                    title={post.title}
+                    timestamp={post.timestamp}
                 content={post.content}
                 likes={post.likes}
                 comments={post.comments}
