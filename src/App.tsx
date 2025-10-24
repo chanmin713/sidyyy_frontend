@@ -96,7 +96,7 @@ collectui.com → 카테고리별 정리, 검색 편함
           <LeftSidebar />
           
           {/* 중앙 피드 */}
-          <div className="w-full md:w-4/5 border-r border-gray-200">
+          <div className="w-full md:w-4/5">
             <div className="space-y-6">
               <PostInput />
               

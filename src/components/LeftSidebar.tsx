@@ -2,7 +2,7 @@ import { Card, CardContent } from '@/components/ui/card'
 
 export function LeftSidebar() {
   return (
-    <div className="hidden md:block w-1/5 sticky top-[70px] self-start h-screen">
+    <div className="hidden md:block w-1/5 sticky top-[70px] self-start h-screen border-r border-gray-200">
       <div className="flex flex-col items-center p-4 rounded-lg text-center">
         <div className="w-14 h-14 rounded-full mb-4 flex items-center justify-center border-2 border-gray-300">
           <svg className="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
