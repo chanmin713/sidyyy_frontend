@@ -11,7 +11,7 @@ function App() {
       <div className="space-y-6">
         <PostInput />
         
-        <div className="w-full max-w-2xl mx-auto space-y-4 pb-4">
+        <div className="w-full max-w-2xl mx-auto space-y-4">
           {posts.map((post, index) => (
             <PostCard
               key={index}
@@ -25,6 +25,7 @@ function App() {
               shares={post.shares}
               bookmarks={post.bookmarks}
               hasImage={post.hasImage}
+              isLast={index === posts.length - 1}
             />
           ))}
         </div>

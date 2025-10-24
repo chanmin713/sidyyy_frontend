@@ -12,6 +12,7 @@ interface PostCardProps {
   shares: number
   bookmarks: number
   hasImage?: boolean
+  isLast?: boolean
 }
 
 export function PostCard({ 
@@ -24,7 +25,8 @@ export function PostCard({
   comments, 
   shares, 
   bookmarks,
-  hasImage = false
+  hasImage = false,
+  isLast = false
 }: PostCardProps) {
   return (
     <div>
@@ -95,7 +97,7 @@ export function PostCard({
           </button>
         </div>
       </div>
-      <div className="border-b border-gray-200 my-4"></div>
+      {!isLast && <div className="border-b border-gray-200 my-4"></div>}
     </div>
   )
 }
