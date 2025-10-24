@@ -117,7 +117,8 @@ Flutter:
     comments: 15,
     shares: 8,
     bookmarks: 18,
-    category: "MobileApp"
+    category: "MobileApp",
+    hashtags: ["ReactNative", "Flutter", "모바일개발", "크로스플랫폼"]
   },
   {
     author: "최디자인",
@@ -146,7 +147,8 @@ Flutter:
     comments: 8,
     shares: 3,
     bookmarks: 9,
-    category: "DesignSystem"
+    category: "DesignSystem",
+    hashtags: ["디자인시스템", "Figma", "Storybook", "UIUX"]
   },
   {
     author: "한데이터",
@@ -175,7 +177,8 @@ Flutter:
     comments: 12,
     shares: 6,
     bookmarks: 14,
-    category: "DataAnalytics"
+    category: "DataAnalytics",
+    hashtags: ["데이터분석", "Python", "자동화", "pandas"]
   },
   {
     author: "송클라우드",
@@ -204,7 +207,8 @@ Flutter:
     comments: 6,
     shares: 4,
     bookmarks: 11,
-    category: "ServerlessAPI"
+    category: "ServerlessAPI",
+    hashtags: ["AWS", "Lambda", "서버리스", "API"]
   },
   {
     author: "윤보안",
@@ -233,7 +237,8 @@ Flutter:
     comments: 10,
     shares: 5,
     bookmarks: 13,
-    category: "AuthSystem"
+    category: "AuthSystem",
+    hashtags: ["JWT", "인증", "보안", "토큰"]
   },
   {
     author: "강머신러닝",
@@ -262,7 +267,8 @@ ML 경험 있으신 분들
     comments: 18,
     shares: 9,
     bookmarks: 20,
-    category: "CatDogAI"
+    category: "CatDogAI",
+    hashtags: ["머신러닝", "TensorFlow", "CNN", "이미지분류"]
   },
   {
     author: "조블록체인",
@@ -291,7 +297,8 @@ Web3 개발 경험 있으신 분들
     comments: 7,
     shares: 3,
     bookmarks: 8,
-    category: "EthereumDApp"
+    category: "EthereumDApp",
+    hashtags: ["블록체인", "Solidity", "스마트컨트랙트", "Web3"]
   },
   {
     author: "김테스트",
@@ -321,7 +328,8 @@ Web3 개발 경험 있으신 분들
     comments: 9,
     shares: 4,
     bookmarks: 12,
-    category: "TestSuite"
+    category: "TestSuite",
+    hashtags: ["테스트자동화", "Jest", "Cypress", "QA"]
   },
   {
     author: "박게임",
@@ -351,7 +359,8 @@ Web3 개발 경험 있으신 분들
     comments: 16,
     shares: 7,
     bookmarks: 19,
-    category: "PixelJump"
+    category: "PixelJump",
+    hashtags: ["게임개발", "Unity", "인디게임", "2D"]
   },
   {
     author: "이알고리즘",
@@ -381,7 +390,8 @@ Web3 개발 경험 있으신 분들
     comments: 13,
     shares: 6,
     bookmarks: 17,
-    category: "LeetCode100"
+    category: "LeetCode100",
+    hashtags: ["알고리즘", "LeetCode", "코딩테스트", "자료구조"]
   },
   {
     author: "정오픈소스",
@@ -411,7 +421,8 @@ Web3 개발 경험 있으신 분들
     comments: 11,
     shares: 5,
     bookmarks: 15,
-    category: "OpenSource"
+    category: "OpenSource",
+    hashtags: ["오픈소스", "GitHub", "기여", "커뮤니티"]
   },
   {
     author: "최성능",
@@ -441,7 +452,8 @@ Web3 개발 경험 있으신 분들
     comments: 19,
     shares: 8,
     bookmarks: 22,
-    category: "WebOptimizer"
+    category: "WebOptimizer",
+    hashtags: ["웹성능", "최적화", "Lighthouse", "CoreWebVitals"]
   },
   {
     author: "박짧은글",
@@ -483,15 +495,15 @@ style: 코드 스타일 변경
     comments: 4,
     shares: 1,
     bookmarks: 8,
-    category: "DebugHelper"
+    category: "DebugHelper",
+    hashtags: ["JavaScript", "디버깅"]
   },
   {
     author: "김짧은글",
     title: "오늘의 한 줄",
     timestamp: "2시간 전",
-    content: `오늘도 열심히 코딩했어요! 💪
-
-#일상 #코딩`,
+    content: `오늘도 열심히 코딩했어요! 💪`,
+    hashtags: ["일상", "코딩"],
     likes: 3,
     comments: 1,
     shares: 0,
@@ -506,9 +518,8 @@ style: 코드 스타일 변경
 justify-content: center;
 align-items: center;
 
-이거 하나면 끝! ✨
-
-#CSS #팁`,
+이거 하나면 끝! ✨`,
+    hashtags: ["CSS", "팁"],
     likes: 7,
     comments: 2,
     shares: 1,
@@ -519,9 +530,8 @@ align-items: center;
     author: "이한줄",
     title: "오늘의 발견",
     timestamp: "6시간 전",
-    content: `console.log() 대신 console.table()을 사용하면 객체를 표 형태로 볼 수 있어요! 
-
-#JavaScript #디버깅`,
+    content: `console.log() 대신 console.table()을 사용하면 객체를 표 형태로 볼 수 있어요!`,
+    hashtags: ["JavaScript", "디버깅"],
     likes: 5,
     comments: 1,
     shares: 0,
@@ -532,9 +542,8 @@ align-items: center;
     author: "김짧은글2",
     title: "오늘의 한 줄",
     timestamp: "1시간 전",
-    content: `오늘도 열심히! 💪
-
-#일상`,
+    content: `오늘도 열심히! 💪`,
+    hashtags: ["일상"],
     likes: 2,
     comments: 0,
     shares: 0,
@@ -547,9 +556,8 @@ align-items: center;
     timestamp: "30분 전",
     content: `margin: 0 auto; 
 
-이거 하나면 가운데 정렬! ✨
-
-#CSS`,
+이거 하나면 가운데 정렬! ✨`,
+    hashtags: ["CSS"],
     likes: 4,
     comments: 1,
     shares: 0,
