@@ -18,16 +18,16 @@ export function DesktopHeader() {
 
           {/* 중앙: 탭 네비게이션 */}
           <div className="flex-1 max-w-2xl mx-8">
-            <div className="flex bg-gray-50 rounded-lg p-0.5 shadow-sm relative animate-in fade-in-0 slide-in-from-top-2 duration-500">
+            <div className="flex bg-gray-50 rounded-lg p-1 shadow-sm relative animate-in fade-in-0 slide-in-from-top-2 duration-500">
               {/* 움직이는 흰색 배경 */}
               <div 
-                className={`absolute top-0.5 bottom-0.5 bg-white rounded-md shadow-sm transition-all duration-500 ease-out ${
-                  hoveredTab === 'feed' ? 'left-0.5 w-[calc(33.333%-0.125rem)]' :
-                  hoveredTab === 'project' ? 'left-[calc(33.333%+0.125rem)] w-[calc(33.333%-0.125rem)]' :
-                  hoveredTab === 'recruit' ? 'left-[calc(66.666%+0.125rem)] w-[calc(33.333%-0.125rem)]' :
-                  activeTab === 'feed' ? 'left-0.5 w-[calc(33.333%-0.125rem)]' :
-                  activeTab === 'project' ? 'left-[calc(33.333%+0.125rem)] w-[calc(33.333%-0.125rem)]' :
-                  'left-[calc(66.666%+0.125rem)] w-[calc(33.333%-0.125rem)]'
+                className={`absolute top-1 bottom-1 bg-white rounded-md shadow-sm transition-all duration-500 ease-out ${
+                  hoveredTab === 'feed' ? 'left-1 w-[calc(33.333%-0.25rem)]' :
+                  hoveredTab === 'project' ? 'left-[calc(33.333%+0.25rem)] w-[calc(33.333%-0.25rem)]' :
+                  hoveredTab === 'recruit' ? 'left-[calc(66.666%+0.25rem)] w-[calc(33.333%-0.25rem)]' :
+                  activeTab === 'feed' ? 'left-1 w-[calc(33.333%-0.25rem)]' :
+                  activeTab === 'project' ? 'left-[calc(33.333%+0.25rem)] w-[calc(33.333%-0.25rem)]' :
+                  'left-[calc(66.666%+0.25rem)] w-[calc(33.333%-0.25rem)]'
                 }`}
               />
               

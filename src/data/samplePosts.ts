@@ -1,13 +1,10 @@
 export interface Post {
   author: string
-  title: string
   timestamp: string
   content: string
   hashtags?: string[]
   likes: number
   comments: number
-  shares: number
-  bookmarks: number
   hasImage?: boolean
   category?: string
 }
@@ -15,7 +12,6 @@ export interface Post {
 export const samplePosts: Post[] = [
   {
     author: "김개발",
-    title: "드디어 첫 사이드 프로젝트 완성! 🎉",
     timestamp: "1일 전",
     content: `3개월 동안 틈틈이 만든 "할일 관리 앱"이 드디어 완성됐어요!
 
@@ -34,13 +30,10 @@ export const samplePosts: Post[] = [
     hashtags: ["첫프로젝트", "React", "TypeScript", "할일관리"],
     likes: 12,
     comments: 7,
-    shares: 2,
-    bookmarks: 5,
     category: "TaskFlow"
   },
   {
     author: "박코딩",
-    title: "Next.js 14 App Router로 블로그 만들기",
     timestamp: "2일 전",
     content: `Next.js 14의 새로운 App Router로 개인 블로그를 만들어봤어요!
 
@@ -57,13 +50,10 @@ export const samplePosts: Post[] = [
     hashtags: ["NextJS", "AppRouter", "블로그", "개발일지"],
     likes: 8,
     comments: 4,
-    shares: 1,
-    bookmarks: 6,
     category: "DevBlog"
   },
   {
     author: "이백엔드",
-    title: "Docker로 개발환경 통일하기",
     timestamp: "4일 전",
     content: `팀에서 Docker를 도입한 후 개발환경이 정말 편해졌어요!
 
@@ -84,13 +74,10 @@ Docker 처음 사용하시는 분들도 금방 익숙해질 거예요 👍`,
     hashtags: ["Docker", "DevOps", "개발환경", "팀개발"],
     likes: 18,
     comments: 9,
-    shares: 5,
-    bookmarks: 12,
     category: "DockerEnv"
   },
   {
     author: "정모바일",
-    title: "React Native vs Flutter, 6개월 사용 후기",
     timestamp: "1주 전",
     content: `React Native와 Flutter를 각각 6개월씩 사용해봤는데,
 솔직한 후기를 공유해드릴게요!
@@ -115,14 +102,13 @@ Flutter:
 #ReactNative #Flutter #모바일개발 #크로스플랫폼`,
     likes: 22,
     comments: 15,
-    shares: 8,
-    bookmarks: 18,
+
     category: "MobileApp",
     hashtags: ["ReactNative", "Flutter", "모바일개발", "크로스플랫폼"]
   },
   {
     author: "최디자인",
-    title: "Figma에서 코드로, 디자인 시스템 구축기",
+
     timestamp: "3일 전",
     content: `디자인 시스템을 처음 구축해봤는데 정말 신기해요!
 
@@ -145,14 +131,13 @@ Flutter:
 #디자인시스템 #Figma #Storybook #UIUX`,
     likes: 15,
     comments: 8,
-    shares: 3,
-    bookmarks: 9,
+
     category: "DesignSystem",
     hashtags: ["디자인시스템", "Figma", "Storybook", "UIUX"]
   },
   {
     author: "한데이터",
-    title: "Python으로 데이터 분석 자동화하기",
+
     timestamp: "5일 전",
     content: `매일 반복되는 데이터 분석 작업을 자동화해봤어요!
 
@@ -175,14 +160,13 @@ Flutter:
 #데이터분석 #Python #자동화 #pandas`,
     likes: 20,
     comments: 12,
-    shares: 6,
-    bookmarks: 14,
+
     category: "DataAnalytics",
     hashtags: ["데이터분석", "Python", "자동화", "pandas"]
   },
   {
     author: "송클라우드",
-    title: "AWS Lambda로 서버리스 API 만들기",
+
     timestamp: "6일 전",
     content: `서버 관리 없이 API를 만들어봤는데 정말 편해요!
 
@@ -205,14 +189,13 @@ Flutter:
 #AWS #Lambda #서버리스 #API`,
     likes: 16,
     comments: 6,
-    shares: 4,
-    bookmarks: 11,
+
     category: "ServerlessAPI",
     hashtags: ["AWS", "Lambda", "서버리스", "API"]
   },
   {
     author: "윤보안",
-    title: "JWT 토큰으로 인증 시스템 구축하기",
+
     timestamp: "1주 전",
     content: `JWT를 사용한 인증 시스템을 만들어봤어요!
 
@@ -235,14 +218,13 @@ Flutter:
 #JWT #인증 #보안 #토큰`,
     likes: 19,
     comments: 10,
-    shares: 5,
-    bookmarks: 13,
+
     category: "AuthSystem",
     hashtags: ["JWT", "인증", "보안", "토큰"]
   },
   {
     author: "강머신러닝",
-    title: "TensorFlow로 이미지 분류 모델 만들기",
+
     timestamp: "2주 전",
     content: `고양이와 개를 구분하는 모델을 만들어봤어요!
 
@@ -265,14 +247,13 @@ ML 경험 있으신 분들
 #머신러닝 #TensorFlow #CNN #이미지분류`,
     likes: 25,
     comments: 18,
-    shares: 9,
-    bookmarks: 20,
+
     category: "CatDogAI",
     hashtags: ["머신러닝", "TensorFlow", "CNN", "이미지분류"]
   },
   {
     author: "조블록체인",
-    title: "Solidity로 첫 스마트 컨트랙트 작성하기",
+
     timestamp: "3주 전",
     content: `이더리움 스마트 컨트랙트를 처음 작성해봤어요!
 
@@ -295,14 +276,13 @@ Web3 개발 경험 있으신 분들
 #블록체인 #Solidity #스마트컨트랙트 #Web3`,
     likes: 14,
     comments: 7,
-    shares: 3,
-    bookmarks: 8,
+
     category: "EthereumDApp",
     hashtags: ["블록체인", "Solidity", "스마트컨트랙트", "Web3"]
   },
   {
     author: "김테스트",
-    title: "Jest와 Cypress로 테스트 자동화 구축하기",
+
     timestamp: "4일 전",
     content: `프로젝트에 테스트 자동화를 도입해봤어요!
 
@@ -326,14 +306,13 @@ Web3 개발 경험 있으신 분들
 #테스트자동화 #Jest #Cypress #QA`,
     likes: 17,
     comments: 9,
-    shares: 4,
-    bookmarks: 12,
+
     category: "TestSuite",
     hashtags: ["테스트자동화", "Jest", "Cypress", "QA"]
   },
   {
     author: "박게임",
-    title: "Unity로 2D 플랫포머 게임 만들기",
+
     timestamp: "5일 전",
     content: `처음으로 완성한 게임을 출시했어요!
 
@@ -357,14 +336,13 @@ Web3 개발 경험 있으신 분들
 #게임개발 #Unity #인디게임 #2D`,
     likes: 23,
     comments: 16,
-    shares: 7,
-    bookmarks: 19,
+
     category: "PixelJump",
     hashtags: ["게임개발", "Unity", "인디게임", "2D"]
   },
   {
     author: "이알고리즘",
-    title: "LeetCode 100문제 달성 후기",
+
     timestamp: "6일 전",
     content: `드디어 LeetCode 100문제를 풀었어요!
 
@@ -388,14 +366,13 @@ Web3 개발 경험 있으신 분들
 #알고리즘 #LeetCode #코딩테스트 #자료구조`,
     likes: 21,
     comments: 13,
-    shares: 6,
-    bookmarks: 17,
+
     category: "LeetCode100",
     hashtags: ["알고리즘", "LeetCode", "코딩테스트", "자료구조"]
   },
   {
     author: "정오픈소스",
-    title: "GitHub 오픈소스 첫 기여하기",
+
     timestamp: "1주 전",
     content: `처음으로 오픈소스에 기여해봤어요!
 
@@ -419,14 +396,13 @@ Web3 개발 경험 있으신 분들
 #오픈소스 #GitHub #기여 #커뮤니티`,
     likes: 19,
     comments: 11,
-    shares: 5,
-    bookmarks: 15,
+
     category: "OpenSource",
     hashtags: ["오픈소스", "GitHub", "기여", "커뮤니티"]
   },
   {
     author: "최성능",
-    title: "웹사이트 로딩 속도 3초→0.5초 최적화",
+
     timestamp: "2주 전",
     content: `웹사이트 성능 최적화 프로젝트를 완료했어요!
 
@@ -450,27 +426,25 @@ Web3 개발 경험 있으신 분들
 #웹성능 #최적화 #Lighthouse #CoreWebVitals`,
     likes: 26,
     comments: 19,
-    shares: 8,
-    bookmarks: 22,
+
     category: "WebOptimizer",
     hashtags: ["웹성능", "최적화", "Lighthouse", "CoreWebVitals"]
   },
   {
     author: "박짧은글",
-    title: "오늘의 코딩 일지",
+
     timestamp: "3시간 전",
     content: `오늘은 React Hook을 공부했어요!
 useState와 useEffect 정말 유용하네요 😊`,
     hashtags: ["React", "Hook", "공부"],
     likes: 5,
     comments: 2,
-    shares: 1,
-    bookmarks: 3,
+
     category: "CodingDiary"
   },
   {
     author: "김간단",
-    title: "Git 커밋 메시지 컨벤션",
+
     timestamp: "5시간 전",
     content: `feat: 새로운 기능 추가
 fix: 버그 수정
@@ -480,39 +454,36 @@ style: 코드 스타일 변경
     hashtags: ["Git", "커밋", "컨벤션"],
     likes: 8,
     comments: 3,
-    shares: 2,
-    bookmarks: 6,
+
     category: "GitConvention"
   },
   {
     author: "이한줄",
-    title: "오늘의 발견",
+
     timestamp: "1일 전",
     content: `console.log() 대신 console.table()을 사용하면 객체를 표 형태로 볼 수 있어요! 
 
 #JavaScript #디버깅`,
     likes: 12,
     comments: 4,
-    shares: 1,
-    bookmarks: 8,
+
     category: "DebugHelper",
     hashtags: ["JavaScript", "디버깅"]
   },
   {
     author: "김짧은글",
-    title: "오늘의 한 줄",
+
     timestamp: "2시간 전",
     content: `오늘도 열심히 코딩했어요! 💪`,
     hashtags: ["일상", "코딩"],
     likes: 3,
     comments: 1,
-    shares: 0,
-    bookmarks: 2,
+
     category: "DailyCoding"
   },
   {
     author: "박간단",
-    title: "CSS 팁",
+
     timestamp: "4시간 전",
     content: `flexbox로 가운데 정렬할 때:
 justify-content: center;
@@ -522,44 +493,40 @@ align-items: center;
     hashtags: ["CSS", "팁"],
     likes: 7,
     comments: 2,
-    shares: 1,
-    bookmarks: 4,
+
     category: "FlexboxGuide"
   },
   {
     author: "이한줄",
-    title: "오늘의 발견",
+
     timestamp: "6시간 전",
     content: `console.log() 대신 console.table()을 사용하면 객체를 표 형태로 볼 수 있어요!`,
     hashtags: ["JavaScript", "디버깅"],
     likes: 5,
     comments: 1,
-    shares: 0,
-    bookmarks: 3,
+
     category: "ConsoleTools"
   },
   {
     author: "김짧은글2",
-    title: "오늘의 한 줄",
+
     timestamp: "1시간 전",
     content: `오늘도 열심히! 💪`,
     likes: 2,
     comments: 0,
-    shares: 0,
-    bookmarks: 1,
+
     category: "DailyCoding"
   },
   {
     author: "박간단2",
-    title: "CSS 팁",
+
     timestamp: "30분 전",
     content: `margin: 0 auto; 
 
 이거 하나면 가운데 정렬! ✨`,
     likes: 4,
     comments: 1,
-    shares: 0,
-    bookmarks: 2,
+
     category: "FlexboxGuide"
   }
 ]

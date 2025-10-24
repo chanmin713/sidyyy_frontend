@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { PostCard } from './PostCard'
 import { samplePosts } from '@/data/samplePosts'
 import { MixerHorizontalIcon } from '@radix-ui/react-icons'
@@ -7,42 +7,43 @@ import { ToggleGroup, ToggleItem, ToggleButton, ToggleBackground } from '@/compo
 import { CheckboxGroup, CheckboxItem } from '@/components/ui/checkbox-group'
 import { IconButton } from '@/components/ui/icon-button'
 import { SearchButton } from '@/components/ui/search-button'
+import { CATEGORIES, SORT_OPTIONS, FILTER_OPTIONS, type SortOption, type FilterOption } from '@/constants'
 
 export function PostList() {
-  const [sortBy, setSortBy] = useState<'popular' | 'latest'>('popular')
-  const [filterBy, setFilterBy] = useState<'all' | 'following'>('all')
+  const [sortBy, setSortBy] = useState<SortOption>(SORT_OPTIONS.POPULAR)
+  const [filterBy, setFilterBy] = useState<FilterOption>(FILTER_OPTIONS.ALL)
   const [hoveredFilter, setHoveredFilter] = useState<string | null>(null)
   const [hoveredSort, setHoveredSort] = useState<string | null>(null)
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [searchQuery, setSearchQuery] = useState('')
-  
-  const categories = ['프로젝트', '질문', '리뷰', '팁', '이벤트']
 
-  // 검색 및 필터링된 포스트 목록
-  const filteredPosts = samplePosts.filter(post => {
-    // 검색 쿼리 필터링
-    if (searchQuery) {
-      const query = searchQuery.toLowerCase()
-      const matchesContent = post.content.toLowerCase().includes(query)
-      const matchesAuthor = post.author.toLowerCase().includes(query)
-      const matchesHashtags = post.hashtags?.some(tag => tag.toLowerCase().includes(query)) || false
-      const matchesCategory = post.category?.toLowerCase().includes(query)
+  // 검색 및 필터링된 포스트 목록 (성능 최적화)
+  const filteredPosts = useMemo(() => {
+    return samplePosts.filter(post => {
+      // 검색 쿼리 필터링
+      if (searchQuery) {
+        const query = searchQuery.toLowerCase()
+        const matchesContent = post.content.toLowerCase().includes(query)
+        const matchesAuthor = post.author.toLowerCase().includes(query)
+        const matchesHashtags = post.hashtags?.some(tag => tag.toLowerCase().includes(query)) || false
+        const matchesCategory = post.category?.toLowerCase().includes(query)
+        
+        if (!matchesContent && !matchesAuthor && !matchesHashtags && !matchesCategory) {
+          return false
+        }
+      }
       
-      if (!matchesContent && !matchesAuthor && !matchesHashtags && !matchesCategory) {
-        return false
+      // 카테고리 필터링
+      if (selectedCategories.length > 0 && post.category) {
+        if (!selectedCategories.includes(post.category)) {
+          return false
+        }
       }
-    }
-    
-    // 카테고리 필터링
-    if (selectedCategories.length > 0 && post.category) {
-      if (!selectedCategories.includes(post.category)) {
-        return false
-      }
-    }
-    
-    return true
-  })
+      
+      return true
+    })
+  }, [searchQuery, selectedCategories])
 
   return (
     <div className="w-full max-w-4xl mx-auto">
@@ -52,7 +53,7 @@ export function PostList() {
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center gap-3">
             {/* 필터 탭 */}
-            <ToggleGroup<'all' | 'following'> value={filterBy} onValueChange={setFilterBy}>
+            <ToggleGroup<FilterOption> value={filterBy} onValueChange={setFilterBy}>
               <ToggleBackground 
                 value={filterBy} 
                 currentValue={filterBy} 
@@ -108,7 +109,7 @@ export function PostList() {
                 {/* 정렬 옵션 */}
                 <div className="mb-4">
                   <h3 className="text-sm font-semibold text-gray-900 mb-3">정렬</h3>
-                  <ToggleGroup<'popular' | 'latest'> value={sortBy} onValueChange={setSortBy} className="justify-center">
+                  <ToggleGroup<SortOption> value={sortBy} onValueChange={setSortBy} className="justify-center">
                     <ToggleBackground 
                       value={sortBy} 
                       currentValue={sortBy} 
@@ -143,7 +144,7 @@ export function PostList() {
                 <div>
                   <h3 className="text-sm font-semibold text-gray-900 mb-3">카테고리</h3>
                   <CheckboxGroup values={selectedCategories} onValuesChange={setSelectedCategories}>
-                    {categories.map((category) => (
+                    {CATEGORIES.map((category) => (
                       <CheckboxItem
                         key={category}
                         value={category}
@@ -181,7 +182,6 @@ export function PostList() {
             hashtags={post.hashtags}
             likes={post.likes}
             comments={post.comments}
-            bookmarks={post.bookmarks}
             hasImage={post.hasImage}
             isFirst={index === 0}
             isLast={index === filteredPosts.length - 1}

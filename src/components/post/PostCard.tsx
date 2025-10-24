@@ -1,4 +1,4 @@
-import { PersonIcon, HeartIcon, ChatBubbleIcon, Share2Icon, BookmarkIcon } from '@radix-ui/react-icons'
+import { PersonIcon, HeartIcon, ChatBubbleIcon, Share2Icon } from '@radix-ui/react-icons'
 
 interface PostCardProps {
   author: string
@@ -7,7 +7,6 @@ interface PostCardProps {
   hashtags?: string[]
   likes: number
   comments: number
-  bookmarks: number
   hasImage?: boolean
   isLast?: boolean
   isFirst?: boolean
@@ -21,7 +20,6 @@ export function PostCard({
   hashtags,
   likes, 
   comments, 
-  bookmarks,
   hasImage = false,
   isLast = false,
   isFirst = false,
@@ -120,10 +118,6 @@ export function PostCard({
           </button>
           <button className="flex items-center gap-1 rounded-md p-2 -m-2 bg-transparent hover:bg-blue-100 hover:text-blue-500">
             <Share2Icon className="w-4 h-4" />
-          </button>
-          <button className="flex items-center gap-1 rounded-md p-2 -m-2 bg-transparent hover:bg-yellow-100 group disabled:opacity-50">
-            <BookmarkIcon className="w-4 h-4 text-muted-foreground group-hover:text-yellow-500" />
-            <span className="group-hover:text-yellow-500">{bookmarks}</span>
           </button>
         </div>
       </div>
