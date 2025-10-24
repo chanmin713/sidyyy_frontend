@@ -25,12 +25,29 @@ export function Footer() {
             </div>
           </div>
 
-          {/* 법적 정보 */}
+          {/* 연락처 정보 */}
           <div className="space-y-4">
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-gray-900">이용약관</a></li>
-              <li><a href="#" className="hover:text-gray-900">개인정보처리방침</a></li>
-            </ul>
+            <h3 className="font-semibold text-gray-900">문의하기</h3>
+            <div className="space-y-3">
+              <div className="text-sm text-gray-600">
+                <p className="font-medium text-gray-900 mb-1">이메일</p>
+                <p>contact@sidyyy.com</p>
+              </div>
+              <div className="text-sm text-gray-600">
+                <p className="font-medium text-gray-900 mb-1">카카오톡 오픈채팅</p>
+                <p>sidyyy.kr/chat</p>
+              </div>
+              <div className="text-sm text-gray-600">
+                <p className="font-medium text-gray-900 mb-1">GitHub</p>
+                <p>github.com/sidyyy</p>
+              </div>
+            </div>
+            <div className="pt-2">
+              <ul className="space-y-1 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900">이용약관</a></li>
+                <li><a href="#" className="hover:text-gray-900">개인정보처리방침</a></li>
+              </ul>
+            </div>
           </div>
         </div>
 
