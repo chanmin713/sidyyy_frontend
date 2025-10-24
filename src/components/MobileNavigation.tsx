@@ -6,7 +6,7 @@ export function MobileNavigation() {
       <div className="flex justify-around py-3">
         <a href="#" className="flex flex-col items-center text-gray-600 hover:text-gray-900 text-xs">
           <HomeIcon className="w-5 h-5 mb-1" />
-          <span>로그</span>
+          <span>피드</span>
         </a>
         <a href="#" className="flex flex-col items-center text-gray-600 hover:text-gray-900 text-xs">
           <FileTextIcon className="w-5 h-5 mb-1" />
@@ -18,7 +18,7 @@ export function MobileNavigation() {
         </a>
         <a href="#" className="flex flex-col items-center text-gray-600 hover:text-gray-900 text-xs">
           <UsersIcon className="w-5 h-5 mb-1" />
-          <span>팀원 구하기</span>
+          <span>모집</span>
         </a>
         <a href="#" className="flex flex-col items-center text-gray-600 hover:text-gray-900 text-xs">
           <PersonIcon className="w-5 h-5 mb-1" />

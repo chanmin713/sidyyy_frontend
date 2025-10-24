@@ -12,9 +12,9 @@ export function Header() {
 
           {/* 중앙: 네비게이션 */}
           <nav className="flex space-x-8">
-            <a href="#" className="text-black font-medium border-b-2 border-black pb-1">로그</a>
+            <a href="#" className="text-black font-medium border-b-2 border-black pb-1">피드</a>
             <a href="#" className="text-gray-500 hover:text-gray-700 font-medium">프로젝트</a>
-            <a href="#" className="text-gray-500 hover:text-gray-700 font-medium">팀원 구하기</a>
+            <a href="#" className="text-gray-500 hover:text-gray-700 font-medium">모집</a>
           </nav>
 
           {/* 오른쪽: 유저 프로필 */}
