@@ -51,7 +51,7 @@ export const PostCard = memo(function PostCard({
           )}
         </div>
         
-        <div className="cursor-pointer py-1 px-card-padding" style={{ marginTop: '-12px' }}>
+        <div className="cursor-pointer py-1 pl-card-padding" style={{ marginTop: '-12px' }}>
           <div className="mb-3">
             <div className="relative">
                   <p className="text-sm md:text-base whitespace-pre-wrap" style={{ 
