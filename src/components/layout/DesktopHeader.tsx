@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { PersonIcon, MagnifyingGlassIcon, Cross2Icon } from '@radix-ui/react-icons'
+import { PersonIcon, MagnifyingGlassIcon, Cross2Icon, BellIcon } from '@radix-ui/react-icons'
 
 export function DesktopHeader() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
@@ -8,9 +8,9 @@ export function DesktopHeader() {
 
   return (
     <header className="border-b bg-white fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-4">
+      <div className="max-w-6xl mx-auto px-4 py-4 h-[69px] flex items-center">
         {/* 상단: 로고 + 네비게이션/검색창 + 아이콘들 */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between w-full">
           {/* 왼쪽: Sidyyy 로고 */}
           <div className="flex items-center">
             <h1 className="text-2xl font-bold text-gray-900">Sidyyy</h1>
@@ -69,12 +69,12 @@ export function DesktopHeader() {
                   <input
                     type="text"
                     placeholder="검색어를 입력하세요..."
-                    className="w-full py-3 px-4 pr-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 shadow-lg transition-all duration-500 placeholder:text-gray-600"
+                    className="w-full py-2.5 px-3 pr-10 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 shadow-lg transition-all duration-500 placeholder:text-gray-600"
                     autoFocus
                   />
                   <button
                     onClick={() => setIsSearchOpen(false)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 w-7 h-7 flex items-center justify-center hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 group"
+                    className="absolute right-2.5 top-1/2 transform -translate-y-1/2 w-6 h-6 flex items-center justify-center hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 group"
                   >
                     <Cross2Icon className="w-4 h-4 text-gray-600 group-hover:text-gray-800 transition-colors duration-300" />
                   </button>
@@ -98,6 +98,13 @@ export function DesktopHeader() {
                   ? 'text-gray-800' 
                   : 'text-gray-600 group-hover:text-gray-900'
               }`} />
+            </button>
+            <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group relative">
+              <BellIcon className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300" />
+              {/* 알림 뱃지 */}
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
+                3
+              </span>
             </button>
             <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group">
               <PersonIcon className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300" />
