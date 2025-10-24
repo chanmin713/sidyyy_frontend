@@ -17,7 +17,7 @@ export function MobileFooter() {
           </div>
 
           {/* 링크들 */}
-          <div className="flex justify-center items-center gap-4 text-xs text-gray-600 px-2">
+          <div className="flex justify-center items-center gap-2 text-xs text-gray-600 px-2 whitespace-nowrap">
             <a href="#" className="hover:text-gray-900 px-2 py-0.5">문의하기</a>
             <span className="text-gray-400">|</span>
             <a href="#" className="hover:text-gray-900 px-2 py-0.5">이용약관</a>
