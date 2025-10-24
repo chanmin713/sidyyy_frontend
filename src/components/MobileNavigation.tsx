@@ -1,4 +1,4 @@
-import { HomeIcon, FolderIcon, PlusIcon, UsersIcon, PersonIcon } from '@radix-ui/react-icons'
+import { HomeIcon, FileTextIcon, PlusIcon, PersonIcon, PersonIcon as UsersIcon } from '@radix-ui/react-icons'
 
 export function MobileNavigation() {
   return (
@@ -9,7 +9,7 @@ export function MobileNavigation() {
           <span>로그</span>
         </a>
         <a href="#" className="flex flex-col items-center text-gray-600 hover:text-gray-900 text-xs">
-          <FolderIcon className="w-5 h-5 mb-1" />
+          <FileTextIcon className="w-5 h-5 mb-1" />
           <span>프로젝트</span>
         </a>
         <a href="#" className="flex flex-col items-center text-gray-600 hover:text-gray-900 text-xs">
