@@ -3,7 +3,7 @@ import { ArrowUpIcon, GitHubLogoIcon, FigmaLogoIcon, NotionLogoIcon, DiscordLogo
 
 export function RightSidebar() {
   return (
-    <div className="hidden lg:block w-80 sticky top-[70px] self-start h-screen border-l border-gray-200 pl-6 pt-6 bg-white">
+    <div className="hidden lg:block w-80 sticky top-[70px] self-start min-h-screen border-l border-gray-200 pl-6 pt-6 bg-white">
       <div className="space-y-6">
         {/* 인기 프로젝트 */}
         <Card>
