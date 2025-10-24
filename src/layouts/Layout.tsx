@@ -1,4 +1,5 @@
 import { Header } from '../components/Header'
+import { Footer } from '../components/Footer'
 import { RightSidebar } from '../components/RightSidebar'
 import { ScrollToTopButton } from '../components/ScrollToTopButton'
 
@@ -26,6 +27,9 @@ export function Layout({ children }: LayoutProps) {
           </main>
         </div>
       </div>
+      
+      {/* 푸터 */}
+      <Footer />
       
       {/* 맨 위로 버튼 */}
       <ScrollToTopButton />
