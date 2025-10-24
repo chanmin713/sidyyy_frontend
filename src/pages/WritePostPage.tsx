@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowLeftIcon } from '@radix-ui/react-icons';
 import { samplePosts } from '@/data/samplePosts';
 import type { Post } from '@/types';
+import { useSearch } from '@/stores';
 
 export const WritePostPage = memo(function WritePostPage() {
   const navigate = useNavigate();
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const { clearSearch } = useSearch();
 
   const [content, setContent] = useState('');
   const [hashtags, setHashtags] = useState<string[]>([]);
@@ -101,7 +103,8 @@ export const WritePostPage = memo(function WritePostPage() {
 
     console.log('새 글 작성:', newPost);
 
-    // 작성 완료 후 로그 페이지로 이동
+    // 작성 완료 후 로그 페이지로 이동하고 검색 상태 초기화
+    clearSearch();
     navigate('/log');
   };
 

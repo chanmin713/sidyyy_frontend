@@ -5,17 +5,15 @@ import {
   TrashIcon,
   HeartIcon,
   ChatBubbleIcon,
-  GitHubLogoIcon,
-  InstagramLogoIcon,
-  DiscordLogoIcon,
-  FigmaLogoIcon,
-  NotionLogoIcon,
-  VercelLogoIcon,
 } from '@radix-ui/react-icons';
 import { Dropdown } from '@/components/ui/dropdown';
 import { ProfileSection } from '@/components/common/ProfileSection';
 import { Post } from '@/types';
-import { samplePosts } from '@/data/samplePosts';
+import {
+  getProjectLogo,
+  getProjectLogNumber,
+  renderContentWithImages,
+} from '@/utils';
 
 interface PostContentProps {
   post: Post;
@@ -25,80 +23,6 @@ interface PostContentProps {
   onCommentClick: () => void;
 }
 
-// 프로젝트 로고 아이콘 반환
-const getProjectLogo = (logoName?: string) => {
-  switch (logoName) {
-    case 'VercelLogoIcon':
-      return <VercelLogoIcon className='w-6 h-6' />;
-    case 'GitHubLogoIcon':
-      return <GitHubLogoIcon className='w-6 h-6' />;
-    case 'NotionLogoIcon':
-      return <NotionLogoIcon className='w-6 h-6' />;
-    case 'DiscordLogoIcon':
-      return <DiscordLogoIcon className='w-6 h-6' />;
-    case 'FigmaLogoIcon':
-      return <FigmaLogoIcon className='w-6 h-6' />;
-    case 'InstagramLogoIcon':
-      return <InstagramLogoIcon className='w-6 h-6' />;
-    default:
-      return <GitHubLogoIcon className='w-6 h-6' />;
-  }
-};
-
-// 프로젝트별 로그 번호 계산
-const getProjectLogNumber = (postId: string, category?: string) => {
-  if (!category || !postId) return 1;
-
-  // 해당 프로젝트의 모든 로그를 찾아서 순서 계산
-  const projectLogs = samplePosts
-    .filter(post => post.category === category)
-    .sort((a, b) => {
-      // 시간순으로 정렬 (최신순)
-      const getTimeValue = (time: string) => {
-        if (time.includes('시간 전')) return 0;
-        if (time.includes('일 전')) return 1;
-        if (time.includes('주 전')) return 2;
-        if (time.includes('개월 전')) return 3;
-        if (time.includes('년 전')) return 4;
-        return 5;
-      };
-      return getTimeValue(a.timestamp) - getTimeValue(b.timestamp);
-    });
-
-  // 현재 로그의 순서 찾기
-  const currentIndex = projectLogs.findIndex(post => post.id === postId);
-  return currentIndex + 1;
-};
-
-// 이미지가 포함된 콘텐츠 렌더링
-const renderContentWithImages = (content: string) => {
-  const imageRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
-  const parts = content.split(imageRegex);
-
-  return parts
-    .map((part, index) => {
-      if (index % 3 === 0) {
-        // 텍스트 부분
-        return <span key={index}>{part}</span>;
-      } else if (index % 3 === 1) {
-        // 이미지 alt 텍스트 (사용하지 않음)
-        return null;
-      } else {
-        // 이미지 URL
-        return (
-          <img
-            key={index}
-            src={part}
-            alt='첨부된 이미지'
-            className='inline-block max-w-full h-auto rounded-lg my-2 mx-1'
-            style={{ maxHeight: '300px' }}
-          />
-        );
-      }
-    })
-    .filter(Boolean);
-};
-
 export const PostContent = memo(function PostContent({
   post,
   onProjectClick,
@@ -106,6 +30,14 @@ export const PostContent = memo(function PostContent({
   onDelete,
   onCommentClick,
 }: PostContentProps) {
+  // 프로젝트 로고 아이콘 반환
+  const ProjectLogo = getProjectLogo(post.projectLogo);
+
+  // 프로젝트별 로그 번호 계산
+  const projectLogNumber = getProjectLogNumber(post.id, post.category);
+
+  // 이미지가 포함된 콘텐츠 렌더링
+  const contentWithImages = renderContentWithImages(post.content, '300px');
   return (
     <article className='bg-white rounded-lg border border-gray-200 p-6'>
       {/* 프로젝트 제목과 날짜 */}
@@ -116,8 +48,8 @@ export const PostContent = memo(function PostContent({
             className='text-left hover:underline'
           >
             <h1 className='text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-3'>
-              {getProjectLogo(post.projectLogo)}
-              {post.category} #{getProjectLogNumber(post.id, post.category)}
+              <ProjectLogo className='w-6 h-6' />
+              {post.category} #{projectLogNumber}
             </h1>
           </button>
           <span className='text-sm text-gray-500'>{post.timestamp}</span>
@@ -168,7 +100,7 @@ export const PostContent = memo(function PostContent({
       <div className='mb-6'>
         <div className='prose max-w-none'>
           <div className='text-base leading-relaxed whitespace-pre-wrap'>
-            {renderContentWithImages(post.content)}
+            {contentWithImages}
           </div>
         </div>
       </div>
@@ -192,10 +124,7 @@ export const PostContent = memo(function PostContent({
       {/* 이미지 */}
       {post.hasImage && (
         <div className='mb-6'>
-          <div
-            className='relative w-full rounded-lg overflow-hidden bg-gray-100'
-            style={{ aspectRatio: '16 / 9' }}
-          >
+          <div className='relative w-full rounded-lg overflow-hidden bg-gray-100 aspect-video'>
             <div className='w-full h-full bg-gray-200 flex items-center justify-center'>
               <span className='text-gray-500 text-lg'>이미지</span>
             </div>

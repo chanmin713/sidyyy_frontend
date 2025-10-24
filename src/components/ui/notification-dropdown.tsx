@@ -1,21 +1,7 @@
-import { useState, useRef, useEffect } from 'react';
-import {
-  BellIcon,
-  CheckIcon,
-  HeartIcon,
-  ChatBubbleIcon,
-  PersonIcon,
-  ExclamationTriangleIcon,
-} from '@radix-ui/react-icons';
-
-interface Notification {
-  id: string;
-  title: string;
-  content: string;
-  time: string;
-  isRead: boolean;
-  type: 'like' | 'comment' | 'follow' | 'mention';
-}
+import { BellIcon, CheckIcon } from '@radix-ui/react-icons';
+import { useNotifications } from '@/stores';
+import { useNotificationHandling, useDropdown } from '@/hooks';
+import { getNotificationIcon } from '@/utils';
 
 interface NotificationDropdownProps {
   className?: string;
@@ -24,124 +10,15 @@ interface NotificationDropdownProps {
 export function NotificationDropdown({
   className = '',
 }: NotificationDropdownProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
-  const [notifications, setNotifications] = useState<Notification[]>([
-    {
-      id: '1',
-      title: '좋아요 알림',
-      content: '김개발님이 당신의 "React 프로젝트 완성!" 포스트를 좋아합니다',
-      time: '5분 전',
-      isRead: false,
-      type: 'like',
-    },
-    {
-      id: '2',
-      title: '댓글 알림',
-      content: '박프론트님이 "TypeScript 질문있습니다"에 댓글을 남겼습니다',
-      time: '1시간 전',
-      isRead: false,
-      type: 'comment',
-    },
-    {
-      id: '3',
-      title: '팔로우 알림',
-      content: '이백엔드님이 당신을 팔로우했습니다',
-      time: '3시간 전',
-      isRead: true,
-      type: 'follow',
-    },
-    {
-      id: '4',
-      title: '멘션 알림',
-      content: '최풀스택님이 댓글에서 당신을 멘션했습니다',
-      time: '1일 전',
-      isRead: true,
-      type: 'mention',
-    },
-    {
-      id: '5',
-      title: '좋아요 알림',
-      content: '정데이터님이 당신의 "Next.js 14 업데이트" 포스트를 좋아합니다',
-      time: '2일 전',
-      isRead: true,
-      type: 'like',
-    },
-  ]);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        if (isOpen) {
-          setIsClosing(true);
-          setTimeout(() => {
-            setIsOpen(false);
-            setIsClosing(false);
-          }, 200);
-        }
-      }
-    }
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen]);
-
-  const unreadCount = notifications.filter(n => !n.isRead).length;
-
-  const markAsRead = (id: string) => {
-    setNotifications(prev =>
-      prev.map(notification =>
-        notification.id === id
-          ? { ...notification, isRead: true }
-          : notification
-      )
-    );
-  };
-
-  const markAllAsRead = () => {
-    setNotifications(prev =>
-      prev.map(notification => ({ ...notification, isRead: true }))
-    );
-  };
-
-  const getNotificationIcon = (type: string) => {
-    switch (type) {
-      case 'like':
-        return <HeartIcon className='w-4 h-4 text-red-500' />;
-      case 'comment':
-        return <ChatBubbleIcon className='w-4 h-4 text-blue-500' />;
-      case 'follow':
-        return <PersonIcon className='w-4 h-4 text-green-500' />;
-      case 'mention':
-        return <ExclamationTriangleIcon className='w-4 h-4 text-orange-500' />;
-      default:
-        return <BellIcon className='w-4 h-4 text-gray-500' />;
-    }
-  };
+  const { notifications, unreadCount, markAsRead, markAllAsRead } =
+    useNotifications();
+  const { displayNotifications } = useNotificationHandling(notifications);
+  const { isOpen, isClosing, dropdownRef, handleToggle } = useDropdown();
 
   return (
     <div className={`relative ${className}`} ref={dropdownRef}>
       <button
-        onClick={() => {
-          if (isOpen) {
-            setIsClosing(true);
-            setTimeout(() => {
-              setIsOpen(false);
-              setIsClosing(false);
-            }, 200);
-          } else {
-            setIsOpen(true);
-          }
-        }}
+        onClick={handleToggle}
         className='w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group relative'
       >
         <BellIcon className='w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300' />
@@ -177,8 +54,8 @@ export function NotificationDropdown({
 
           {/* 알림 목록 */}
           <div className='max-h-96 overflow-y-auto'>
-            {notifications.length > 0 ? (
-              notifications.map(notification => (
+            {displayNotifications.length > 0 ? (
+              displayNotifications.map(notification => (
                 <div
                   key={notification.id}
                   onClick={() => markAsRead(notification.id)}

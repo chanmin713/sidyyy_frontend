@@ -1,6 +1,6 @@
 // 사이드바 데이터
 
-export interface Project {
+export interface SidebarProject {
   id: string;
   name: string;
   description: string;
@@ -9,23 +9,23 @@ export interface Project {
   trend: 'up' | 'down' | 'stable';
 }
 
-export interface Member {
+export interface SidebarMember {
   id: string;
   name: string;
   role: string;
   initial: string;
 }
 
-export interface PopularLog {
+export interface SidebarLog {
   id: string;
   title: string;
   author: string;
+  category: string;
   likes: number;
   comments: number;
-  category: string;
 }
 
-export interface PopularRecruit {
+export interface SidebarRecruit {
   id: string;
   title: string;
   company: string;
@@ -34,7 +34,7 @@ export interface PopularRecruit {
   deadline: string;
 }
 
-export const popularProjects: Project[] = [
+export const popularProjects: SidebarProject[] = [
   {
     id: '1',
     name: 'Sidyyy',
@@ -105,7 +105,7 @@ export const popularProjects: Project[] = [
   },
 ];
 
-export const recommendedMembers: Member[] = [
+export const recommendedMembers: SidebarMember[] = [
   {
     id: '1',
     name: '김개발',
@@ -124,9 +124,51 @@ export const recommendedMembers: Member[] = [
     role: '스타트업 창업자',
     initial: '박',
   },
+  {
+    id: '4',
+    name: '최백엔드',
+    role: '백엔드 개발자',
+    initial: '최',
+  },
+  {
+    id: '5',
+    name: '정풀스택',
+    role: '풀스택 개발자',
+    initial: '정',
+  },
+  {
+    id: '6',
+    name: '한데이터',
+    role: '데이터 사이언티스트',
+    initial: '한',
+  },
+  {
+    id: '7',
+    name: '윤모바일',
+    role: '모바일 개발자',
+    initial: '윤',
+  },
+  {
+    id: '8',
+    name: '강데브옵스',
+    role: 'DevOps 엔지니어',
+    initial: '강',
+  },
+  {
+    id: '9',
+    name: '임AI',
+    role: 'AI/ML 엔지니어',
+    initial: '임',
+  },
+  {
+    id: '10',
+    name: '조보안',
+    role: '보안 엔지니어',
+    initial: '조',
+  },
 ];
 
-export const popularLogs: PopularLog[] = [
+export const popularLogs: SidebarLog[] = [
   {
     id: '1',
     title: 'React 18의 새로운 기능들',
@@ -159,9 +201,57 @@ export const popularLogs: PopularLog[] = [
     comments: 15,
     category: '백엔드',
   },
+  {
+    id: '5',
+    title: 'Vue 3 Composition API 완벽 가이드',
+    author: '정뷰',
+    likes: 31,
+    comments: 9,
+    category: '프론트엔드',
+  },
+  {
+    id: '6',
+    title: 'Docker 컨테이너 최적화 전략',
+    author: '강도커',
+    likes: 27,
+    comments: 11,
+    category: 'DevOps',
+  },
+  {
+    id: '7',
+    title: 'Python FastAPI로 API 서버 구축하기',
+    author: '한파이썬',
+    likes: 25,
+    comments: 7,
+    category: '백엔드',
+  },
+  {
+    id: '8',
+    title: 'AWS Lambda 서버리스 아키텍처',
+    author: '윤클라우드',
+    likes: 23,
+    comments: 13,
+    category: '클라우드',
+  },
+  {
+    id: '9',
+    title: 'GraphQL vs REST API 비교 분석',
+    author: '임API',
+    likes: 21,
+    comments: 5,
+    category: '백엔드',
+  },
+  {
+    id: '10',
+    title: 'React Native 앱 성능 최적화',
+    author: '조모바일',
+    likes: 19,
+    comments: 8,
+    category: '모바일',
+  },
 ];
 
-export const popularRecruits: PopularRecruit[] = [
+export const popularRecruits: SidebarRecruit[] = [
   {
     id: '1',
     title: '프론트엔드 개발자 모집',
@@ -193,5 +283,53 @@ export const popularRecruits: PopularRecruit[] = [
     position: '백엔드 개발자',
     applicants: 16,
     deadline: '2024-02-25',
+  },
+  {
+    id: '5',
+    title: 'DevOps 엔지니어 채용',
+    company: '클라우드플랫폼',
+    position: 'DevOps 엔지니어',
+    applicants: 14,
+    deadline: '2024-02-22',
+  },
+  {
+    id: '6',
+    title: '데이터 사이언티스트 모집',
+    company: 'AI스타트업',
+    position: '시니어 데이터 사이언티스트',
+    applicants: 20,
+    deadline: '2024-02-28',
+  },
+  {
+    id: '7',
+    title: '모바일 앱 개발자 구인',
+    company: '핀테크회사',
+    position: 'iOS/Android 개발자',
+    applicants: 15,
+    deadline: '2024-02-26',
+  },
+  {
+    id: '8',
+    title: 'AI/ML 엔지니어 채용',
+    company: '헬스케어테크',
+    position: '머신러닝 엔지니어',
+    applicants: 22,
+    deadline: '2024-03-01',
+  },
+  {
+    id: '9',
+    title: '보안 엔지니어 모집',
+    company: '금융회사',
+    position: '시큐리티 엔지니어',
+    applicants: 11,
+    deadline: '2024-02-24',
+  },
+  {
+    id: '10',
+    title: '프로덕트 매니저 구인',
+    company: '이커머스플랫폼',
+    position: '시니어 PM',
+    applicants: 19,
+    deadline: '2024-02-29',
   },
 ];

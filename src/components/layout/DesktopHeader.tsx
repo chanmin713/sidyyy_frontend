@@ -48,6 +48,25 @@ export function DesktopHeader() {
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent, tab: string) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleTabClick(tab);
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      const tabs = ['home', 'project', 'recruit', 'member'];
+      const currentIndex = tabs.indexOf(tab);
+      const nextTab = tabs[(currentIndex + 1) % tabs.length];
+      handleTabClick(nextTab);
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const tabs = ['home', 'project', 'recruit', 'member'];
+      const currentIndex = tabs.indexOf(tab);
+      const prevTab = tabs[(currentIndex - 1 + tabs.length) % tabs.length];
+      handleTabClick(prevTab);
+    }
+  };
+
   return (
     <header className='border-b bg-white fixed top-0 left-0 right-0 z-50'>
       <div className='max-w-6xl mx-auto px-4 py-4 h-[69px] flex items-center'>
@@ -65,7 +84,11 @@ export function DesktopHeader() {
 
           {/* 중앙: 탭 네비게이션 */}
           <div className='flex-1 max-w-2xl mx-8'>
-            <div className='flex bg-gray-50 rounded-lg p-1 shadow-sm relative animate-in fade-in-0 slide-in-from-top-2 duration-500'>
+            <nav
+              role='tablist'
+              aria-label='메인 네비게이션'
+              className='flex bg-gray-50 rounded-lg p-1 shadow-sm relative animate-in fade-in-0 slide-in-from-top-2 duration-500'
+            >
               {/* 움직이는 흰색 배경 */}
               <div
                 className={`absolute top-1 bottom-1 bg-white rounded-md shadow-sm transition-all duration-500 ease-out ${
@@ -88,7 +111,12 @@ export function DesktopHeader() {
               />
 
               <button
+                role='tab'
+                aria-selected={activeTab === 'home'}
+                aria-controls='log-panel'
+                tabIndex={activeTab === 'home' ? 0 : -1}
                 onClick={() => handleTabClick('home')}
+                onKeyDown={e => handleKeyDown(e, 'home')}
                 onMouseEnter={() => setHoveredTab('home')}
                 onMouseLeave={() => setHoveredTab(null)}
                 className={`flex-1 py-1.5 px-4 text-sm font-medium transition-all duration-500 relative z-10 ${
@@ -100,7 +128,12 @@ export function DesktopHeader() {
                 로그
               </button>
               <button
+                role='tab'
+                aria-selected={activeTab === 'project'}
+                aria-controls='project-panel'
+                tabIndex={activeTab === 'project' ? 0 : -1}
                 onClick={() => handleTabClick('project')}
+                onKeyDown={e => handleKeyDown(e, 'project')}
                 onMouseEnter={() => setHoveredTab('project')}
                 onMouseLeave={() => setHoveredTab(null)}
                 className={`flex-1 py-1.5 px-4 text-sm font-medium transition-all duration-500 relative z-10 ${
@@ -112,7 +145,12 @@ export function DesktopHeader() {
                 프로젝트
               </button>
               <button
+                role='tab'
+                aria-selected={activeTab === 'recruit'}
+                aria-controls='recruit-panel'
+                tabIndex={activeTab === 'recruit' ? 0 : -1}
                 onClick={() => handleTabClick('recruit')}
+                onKeyDown={e => handleKeyDown(e, 'recruit')}
                 onMouseEnter={() => setHoveredTab('recruit')}
                 onMouseLeave={() => setHoveredTab(null)}
                 className={`flex-1 py-1.5 px-4 text-sm font-medium transition-all duration-500 relative z-10 ${
@@ -124,7 +162,12 @@ export function DesktopHeader() {
                 모집
               </button>
               <button
+                role='tab'
+                aria-selected={activeTab === 'member'}
+                aria-controls='member-panel'
+                tabIndex={activeTab === 'member' ? 0 : -1}
                 onClick={() => handleTabClick('member')}
+                onKeyDown={e => handleKeyDown(e, 'member')}
                 onMouseEnter={() => setHoveredTab('member')}
                 onMouseLeave={() => setHoveredTab(null)}
                 className={`flex-1 py-1.5 px-4 text-sm font-medium transition-all duration-500 relative z-10 ${
@@ -135,7 +178,7 @@ export function DesktopHeader() {
               >
                 멤버
               </button>
-            </div>
+            </nav>
           </div>
 
           {/* 오른쪽: 아이콘들 */}

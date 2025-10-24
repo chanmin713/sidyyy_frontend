@@ -1,22 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { HamburgerMenuIcon, PaperPlaneIcon } from '@radix-ui/react-icons';
 import { NotificationDropdown } from '../ui/notification-dropdown';
+import { useUI } from '@/stores';
 
 export function MobileHeader() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { mobileMenuOpen, setMobileMenuOpen, toggleMobileMenu } = useUI();
 
   const handleMenuClick = (path: string) => {
     navigate(path);
-    setIsMenuOpen(false);
+    setMobileMenuOpen(false);
   };
 
   // 현재 경로에 따라 메뉴 닫기
   useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location.pathname]);
+    setMobileMenuOpen(false);
+  }, [location.pathname, setMobileMenuOpen]);
 
   // 현재 경로 확인 함수
   const isActivePath = (path: string) => {
@@ -54,16 +55,16 @@ export function MobileHeader() {
                 <PaperPlaneIcon className='w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300' />
               </button>
               <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={toggleMobileMenu}
                 className={`w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 group ${
-                  isMenuOpen
+                  mobileMenuOpen
                     ? 'bg-white/20 backdrop-blur-md border border-white/30 shadow-lg'
                     : 'hover:bg-gray-100 hover:shadow-sm'
                 }`}
               >
                 <HamburgerMenuIcon
                   className={`w-5 h-5 transition-colors duration-300 ${
-                    isMenuOpen
+                    mobileMenuOpen
                       ? 'text-gray-800'
                       : 'text-gray-600 group-hover:text-gray-900'
                   }`}
@@ -75,7 +76,7 @@ export function MobileHeader() {
       </div>
 
       {/* 햄버거 메뉴 */}
-      {isMenuOpen && (
+      {mobileMenuOpen && (
         <div className='animate-in fade-in-0 slide-in-from-top-2 duration-500 bg-gray-50 border-b px-4 py-4'>
           <div className='max-w-6xl mx-auto'>
             <div className='space-y-2'>

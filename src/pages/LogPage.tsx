@@ -13,17 +13,22 @@ import {
 import { CheckboxGroup, CheckboxItem } from '@/components/ui/checkbox-group';
 import { IconButton } from '@/components/ui/icon-button';
 import { SearchButton } from '@/components/ui/search-button';
-import { CATEGORIES, SORT_OPTIONS, FILTER_OPTIONS, LAYOUT } from '@/constants';
+import { CATEGORIES, LAYOUT } from '@/constants';
 import type { SortOption, FilterOption } from '@/types';
+import { useSearch } from '@/stores';
 
 export function LogPage() {
-  const [sortBy, setSortBy] = useState<SortOption>(SORT_OPTIONS.POPULAR);
-  const [filterBy, setFilterBy] = useState<FilterOption>(FILTER_OPTIONS.ALL);
+  // Zustand에서 검색 상태 가져오기
+  const { query: searchQuery, filters, setQuery, setFilters } = useSearch();
+
   const [hoveredFilter, setHoveredFilter] = useState<string | null>(null);
   const [hoveredSort, setHoveredSort] = useState<string | null>(null);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [searchQuery, setSearchQuery] = useState('');
+
+  // 로컬 상태를 Zustand 상태로 매핑
+  const sortBy = filters.sortBy;
+  const filterBy = filters.filterBy;
+  const selectedCategories = filters.category;
 
   // 검색 및 필터링된 포스트 목록 (성능 최적화)
   const filteredPosts = useMemo(() => {
@@ -60,25 +65,37 @@ export function LogPage() {
   }, [searchQuery, selectedCategories]);
 
   // 성능 최적화: 콜백 함수들 메모이제이션
-  const handleSearch = useCallback((query: string) => {
-    setSearchQuery(query);
-  }, []);
+  const handleSearch = useCallback(
+    (query: string) => {
+      setQuery(query);
+    },
+    [setQuery]
+  );
 
-  const handleFilterChange = useCallback((value: FilterOption) => {
-    setFilterBy(value);
-  }, []);
+  const handleFilterChange = useCallback(
+    (value: FilterOption) => {
+      setFilters({ filterBy: value });
+    },
+    [setFilters]
+  );
 
-  const handleSortChange = useCallback((value: SortOption) => {
-    setSortBy(value);
-  }, []);
+  const handleSortChange = useCallback(
+    (value: SortOption) => {
+      setFilters({ sortBy: value });
+    },
+    [setFilters]
+  );
 
-  const handleCategoryChange = useCallback((values: string[]) => {
-    setSelectedCategories(values);
-  }, []);
+  const handleCategoryChange = useCallback(
+    (values: string[]) => {
+      setFilters({ category: values });
+    },
+    [setFilters]
+  );
 
   const handleClearCategories = useCallback(() => {
-    setSelectedCategories([]);
-  }, []);
+    setFilters({ category: [] });
+  }, [setFilters]);
 
   return (
     <div className={`w-full ${LAYOUT.MAX_WIDTH} ${LAYOUT.CONTAINER_CENTER}`}>
