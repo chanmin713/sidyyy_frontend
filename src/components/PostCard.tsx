@@ -28,9 +28,10 @@ export function PostCard({
   isLast = false,
   category
 }: PostCardProps) {
-  // 10줄 이상인지 확인 (대략 300자 이상)
-  const shouldShowMoreButton = content.length > 300
-  console.log('Post:', title, 'Length:', content.length, 'Should show more:', shouldShowMoreButton)
+  // 실제 줄 수로 판단 (줄바꿈 개수 기준)
+  const lineCount = content.split('\n').length
+  const shouldShowMoreButton = lineCount > 10
+  console.log('Post:', title, 'Lines:', lineCount, 'Should show more:', shouldShowMoreButton)
   return (
     <div>
       <div className="rounded-lg flex flex-col">
