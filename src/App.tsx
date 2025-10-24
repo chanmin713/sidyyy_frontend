@@ -42,45 +42,6 @@ _
       comments: 0,
       shares: 0,
       bookmarks: 0
-    },
-    {
-      author: "사이드",
-      title: "Sidyyy 공식 계정입니다.",
-      subtitle: "",
-      timestamp: "4일 전",
-      content: `디자이너 없이 앱 만드는 1인 개발자들 주목!
-Sidyyy 커뮤니티에서 추천하는 디자인 레퍼런스 사이트 8곳 🎨
-
-uibowl.io → UI 디자인 패턴 별 모음
-upa.userspoon.com → UX 패턴을 영상 형태로 제공
-wwit.design → 카테고리/패턴/컴포넌트 별로 앱 UI 탐색 가능
-ko.designus.design/reference → 한글 UI, 토스/당근/배민 등 국내 서비스
-dribbble.com → 트렌드 파악, 영감용
-mobbin.com → 가장 유명한 레퍼런스 사이트, 유명한 앱들이 많음
-scrnshts.club → 모바일 앱 스크린샷 아카이브
-collectui.com → 카테고리별 정리, 검색 편함
-
-저장해두고 디자인이 막막할 때마다 꺼내보세요✨`,
-      likes: 4,
-      comments: 0,
-      shares: 0,
-      bookmarks: 0
-    },
-    {
-      author: "DQ",
-      title: "",
-      subtitle: "자꾸만 뭘 그렇게 할라 그러는 개발자",
-      timestamp: "10월 17일",
-      content: `M1 아직은 현역인거죠??
-
-최신 M5가 M1보다 2.1배 빠르다면(코드 컴파일링 기준)
-5년 됐지만 현역 맞죠??
-1분 걸릴꺼, 1분만 더 기다리면 되는거 잖아요...`,
-      likes: 2,
-      comments: 1,
-      shares: 0,
-      bookmarks: 0,
-      hasImage: true
     }
   ]
 
