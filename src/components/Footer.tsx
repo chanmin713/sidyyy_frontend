@@ -7,10 +7,10 @@ export function Footer() {
         {/* 모바일: 세로 배치, 데스크톱: 가로 배치 */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           {/* 브랜드 정보 */}
-          <div className="text-center md:text-left">
-            <div className="flex items-start justify-center md:justify-start gap-3">
+          <div className="text-left">
+            <div className="flex items-start justify-between gap-3">
               <h3 className="font-semibold text-gray-900 text-base leading-tight">Sidyyy</h3>
-              <p className="text-xs text-gray-600 leading-tight">
+              <p className="text-xs text-gray-600 leading-tight text-right">
                 나만의 사이드 프로젝트를 자랑하고<br />
                 함께 성장하는 개발자 커뮤니티
               </p>
