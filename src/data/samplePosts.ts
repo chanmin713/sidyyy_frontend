@@ -531,5 +531,33 @@ align-items: center;
     shares: 0,
     bookmarks: 3,
     category: "ConsoleTools"
+  },
+  {
+    author: "김짧은글2",
+    title: "오늘의 한 줄",
+    timestamp: "1시간 전",
+    content: `오늘도 열심히! 💪
+
+#일상`,
+    likes: 2,
+    comments: 0,
+    shares: 0,
+    bookmarks: 1,
+    category: "DailyCoding"
+  },
+  {
+    author: "박간단2",
+    title: "CSS 팁",
+    timestamp: "30분 전",
+    content: `margin: 0 auto; 
+
+이거 하나면 가운데 정렬! ✨
+
+#CSS`,
+    likes: 4,
+    comments: 1,
+    shares: 0,
+    bookmarks: 2,
+    category: "FlexboxGuide"
   }
 ]
