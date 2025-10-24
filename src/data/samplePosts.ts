@@ -9,6 +9,7 @@ export interface Post {
   shares: number
   bookmarks: number
   hasImage?: boolean
+  category?: string
 }
 
 export const samplePosts: Post[] = [
@@ -36,7 +37,8 @@ export const samplePosts: Post[] = [
     likes: 12,
     comments: 7,
     shares: 2,
-    bookmarks: 5
+    bookmarks: 5,
+    category: "프로젝트"
   },
   {
     author: "박코딩",
@@ -60,7 +62,8 @@ export const samplePosts: Post[] = [
     likes: 8,
     comments: 4,
     shares: 1,
-    bookmarks: 6
+    bookmarks: 6,
+    category: "기술"
   },
   {
     author: "이백엔드",
@@ -88,7 +91,8 @@ Docker 처음 사용하시는 분들도 금방 익숙해질 거예요 👍
     likes: 18,
     comments: 9,
     shares: 5,
-    bookmarks: 12
+    bookmarks: 12,
+    category: "DevOps"
   },
   {
     author: "정모바일",
@@ -119,7 +123,8 @@ Flutter:
     likes: 22,
     comments: 15,
     shares: 8,
-    bookmarks: 18
+    bookmarks: 18,
+    category: "모바일"
   },
   {
     author: "최디자인",
@@ -148,7 +153,8 @@ Flutter:
     likes: 15,
     comments: 8,
     shares: 3,
-    bookmarks: 9
+    bookmarks: 9,
+    category: "디자인"
   },
   {
     author: "한데이터",

@@ -30,6 +30,7 @@ function App() {
                 hasImage={post.hasImage}
                 isLast={index === posts.length - 1}
                 showMoreButton={shouldShowMoreButton}
+                category={post.category}
               />
             )
           })}

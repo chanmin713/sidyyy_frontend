@@ -14,6 +14,7 @@ interface PostCardProps {
   hasImage?: boolean
   isLast?: boolean
   showMoreButton?: boolean
+  category?: string
 }
 
 export function PostCard({ 
@@ -28,13 +29,14 @@ export function PostCard({
   bookmarks,
   hasImage = false,
   isLast = false,
-  showMoreButton = true
+  showMoreButton = true,
+  category
 }: PostCardProps) {
   return (
     <div>
       <div className="rounded-lg flex flex-col">
         <div className="flex items-start justify-between">
-          <div className="flex items-start">
+          <div className="flex items-start flex-1">
             <div className="flex-shrink-0">
               <div className="w-9 h-9 rounded-full flex items-center justify-center mr-2 border-2 border-gray-300">
                 <PersonIcon className="w-5 h-5 text-gray-600" />
@@ -54,6 +56,15 @@ export function PostCard({
               </div>
             </div>
           </div>
+          
+          {/* 카테고리 칩 */}
+          {category && (
+            <div className="flex-shrink-0 ml-3">
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors">
+                {category}
+              </span>
+            </div>
+          )}
         </div>
         
         <div className="cursor-pointer py-1 pl-[44px]" style={{ marginTop: '-12px' }}>
