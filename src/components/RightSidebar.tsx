@@ -1,4 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card'
+import { ArrowUpIcon } from '@radix-ui/react-icons'
 
 export function RightSidebar() {
   return (
@@ -17,7 +18,10 @@ export function RightSidebar() {
                   <h4 className="font-medium text-gray-900 text-sm">플레이포켓</h4>
                   <p className="text-xs text-gray-500">게임 가격 비교 서비스</p>
                 </div>
-                <div className="text-xs text-gray-400">2.1k</div>
+                <div className="flex items-center text-xs text-gray-400">
+                  <span>2.1k</span>
+                  <ArrowUpIcon className="w-3 h-3 ml-1 text-green-500" />
+                </div>
               </div>
               
               <div className="flex items-center space-x-3">
@@ -28,7 +32,10 @@ export function RightSidebar() {
                   <h4 className="font-medium text-gray-900 text-sm">디자인 가이드</h4>
                   <p className="text-xs text-gray-500">UI/UX 레퍼런스 모음</p>
                 </div>
-                <div className="text-xs text-gray-400">1.8k</div>
+                <div className="flex items-center text-xs text-gray-400">
+                  <span>1.8k</span>
+                  <ArrowUpIcon className="w-3 h-3 ml-1 text-green-500" />
+                </div>
               </div>
               
               <div className="flex items-center space-x-3">
@@ -39,7 +46,10 @@ export function RightSidebar() {
                   <h4 className="font-medium text-gray-900 text-sm">맥북 가이드</h4>
                   <p className="text-xs text-gray-500">개발자용 맥북 추천</p>
                 </div>
-                <div className="text-xs text-gray-400">1.5k</div>
+                <div className="flex items-center text-xs text-gray-400">
+                  <span>1.5k</span>
+                  <ArrowUpIcon className="w-3 h-3 ml-1 text-green-500" />
+                </div>
               </div>
               
               <div className="flex items-center space-x-3">
@@ -50,7 +60,10 @@ export function RightSidebar() {
                   <h4 className="font-medium text-gray-900 text-sm">스타트업 로드맵</h4>
                   <p className="text-xs text-gray-500">창업 가이드북</p>
                 </div>
-                <div className="text-xs text-gray-400">1.2k</div>
+                <div className="flex items-center text-xs text-gray-400">
+                  <span>1.2k</span>
+                  <ArrowUpIcon className="w-3 h-3 ml-1 text-green-500" />
+                </div>
               </div>
             </div>
           </CardContent>
