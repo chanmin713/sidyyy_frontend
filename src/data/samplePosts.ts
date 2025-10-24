@@ -444,5 +444,49 @@ Web3 개발 경험 있으신 분들
     comments: 19,
     shares: 8,
     bookmarks: 22
+  },
+  {
+    author: "박짧은글",
+    title: "오늘의 코딩 일지",
+    subtitle: "개발자",
+    timestamp: "3시간 전",
+    content: `오늘은 React Hook을 공부했어요!
+useState와 useEffect 정말 유용하네요 😊
+
+#React #Hook #공부`,
+    likes: 5,
+    comments: 2,
+    shares: 1,
+    bookmarks: 3
+  },
+  {
+    author: "김간단",
+    title: "Git 커밋 메시지 컨벤션",
+    subtitle: "프론트엔드 개발자",
+    timestamp: "5시간 전",
+    content: `feat: 새로운 기능 추가
+fix: 버그 수정
+style: 코드 스타일 변경
+
+이제 커밋 메시지가 깔끔해졌어요! ✨
+
+#Git #커밋 #컨벤션`,
+    likes: 8,
+    comments: 3,
+    shares: 2,
+    bookmarks: 6
+  },
+  {
+    author: "이한줄",
+    title: "오늘의 발견",
+    subtitle: "백엔드 개발자",
+    timestamp: "1일 전",
+    content: `console.log() 대신 console.table()을 사용하면 객체를 표 형태로 볼 수 있어요! 
+
+#JavaScript #디버깅`,
+    likes: 12,
+    comments: 4,
+    shares: 1,
+    bookmarks: 8
   }
 ]
