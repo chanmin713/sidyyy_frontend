@@ -25,7 +25,7 @@ export function Footer() {
         </div>
 
         {/* 저작권 - 별도 섹션으로 분리 */}
-        <div className="mt-3 pt-3 border-t border-gray-100">
+        <div className="mt-3">
           <div className="text-center text-xs text-gray-500">
             <p>© 2025. Sidyyy. All rights reserved.</p>
           </div>
