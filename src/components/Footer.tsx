@@ -8,11 +8,13 @@ export function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           {/* 브랜드 정보 */}
           <div className="text-center md:text-left">
-            <h3 className="font-semibold text-gray-900 text-base mb-1">Sidyyy</h3>
-            <p className="text-xs text-gray-600 leading-relaxed">
-              나만의 사이드 프로젝트를 자랑하고<br className="hidden sm:block" />
-              함께 성장하는 개발자 커뮤니티
-            </p>
+            <div className="flex items-center justify-center md:justify-start gap-2">
+              <h3 className="font-semibold text-gray-900 text-base">Sidyyy</h3>
+              <span className="text-xs text-gray-600">-</span>
+              <p className="text-xs text-gray-600">
+                나만의 사이드 프로젝트를 자랑하고 함께 성장하는 개발자 커뮤니티
+              </p>
+            </div>
           </div>
 
           {/* 링크들 */}
