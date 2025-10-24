@@ -19,8 +19,8 @@ export function Header() {
 
           {/* 오른쪽: 유저 프로필 */}
           <div className="flex items-center">
-            <button className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition-colors">
-              <PersonIcon className="w-6 h-6 text-gray-600" />
+            <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors">
+              <PersonIcon className="w-5 h-5 text-gray-600" />
             </button>
           </div>
         </div>
