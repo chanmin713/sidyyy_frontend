@@ -1,4 +1,4 @@
-import { Layout } from '@/components/Layout'
+import { Layout } from '@/layouts/Layout'
 import { PostInput } from '@/components/PostInput'
 import { PostCard } from '@/components/PostCard'
 
