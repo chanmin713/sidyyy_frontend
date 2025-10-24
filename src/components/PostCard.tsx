@@ -34,7 +34,7 @@ export function PostCard({
   const lineCount = content.split('\n').length
   const shouldShowMoreButton = lineCount > 10
   return (
-    <div>
+    <div className="py-4">
       <div className="rounded-lg flex flex-col">
         <div className="flex items-start justify-between">
           <div className="flex items-start flex-1">
@@ -130,7 +130,7 @@ export function PostCard({
           </button>
         </div>
       </div>
-      {!isLast && <div className="border-b border-gray-200 my-4"></div>}
+      {!isLast && <div className="border-b border-gray-200 mt-6"></div>}
     </div>
   )
 }
