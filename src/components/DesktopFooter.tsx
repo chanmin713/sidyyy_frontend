@@ -27,7 +27,7 @@ export function DesktopFooter() {
         </div>
 
         {/* 저작권 */}
-        <div className="mt-6 pt-4 border-t border-gray-200">
+        <div className="mt-6">
           <div className="text-center text-sm text-gray-500">
             <p>© 2025. Sidyyy. All rights reserved.</p>
           </div>
