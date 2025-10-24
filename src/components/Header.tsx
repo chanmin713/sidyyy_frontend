@@ -13,11 +13,6 @@ export function Header() {
               <a href="#" className="text-gray-600 hover:text-gray-900 font-medium">소셜링</a>
             </nav>
           </div>
-          <div className="flex items-center space-x-4">
-            <button className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium hover:bg-yellow-500 transition-colors">
-              KakaoSidyyy 오픈채팅
-            </button>
-          </div>
         </div>
       </div>
     </header>
