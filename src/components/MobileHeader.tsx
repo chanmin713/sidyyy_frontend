@@ -1,4 +1,4 @@
-import { PersonIcon, MagnifyingGlassIcon, HamburgerMenuIcon } from '@radix-ui/react-icons'
+import { MagnifyingGlassIcon, HamburgerMenuIcon } from '@radix-ui/react-icons'
 
 export function MobileHeader() {
   return (
@@ -18,9 +18,6 @@ export function MobileHeader() {
             </button>
             <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors">
               <HamburgerMenuIcon className="w-5 h-5 text-gray-600" />
-            </button>
-            <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors">
-              <PersonIcon className="w-5 h-5 text-gray-600" />
             </button>
           </div>
         </div>
