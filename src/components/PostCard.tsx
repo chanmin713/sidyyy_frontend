@@ -12,7 +12,6 @@ interface PostCardProps {
   bookmarks: number
   hasImage?: boolean
   isLast?: boolean
-  showMoreButton?: boolean
   category?: string
 }
 
@@ -27,9 +26,10 @@ export function PostCard({
   bookmarks,
   hasImage = false,
   isLast = false,
-  showMoreButton = true,
   category
 }: PostCardProps) {
+  // 10줄 이상인지 확인 (대략 300자 이상)
+  const shouldShowMoreButton = content.length > 300
   return (
     <div>
       <div className="rounded-lg flex flex-col">

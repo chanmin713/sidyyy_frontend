@@ -12,27 +12,22 @@ function App() {
         <PostInput />
         
         <div className="w-full max-w-2xl mx-auto space-y-4">
-          {posts.map((post, index) => {
-            // 10줄 이상인지 확인 (대략 300자 이상)
-            const shouldShowMoreButton = post.content.length > 300
-            return (
-                  <PostCard
-                    key={index}
-                    author={post.author}
-                    title={post.title}
-                    timestamp={post.timestamp}
-                content={post.content}
-                likes={post.likes}
-                comments={post.comments}
-                shares={post.shares}
-                bookmarks={post.bookmarks}
-                hasImage={post.hasImage}
-                isLast={index === posts.length - 1}
-                showMoreButton={shouldShowMoreButton}
-                category={post.category}
-              />
-            )
-          })}
+          {posts.map((post, index) => (
+            <PostCard
+              key={index}
+              author={post.author}
+              title={post.title}
+              timestamp={post.timestamp}
+              content={post.content}
+              likes={post.likes}
+              comments={post.comments}
+              shares={post.shares}
+              bookmarks={post.bookmarks}
+              hasImage={post.hasImage}
+              isLast={index === posts.length - 1}
+              category={post.category}
+            />
+          ))}
         </div>
       </div>
     </Layout>
