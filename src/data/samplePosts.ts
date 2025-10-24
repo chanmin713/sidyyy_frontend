@@ -3,7 +3,7 @@ export interface Post {
   title: string
   timestamp: string
   content: string
-  hashtags: string[]
+  hashtags?: string[]
   likes: number
   comments: number
   shares: number
@@ -543,7 +543,6 @@ align-items: center;
     title: "오늘의 한 줄",
     timestamp: "1시간 전",
     content: `오늘도 열심히! 💪`,
-    hashtags: ["일상"],
     likes: 2,
     comments: 0,
     shares: 0,
@@ -557,7 +556,6 @@ align-items: center;
     content: `margin: 0 auto; 
 
 이거 하나면 가운데 정렬! ✨`,
-    hashtags: ["CSS"],
     likes: 4,
     comments: 1,
     shares: 0,

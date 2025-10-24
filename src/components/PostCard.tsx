@@ -6,7 +6,7 @@ interface PostCardProps {
   title: string
   timestamp: string
   content: string
-  hashtags: string[]
+  hashtags?: string[]
   likes: number
   comments: number
   shares: number
