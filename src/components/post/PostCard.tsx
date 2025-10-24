@@ -1,6 +1,7 @@
 import { memo, useMemo } from 'react'
 import { PersonIcon, HeartIcon, ChatBubbleIcon, Share2Icon } from '@radix-ui/react-icons'
 import type { PostCardProps } from '@/types'
+import { truncateText } from '@/lib/text-utils'
 
 export const PostCard = memo(function PostCard({ 
   author, 
@@ -14,10 +15,9 @@ export const PostCard = memo(function PostCard({
   isFirst = false,
   category
 }: PostCardProps) {
-  // 실제 줄 수로 판단 (줄바꿈 개수 기준) - 성능 최적화
-  const shouldShowMoreButton = useMemo(() => {
-    const lineCount = content.split('\n').length
-    return lineCount > 10
+  // 텍스트 줄 수 판단 및 자르기 - 성능 최적화
+  const textInfo = useMemo(() => {
+    return truncateText(content, 10)
   }, [content])
   return (
     <div className={`${isFirst ? 'pt-6 pb-4' : 'py-4'} ${isLast ? 'mb-6' : ''}`}>
@@ -55,22 +55,22 @@ export const PostCard = memo(function PostCard({
           <div className="mb-3">
             <div className="relative">
                   <p className="text-sm md:text-base whitespace-pre-wrap" style={{ 
-                    display: shouldShowMoreButton ? '-webkit-box' : 'block',
-                    WebkitLineClamp: shouldShowMoreButton ? 10 : 'none', 
+                    display: textInfo.shouldTruncate ? '-webkit-box' : 'block',
+                    WebkitLineClamp: textInfo.shouldTruncate ? 10 : 'none', 
                     WebkitBoxOrient: 'vertical', 
                     overflow: 'hidden', 
-                    maxHeight: shouldShowMoreButton ? '15rem' : 'none'
+                    maxHeight: textInfo.shouldTruncate ? '15rem' : 'none'
                   }}>
-                    {content}
+                    {textInfo.truncatedText}
                   </p>
-                  {shouldShowMoreButton && (
+                  {textInfo.shouldTruncate && (
                     <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
                   )}
             </div>
-            {shouldShowMoreButton && (
+            {textInfo.shouldTruncate && (
               <div className="mt-2 text-right pr-4">
                 <button className="text-gray-500 hover:text-gray-700 text-sm md:text-base">
-                  더 보기 →
+                  더 보기 → ({textInfo.lineCount}줄)
                 </button>
               </div>
             )}
