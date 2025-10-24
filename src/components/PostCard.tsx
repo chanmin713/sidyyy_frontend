@@ -41,12 +41,6 @@ export function PostCard({
                 <div className="flex-shrink-0">
                   <div className="flex items-center gap-1">
                     <p className="font-semibold hover:underline text-sm md:text-base">{author}</p>
-                    {title && (
-                      <svg className="w-3 h-3 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/>
-                        <path d="m9 12 2 2 4-4"/>
-                      </svg>
-                    )}
                   </div>
                 </div>
                 {subtitle && (
