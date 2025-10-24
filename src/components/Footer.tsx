@@ -60,10 +60,10 @@ export function Footer() {
         </div>
 
         {/* 하단 저작권 */}
-        <div className="border-t border-gray-200 mt-8 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <div className="mt-8 pt-6">
+          <div className="text-center text-sm text-gray-500">
             <p>© 2025. Sidyyy. All rights reserved.</p>
-            <p className="mt-2 md:mt-0">Made with ❤️ by Sidyyy Team</p>
+            <p className="mt-2">Made with ❤️ by Sidyyy Team</p>
           </div>
         </div>
       </div>
