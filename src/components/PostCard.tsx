@@ -27,7 +27,7 @@ export function PostCard({
   hasImage = false
 }: PostCardProps) {
   return (
-    <div className="px-4">
+    <div>
       <div className="rounded-lg flex flex-col">
         <div className="flex items-start justify-between">
           <div className="flex items-start">
