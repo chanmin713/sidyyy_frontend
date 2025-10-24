@@ -13,6 +13,8 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const isMessagePage = location.pathname === '/message';
+  const isProfilePage = location.pathname === '/profile';
   const isPostDetail = location.pathname.startsWith('/post/');
   const isWritePage = location.pathname === '/write';
   const isProjectDetail = location.pathname.startsWith('/project/');
@@ -23,25 +25,33 @@ export function Layout({ children }: LayoutProps) {
 
       <div
         className={
-          isHomePage || isPostDetail || isWritePage || isProjectDetail
+          isHomePage ||
+          isMessagePage ||
+          isProfilePage ||
+          isPostDetail ||
+          isWritePage ||
+          isProjectDetail
             ? 'max-w-7xl mx-auto'
             : 'max-w-6xl mx-auto'
         }
       >
         <main
-          className={`${isHomePage || isPostDetail || isWritePage || isProjectDetail ? 'pt-[69px] px-4' : 'flex justify-center gap-x-4 md:px-5 pt-[69px]'}`}
+          className={`${isHomePage || isMessagePage || isProfilePage || isPostDetail || isWritePage || isProjectDetail ? 'pt-[69px] px-4' : 'flex justify-center gap-x-4 md:px-5 pt-[69px]'}`}
         >
           {/* 중앙 콘텐츠 */}
           <div
-            className={`w-full bg-white ${isHomePage || isPostDetail || isWritePage || isProjectDetail ? 'px-0' : 'lg:w-3/4 px-6 md:px-8'}`}
+            className={`w-full bg-white ${isHomePage || isMessagePage || isProfilePage || isPostDetail || isWritePage || isProjectDetail ? 'px-0' : 'lg:w-3/4 px-6 md:px-8'}`}
           >
             {children}
           </div>
 
-          {/* 오른쪽 사이드바 - 데스크톱에서만 보임, 홈페이지, 상세 페이지, 글쓰기 페이지, 프로젝트 페이지에서는 숨김 */}
-          {!isHomePage && !isPostDetail && !isWritePage && !isProjectDetail && (
-            <RightSidebar />
-          )}
+          {/* 오른쪽 사이드바 - 데스크톱에서만 보임, 홈페이지, 메시지 페이지, 프로필 페이지, 상세 페이지, 글쓰기 페이지, 프로젝트 페이지에서는 숨김 */}
+          {!isHomePage &&
+            !isMessagePage &&
+            !isProfilePage &&
+            !isPostDetail &&
+            !isWritePage &&
+            !isProjectDetail && <RightSidebar />}
         </main>
       </div>
 

@@ -6,6 +6,7 @@ import { ProjectPage } from '@/pages/ProjectPage';
 import { RecruitPage } from '@/pages/RecruitPage';
 import { MemberPage } from '@/pages/MemberPage';
 import { ProfilePage } from '@/pages/ProfilePage';
+import { MessagePage } from '@/pages/MessagePage';
 import { PostDetailPage } from '@/pages/PostDetailPage';
 import { WritePostPage } from '@/pages/WritePostPage';
 import { ProjectDetailPage } from '@/pages/ProjectDetailPage';
@@ -21,6 +22,7 @@ function App() {
           <Route path='/recruit' element={<RecruitPage />} />
           <Route path='/member' element={<MemberPage />} />
           <Route path='/profile' element={<ProfilePage />} />
+          <Route path='/message' element={<MessagePage />} />
           <Route path='/write' element={<WritePostPage />} />
           <Route path='/post/:id' element={<PostDetailPage />} />
           <Route path='/project/:projectName' element={<ProjectDetailPage />} />

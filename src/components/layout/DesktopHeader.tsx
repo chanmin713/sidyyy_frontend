@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { PersonIcon } from '@radix-ui/react-icons';
+import { PersonIcon, PaperPlaneIcon } from '@radix-ui/react-icons';
 import { NotificationDropdown } from '../ui/notification-dropdown';
 
 export function DesktopHeader() {
@@ -141,6 +141,14 @@ export function DesktopHeader() {
           {/* 오른쪽: 아이콘들 */}
           <div className='flex items-center gap-4'>
             <NotificationDropdown />
+            <button
+              onClick={() => navigate('/message')}
+              className='w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group'
+              title='메시지'
+              aria-label='메시지'
+            >
+              <PaperPlaneIcon className='w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300' />
+            </button>
             <button
               onClick={() => navigate('/profile')}
               className='w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group'
