@@ -3,6 +3,7 @@ import { PersonIcon, MagnifyingGlassIcon, Cross2Icon } from '@radix-ui/react-ico
 
 export function DesktopHeader() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [activeTab, setActiveTab] = useState('feed')
 
   return (
     <header className="border-b bg-white">
@@ -16,14 +17,38 @@ export function DesktopHeader() {
 
           {/* 중앙: 탭 네비게이션 또는 검색창 */}
           {!isSearchOpen ? (
-            <div className="flex bg-gray-50 rounded-lg p-1 shadow-sm">
-              <button className="py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-md shadow-sm transition-all duration-200 hover:shadow-md hover:scale-105">
+            <div className="flex bg-gray-50 rounded-xl p-1.5 shadow-sm relative">
+              {/* 움직이는 흰색 배경 */}
+              <div 
+                className={`absolute top-1.5 bottom-1.5 bg-white rounded-lg shadow-sm transition-all duration-300 ease-out ${
+                  activeTab === 'feed' ? 'left-1.5 w-[calc(33.333%-0.375rem)]' :
+                  activeTab === 'project' ? 'left-[calc(33.333%+0.375rem)] w-[calc(33.333%-0.375rem)]' :
+                  'left-[calc(66.666%+0.375rem)] w-[calc(33.333%-0.375rem)]'
+                }`}
+              />
+              
+              <button 
+                onClick={() => setActiveTab('feed')}
+                className={`flex-1 py-3 px-6 text-base font-medium transition-all duration-300 relative z-10 ${
+                  activeTab === 'feed' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
+                }`}
+              >
                 피드
               </button>
-              <button className="py-2 px-4 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-white hover:rounded-md hover:shadow-sm transition-all duration-200 hover:scale-105">
+              <button 
+                onClick={() => setActiveTab('project')}
+                className={`flex-1 py-3 px-6 text-base font-medium transition-all duration-300 relative z-10 ${
+                  activeTab === 'project' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
+                }`}
+              >
                 프로젝트
               </button>
-              <button className="py-2 px-4 text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-white hover:rounded-md hover:shadow-sm transition-all duration-200 hover:scale-105">
+              <button 
+                onClick={() => setActiveTab('recruit')}
+                className={`flex-1 py-3 px-6 text-base font-medium transition-all duration-300 relative z-10 ${
+                  activeTab === 'recruit' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
+                }`}
+              >
                 모집
               </button>
             </div>
