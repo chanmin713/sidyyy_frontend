@@ -4,7 +4,7 @@ export function MobileFooter() {
   return (
     <footer className="border-t mt-8">
       <div className="max-w-6xl mx-auto px-4 py-4">
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
           {/* 브랜드 정보 */}
           <div className="text-left px-2">
             <div className="flex items-start justify-between gap-3">
@@ -29,7 +29,7 @@ export function MobileFooter() {
         </div>
 
         {/* 저작권 */}
-        <div className="mt-6">
+        <div className="mt-4">
           <div className="text-center text-xs text-gray-500">
             <p>© 2025. Sidyyy. All rights reserved.</p>
           </div>
