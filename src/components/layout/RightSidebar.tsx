@@ -13,59 +13,59 @@ export function RightSidebar() {
               인기 프로젝트
             </h3>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 flex items-center justify-center">
-                  <GitHubLogoIcon className="w-6 h-6 text-gray-700" />
+              <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group">
+                <div className="w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                  <GitHubLogoIcon className="w-6 h-6 text-gray-700 group-hover:text-gray-900 transition-colors duration-200" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-medium text-gray-900 text-sm">플레이포켓</h4>
-                  <p className="text-xs text-gray-500">게임 가격 비교 서비스</p>
+                  <h4 className="font-medium text-gray-900 text-sm group-hover:text-gray-700 transition-colors duration-200">플레이포켓</h4>
+                  <p className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-200">게임 가격 비교 서비스</p>
                 </div>
-                <div className="flex items-center text-xs text-gray-400">
+                <div className="flex items-center text-xs text-gray-400 group-hover:text-gray-600 transition-colors duration-200">
                   <span>2.1k</span>
-                  <ArrowUpIcon className="w-3 h-3 ml-1 text-green-500" />
+                  <ArrowUpIcon className="w-3 h-3 ml-1 text-green-500 group-hover:text-green-600 transition-colors duration-200" />
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 flex items-center justify-center">
-                  <FigmaLogoIcon className="w-6 h-6 text-gray-700" />
+              <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group">
+                <div className="w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                  <FigmaLogoIcon className="w-6 h-6 text-gray-700 group-hover:text-gray-900 transition-colors duration-200" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-medium text-gray-900 text-sm">디자인 가이드</h4>
-                  <p className="text-xs text-gray-500">UI/UX 레퍼런스 모음</p>
+                  <h4 className="font-medium text-gray-900 text-sm group-hover:text-gray-700 transition-colors duration-200">디자인 가이드</h4>
+                  <p className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-200">UI/UX 레퍼런스 모음</p>
                 </div>
-                <div className="flex items-center text-xs text-gray-400">
+                <div className="flex items-center text-xs text-gray-400 group-hover:text-gray-600 transition-colors duration-200">
                   <span>1.8k</span>
-                  <ArrowUpIcon className="w-3 h-3 ml-1 text-green-500" />
+                  <ArrowUpIcon className="w-3 h-3 ml-1 text-green-500 group-hover:text-green-600 transition-colors duration-200" />
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 flex items-center justify-center">
-                  <NotionLogoIcon className="w-6 h-6 text-gray-700" />
+              <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group">
+                <div className="w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                  <NotionLogoIcon className="w-6 h-6 text-gray-700 group-hover:text-gray-900 transition-colors duration-200" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-medium text-gray-900 text-sm">맥북 가이드</h4>
-                  <p className="text-xs text-gray-500">개발자용 맥북 추천</p>
+                  <h4 className="font-medium text-gray-900 text-sm group-hover:text-gray-700 transition-colors duration-200">맥북 가이드</h4>
+                  <p className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-200">개발자용 맥북 추천</p>
                 </div>
-                <div className="flex items-center text-xs text-gray-400">
+                <div className="flex items-center text-xs text-gray-400 group-hover:text-gray-600 transition-colors duration-200">
                   <span>1.5k</span>
-                  <ArrowUpIcon className="w-3 h-3 ml-1 text-green-500" />
+                  <ArrowUpIcon className="w-3 h-3 ml-1 text-green-500 group-hover:text-green-600 transition-colors duration-200" />
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 flex items-center justify-center">
-                  <DiscordLogoIcon className="w-6 h-6 text-gray-700" />
+              <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group">
+                <div className="w-10 h-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                  <DiscordLogoIcon className="w-6 h-6 text-gray-700 group-hover:text-gray-900 transition-colors duration-200" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-medium text-gray-900 text-sm">스타트업 로드맵</h4>
-                  <p className="text-xs text-gray-500">창업 가이드북</p>
+                  <h4 className="font-medium text-gray-900 text-sm group-hover:text-gray-700 transition-colors duration-200">스타트업 로드맵</h4>
+                  <p className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-200">창업 가이드북</p>
                 </div>
-                <div className="flex items-center text-xs text-gray-400">
+                <div className="flex items-center text-xs text-gray-400 group-hover:text-gray-600 transition-colors duration-200">
                   <span>1.2k</span>
-                  <ArrowUpIcon className="w-3 h-3 ml-1 text-green-500" />
+                  <ArrowUpIcon className="w-3 h-3 ml-1 text-green-500 group-hover:text-green-600 transition-colors duration-200" />
                 </div>
               </div>
             </div>
@@ -85,37 +85,37 @@ export function RightSidebar() {
               추천 멤버
             </h3>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center">
-                  <span className="text-gray-600 text-xs font-medium">김</span>
+              <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group">
+                <div className="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center group-hover:border-gray-400 transition-colors duration-200">
+                  <span className="text-gray-600 text-xs font-medium group-hover:text-gray-800 transition-colors duration-200">김</span>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-medium text-gray-900 text-sm">김개발</h4>
-                  <p className="text-xs text-gray-500">프론트엔드 개발자</p>
+                  <h4 className="font-medium text-gray-900 text-sm group-hover:text-gray-700 transition-colors duration-200">김개발</h4>
+                  <p className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-200">프론트엔드 개발자</p>
                 </div>
-                <button className="text-xs text-blue-500 hover:text-blue-700">팔로우</button>
+                <button className="text-xs text-blue-500 hover:text-blue-700 transition-colors duration-200">팔로우</button>
               </div>
               
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center">
-                  <span className="text-gray-600 text-xs font-medium">이</span>
+              <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group">
+                <div className="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center group-hover:border-gray-400 transition-colors duration-200">
+                  <span className="text-gray-600 text-xs font-medium group-hover:text-gray-800 transition-colors duration-200">이</span>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-medium text-gray-900 text-sm">이디자인</h4>
-                  <p className="text-xs text-gray-500">UI/UX 디자이너</p>
+                  <h4 className="font-medium text-gray-900 text-sm group-hover:text-gray-700 transition-colors duration-200">이디자인</h4>
+                  <p className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-200">UI/UX 디자이너</p>
                 </div>
-                <button className="text-xs text-blue-500 hover:text-blue-700">팔로우</button>
+                <button className="text-xs text-blue-500 hover:text-blue-700 transition-colors duration-200">팔로우</button>
               </div>
               
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center">
-                  <span className="text-gray-600 text-xs font-medium">박</span>
+              <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group">
+                <div className="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center group-hover:border-gray-400 transition-colors duration-200">
+                  <span className="text-gray-600 text-xs font-medium group-hover:text-gray-800 transition-colors duration-200">박</span>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-medium text-gray-900 text-sm">박스타트업</h4>
-                  <p className="text-xs text-gray-500">스타트업 창업자</p>
+                  <h4 className="font-medium text-gray-900 text-sm group-hover:text-gray-700 transition-colors duration-200">박스타트업</h4>
+                  <p className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-200">스타트업 창업자</p>
                 </div>
-                <button className="text-xs text-blue-500 hover:text-blue-700">팔로우</button>
+                <button className="text-xs text-blue-500 hover:text-blue-700 transition-colors duration-200">팔로우</button>
               </div>
             </div>
             <div className="mt-3 text-right">
