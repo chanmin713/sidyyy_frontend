@@ -31,7 +31,7 @@ export function ScrollToTopButton() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-4 right-4 md:right-8 z-50 w-12 h-12 bg-gray-600/80 hover:bg-gray-600 text-white rounded-full shadow-lg backdrop-blur-sm transition-all duration-200 flex items-center justify-center"
+      className="fixed bottom-4 right-4 md:right-8 z-50 w-12 h-12 bg-white/20 hover:bg-white/30 text-gray-700 rounded-full shadow-lg backdrop-blur-md border border-white/30 transition-all duration-200 flex items-center justify-center"
       aria-label="맨 위로"
     >
       <ArrowUpIcon className="w-6 h-6" />
