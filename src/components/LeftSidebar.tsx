@@ -4,9 +4,9 @@ export function LeftSidebar() {
   return (
     <div className="hidden md:block w-1/5 sticky top-[70px] self-start h-screen">
       <div className="flex flex-col items-center p-4 rounded-lg text-center">
-        <div className="w-14 h-14 bg-black rounded-full mb-4 flex items-center justify-center">
-          <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        <div className="w-14 h-14 rounded-full mb-4 flex items-center justify-center border-2 border-gray-300">
+          <svg className="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
           </svg>
         </div>
         <p className="text-sm font-semibold mb-4">
