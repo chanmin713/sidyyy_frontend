@@ -13,10 +13,10 @@ export function MobileHeader() {
 
           {/* 오른쪽: 아이콘들 */}
           <div className="flex items-center gap-4">
-            <button className="w-8 h-8 flex items-center justify-center hover:bg-white/20 backdrop-blur-sm rounded-lg transition-all duration-200 border border-transparent hover:border-white/30">
+            <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors">
               <MagnifyingGlassIcon className="w-5 h-5 text-gray-600" />
             </button>
-            <button className="w-8 h-8 flex items-center justify-center hover:bg-white/20 backdrop-blur-sm rounded-lg transition-all duration-200 border border-transparent hover:border-white/30">
+            <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors">
               <HamburgerMenuIcon className="w-5 h-5 text-gray-600" />
             </button>
           </div>
@@ -24,14 +24,14 @@ export function MobileHeader() {
 
         {/* 하단: 탭 네비게이션 */}
         <div>
-          <div className="flex bg-white/20 backdrop-blur-md rounded-lg p-1 border border-white/30 shadow-lg">
-            <button className="flex-1 py-2 px-4 text-sm font-medium text-gray-900 bg-white/40 backdrop-blur-sm rounded-md shadow-sm border border-white/20">
+          <div className="flex bg-gray-50 rounded-lg p-1">
+            <button className="flex-1 py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-md shadow-sm">
               피드
             </button>
-            <button className="flex-1 py-2 px-4 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-white/20 rounded-md transition-all duration-200">
+            <button className="flex-1 py-2 px-4 text-sm font-medium text-gray-500 hover:text-gray-700">
               프로젝트
             </button>
-            <button className="flex-1 py-2 px-4 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-white/20 rounded-md transition-all duration-200">
+            <button className="flex-1 py-2 px-4 text-sm font-medium text-gray-500 hover:text-gray-700">
               모집
             </button>
           </div>
