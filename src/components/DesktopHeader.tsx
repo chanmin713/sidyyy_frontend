@@ -4,6 +4,7 @@ import { PersonIcon, MagnifyingGlassIcon, Cross2Icon } from '@radix-ui/react-ico
 export function DesktopHeader() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('feed')
+  const [hoveredTab, setHoveredTab] = useState<string | null>(null)
 
   return (
     <header className="border-b bg-white">
@@ -22,6 +23,9 @@ export function DesktopHeader() {
                 {/* 움직이는 흰색 배경 */}
                 <div 
                   className={`absolute top-1.5 bottom-1.5 bg-white rounded-lg shadow-sm transition-all duration-300 ease-out ${
+                    hoveredTab === 'feed' ? 'left-1.5 w-[calc(33.333%-0.375rem)]' :
+                    hoveredTab === 'project' ? 'left-[calc(33.333%+0.375rem)] w-[calc(33.333%-0.375rem)]' :
+                    hoveredTab === 'recruit' ? 'left-[calc(66.666%+0.375rem)] w-[calc(33.333%-0.375rem)]' :
                     activeTab === 'feed' ? 'left-1.5 w-[calc(33.333%-0.375rem)]' :
                     activeTab === 'project' ? 'left-[calc(33.333%+0.375rem)] w-[calc(33.333%-0.375rem)]' :
                     'left-[calc(66.666%+0.375rem)] w-[calc(33.333%-0.375rem)]'
@@ -30,6 +34,8 @@ export function DesktopHeader() {
                 
                 <button 
                   onClick={() => setActiveTab('feed')}
+                  onMouseEnter={() => setHoveredTab('feed')}
+                  onMouseLeave={() => setHoveredTab(null)}
                   className={`flex-1 py-3 px-6 text-base font-medium transition-all duration-300 relative z-10 ${
                     activeTab === 'feed' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
                   }`}
@@ -38,6 +44,8 @@ export function DesktopHeader() {
                 </button>
                 <button 
                   onClick={() => setActiveTab('project')}
+                  onMouseEnter={() => setHoveredTab('project')}
+                  onMouseLeave={() => setHoveredTab(null)}
                   className={`flex-1 py-3 px-6 text-base font-medium transition-all duration-300 relative z-10 ${
                     activeTab === 'project' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
                   }`}
@@ -46,6 +54,8 @@ export function DesktopHeader() {
                 </button>
                 <button 
                   onClick={() => setActiveTab('recruit')}
+                  onMouseEnter={() => setHoveredTab('recruit')}
+                  onMouseLeave={() => setHoveredTab(null)}
                   className={`flex-1 py-3 px-6 text-base font-medium transition-all duration-300 relative z-10 ${
                     activeTab === 'recruit' ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
                   }`}
