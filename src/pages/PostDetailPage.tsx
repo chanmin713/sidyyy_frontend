@@ -46,6 +46,11 @@ export const PostDetailPage = memo(function PostDetailPage() {
     }, 500);
   };
 
+  // 페이지 로드 시 맨 위로 스크롤
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   // URL 해시가 #comments인 경우 자동으로 댓글 영역으로 스크롤
   useEffect(() => {
     if (window.location.hash === '#comments') {

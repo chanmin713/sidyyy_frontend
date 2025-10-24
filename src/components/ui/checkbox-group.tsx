@@ -12,7 +12,7 @@ export function CheckboxGroup({
   children,
   className = '',
 }: Omit<CheckboxGroupProps, 'values' | 'onValuesChange'>) {
-  return <div className={`space-y-2 ${className}`}>{children}</div>;
+  return <div className={`space-y-1 ${className}`}>{children}</div>;
 }
 
 interface CheckboxItemProps {
@@ -42,7 +42,7 @@ export function CheckboxItem({
 
   return (
     <label
-      className={`flex items-center gap-3 cursor-pointer hover:bg-gray-50 rounded-md p-2 -m-2 transition-colors duration-150 ${className}`}
+      className={`flex items-center gap-3 cursor-pointer hover:bg-gray-50 rounded-md px-2 py-1.5 -mx-2 transition-colors duration-150 ${className}`}
     >
       <input
         type='checkbox'

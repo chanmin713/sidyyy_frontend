@@ -142,7 +142,7 @@ export function HomePage() {
               >
                 <div className='p-4'>
                   {/* 정렬 옵션 */}
-                  <div className='mb-4'>
+                  <div className='mb-6'>
                     <h3 className='text-sm font-semibold text-gray-900 mb-3'>
                       정렬
                     </h3>
@@ -197,7 +197,7 @@ export function HomePage() {
                         </CheckboxItem>
                       ))}
                     </CheckboxGroup>
-                    <div className='mt-3 pt-3 border-t border-gray-100'>
+                    <div className='mt-4 pt-3 border-t border-gray-100'>
                       <button
                         onClick={handleClearCategories}
                         className='text-xs text-gray-500 hover:text-gray-700 hover:bg-gray-50 rounded-md px-2 py-1 -mx-2 transition-colors duration-150'

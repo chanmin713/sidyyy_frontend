@@ -1,4 +1,4 @@
-import { memo, useMemo, useState } from 'react';
+import { memo, useMemo, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   ArrowLeftIcon,
@@ -27,6 +27,11 @@ export const ProjectDetailPage = memo(function ProjectDetailPage() {
   const projectComments = useMemo(() => {
     return project ? sampleProjectComments[project.id] || [] : [];
   }, [project]);
+
+  // 페이지 로드 시 맨 위로 스크롤
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [projectName]);
 
   const [showComments, setShowComments] = useState(false);
 
