@@ -30,7 +30,7 @@ export function PostCard({
 }: PostCardProps) {
   return (
     <div>
-      <div className="rounded-lg flex flex-col bg-white/60 backdrop-blur-sm border border-white/30 shadow-lg">
+      <div className="rounded-lg flex flex-col">
         <div className="flex items-start justify-between">
           <div className="flex items-start">
             <div className="flex-shrink-0">
