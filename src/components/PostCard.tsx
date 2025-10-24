@@ -65,16 +65,16 @@ export function PostCard({
         <div className="cursor-pointer py-1 pl-[44px]" style={{ marginTop: '-12px' }}>
           <div className="mb-3">
             <div className="relative">
-              <p className="text-sm md:text-base whitespace-pre-wrap" style={{ 
-                display: '-webkit-box', 
-                WebkitLineClamp: 15, 
-                WebkitBoxOrient: 'vertical', 
-                overflow: 'hidden', 
-                maxHeight: '22rem' 
-              }}>
-                {content}
-              </p>
-              <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+                  <p className="text-sm md:text-base whitespace-pre-wrap" style={{ 
+                    display: '-webkit-box', 
+                    WebkitLineClamp: 10, 
+                    WebkitBoxOrient: 'vertical', 
+                    overflow: 'hidden', 
+                    maxHeight: '15rem' 
+                  }}>
+                    {content}
+                  </p>
+                  <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
             </div>
             {showMoreButton && (
               <div className="mt-2 text-right pr-4">

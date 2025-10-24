@@ -489,5 +489,48 @@ style: 코드 스타일 변경
     shares: 1,
     bookmarks: 8,
     category: "팁"
+  },
+  {
+    author: "김짧은글",
+    title: "오늘의 한 줄",
+    timestamp: "2시간 전",
+    content: `오늘도 열심히 코딩했어요! 💪
+
+#일상 #코딩`,
+    likes: 3,
+    comments: 1,
+    shares: 0,
+    bookmarks: 2,
+    category: "일상"
+  },
+  {
+    author: "박간단",
+    title: "CSS 팁",
+    timestamp: "4시간 전",
+    content: `flexbox로 가운데 정렬할 때:
+justify-content: center;
+align-items: center;
+
+이거 하나면 끝! ✨
+
+#CSS #팁`,
+    likes: 7,
+    comments: 2,
+    shares: 1,
+    bookmarks: 4,
+    category: "팁"
+  },
+  {
+    author: "이한줄",
+    title: "오늘의 발견",
+    timestamp: "6시간 전",
+    content: `console.log() 대신 console.table()을 사용하면 객체를 표 형태로 볼 수 있어요! 
+
+#JavaScript #디버깅`,
+    likes: 5,
+    comments: 1,
+    shares: 0,
+    bookmarks: 3,
+    category: "팁"
   }
 ]

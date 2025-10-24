@@ -13,8 +13,8 @@ function App() {
         
         <div className="w-full max-w-2xl mx-auto space-y-4">
           {posts.map((post, index) => {
-            // 15줄 이상인지 확인 (대략 500자 이상)
-            const shouldShowMoreButton = post.content.length > 500
+            // 10줄 이상인지 확인 (대략 300자 이상)
+            const shouldShowMoreButton = post.content.length > 300
             return (
                   <PostCard
                     key={index}
