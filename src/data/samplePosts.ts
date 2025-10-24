@@ -36,7 +36,7 @@ export const samplePosts: Post[] = [
     comments: 7,
     shares: 2,
     bookmarks: 5,
-    category: "프로젝트"
+    category: "TaskFlow"
   },
   {
     author: "박코딩",
@@ -60,7 +60,7 @@ export const samplePosts: Post[] = [
     comments: 4,
     shares: 1,
     bookmarks: 6,
-    category: "기술"
+    category: "DevBlog"
   },
   {
     author: "이백엔드",
@@ -88,7 +88,7 @@ Docker 처음 사용하시는 분들도 금방 익숙해질 거예요 👍
     comments: 9,
     shares: 5,
     bookmarks: 12,
-    category: "DevOps"
+    category: "DockerEnv"
   },
   {
     author: "정모바일",
@@ -119,7 +119,7 @@ Flutter:
     comments: 15,
     shares: 8,
     bookmarks: 18,
-    category: "모바일"
+    category: "MobileApp"
   },
   {
     author: "최디자인",
@@ -148,7 +148,7 @@ Flutter:
     comments: 8,
     shares: 3,
     bookmarks: 9,
-    category: "디자인"
+    category: "DesignSystem"
   },
   {
     author: "한데이터",
@@ -177,7 +177,7 @@ Flutter:
     comments: 12,
     shares: 6,
     bookmarks: 14,
-    category: "데이터"
+    category: "DataAnalytics"
   },
   {
     author: "송클라우드",
@@ -206,7 +206,7 @@ Flutter:
     comments: 6,
     shares: 4,
     bookmarks: 11,
-    category: "클라우드"
+    category: "ServerlessAPI"
   },
   {
     author: "윤보안",
@@ -235,7 +235,7 @@ Flutter:
     comments: 10,
     shares: 5,
     bookmarks: 13,
-    category: "보안"
+    category: "AuthSystem"
   },
   {
     author: "강머신러닝",
@@ -264,7 +264,7 @@ ML 경험 있으신 분들
     comments: 18,
     shares: 9,
     bookmarks: 20,
-    category: "AI/ML"
+    category: "CatDogAI"
   },
   {
     author: "조블록체인",
@@ -293,7 +293,7 @@ Web3 개발 경험 있으신 분들
     comments: 7,
     shares: 3,
     bookmarks: 8,
-    category: "블록체인"
+    category: "EthereumDApp"
   },
   {
     author: "김테스트",
@@ -323,7 +323,7 @@ Web3 개발 경험 있으신 분들
     comments: 9,
     shares: 4,
     bookmarks: 12,
-    category: "테스트"
+    category: "TestSuite"
   },
   {
     author: "박게임",
@@ -353,7 +353,7 @@ Web3 개발 경험 있으신 분들
     comments: 16,
     shares: 7,
     bookmarks: 19,
-    category: "게임"
+    category: "PixelJump"
   },
   {
     author: "이알고리즘",
@@ -383,7 +383,7 @@ Web3 개발 경험 있으신 분들
     comments: 13,
     shares: 6,
     bookmarks: 17,
-    category: "알고리즘"
+    category: "LeetCode100"
   },
   {
     author: "정오픈소스",
@@ -413,7 +413,7 @@ Web3 개발 경험 있으신 분들
     comments: 11,
     shares: 5,
     bookmarks: 15,
-    category: "오픈소스"
+    category: "OpenSource"
   },
   {
     author: "최성능",
@@ -443,7 +443,7 @@ Web3 개발 경험 있으신 분들
     comments: 19,
     shares: 8,
     bookmarks: 22,
-    category: "성능"
+    category: "WebOptimizer"
   },
   {
     author: "박짧은글",
@@ -457,12 +457,11 @@ useState와 useEffect 정말 유용하네요 😊
     comments: 2,
     shares: 1,
     bookmarks: 3,
-    category: "일지"
+    category: "CodingDiary"
   },
   {
     author: "김간단",
     title: "Git 커밋 메시지 컨벤션",
-    subtitle: "프론트엔드 개발자",
     timestamp: "5시간 전",
     content: `feat: 새로운 기능 추가
 fix: 버그 수정
@@ -475,7 +474,7 @@ style: 코드 스타일 변경
     comments: 3,
     shares: 2,
     bookmarks: 6,
-    category: "팁"
+    category: "GitConvention"
   },
   {
     author: "이한줄",
@@ -488,7 +487,7 @@ style: 코드 스타일 변경
     comments: 4,
     shares: 1,
     bookmarks: 8,
-    category: "팁"
+    category: "DebugHelper"
   },
   {
     author: "김짧은글",
@@ -501,7 +500,7 @@ style: 코드 스타일 변경
     comments: 1,
     shares: 0,
     bookmarks: 2,
-    category: "일상"
+    category: "DailyCoding"
   },
   {
     author: "박간단",
@@ -518,7 +517,7 @@ align-items: center;
     comments: 2,
     shares: 1,
     bookmarks: 4,
-    category: "팁"
+    category: "FlexboxGuide"
   },
   {
     author: "이한줄",
@@ -531,6 +530,6 @@ align-items: center;
     comments: 1,
     shares: 0,
     bookmarks: 3,
-    category: "팁"
+    category: "ConsoleTools"
   }
 ]
