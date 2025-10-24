@@ -185,10 +185,7 @@ export function HomePage() {
                     <h3 className='text-sm font-semibold text-gray-900 mb-3'>
                       카테고리
                     </h3>
-                    <CheckboxGroup
-                      values={selectedCategories}
-                      onValuesChange={handleCategoryChange}
-                    >
+                    <CheckboxGroup>
                       {CATEGORIES.map(category => (
                         <CheckboxItem
                           key={category}

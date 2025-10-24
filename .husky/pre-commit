@@ -1,4 +1,11 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx lint-staged
+# Windows 환경에서 더 안정적인 실행을 위한 설정
+if [ -f package.json ]; then
+  echo "Running lint-staged..."
+  npx lint-staged
+else
+  echo "package.json not found, skipping lint-staged"
+  exit 0
+fi

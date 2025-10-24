@@ -1,7 +1,7 @@
 import type { Post } from '@/types';
 
 export const samplePosts: Post[] = [
-  // WebOptimizer 프로젝트 (3개 로그)
+  // WebOptimizer 프로젝트
   {
     id: '1',
     author: '최성능',
@@ -23,9 +23,6 @@ export const samplePosts: Post[] = [
 사용자 경험이 정말 많이 개선됐어요!
 성능 최적화는 정말 보람있는 작업이네요 🚀
 
-웹 성능 최적화 꿀팁 있으면
-공유해주세요! ⚡
-
 #웹성능 #최적화 #Lighthouse #CoreWebVitals`,
     likes: 26,
     comments: 19,
@@ -34,56 +31,10 @@ export const samplePosts: Post[] = [
     projectLogo: 'VercelLogoIcon',
     hashtags: ['웹성능', '최적화', 'Lighthouse', 'CoreWebVitals'],
   },
+
+  // TaskFlow 프로젝트
   {
     id: '2',
-    author: '최성능',
-    authorRole: 'PO',
-    timestamp: '1주 전',
-    content: `WebOptimizer 프로젝트의 두 번째 로그입니다!
-
-오늘은 Core Web Vitals 개선에 집중했어요.
-LCP를 2.1초에서 0.8초로 줄였습니다! 🎉
-
-주요 개선사항:
-• 이미지 lazy loading 적용
-• Critical CSS 인라인화
-• JavaScript 번들 최적화
-
-다음 목표는 CLS 점수 개선이에요!`,
-    likes: 15,
-    comments: 8,
-    category: 'WebOptimizer',
-    projectLikes: 42,
-    projectLogo: 'VercelLogoIcon',
-    hashtags: ['CoreWebVitals', 'LCP', '성능최적화'],
-  },
-  {
-    id: '3',
-    author: '최성능',
-    authorRole: 'PO',
-    timestamp: '3일 전',
-    content: `WebOptimizer 프로젝트 마지막 로그!
-
-CLS 점수를 0.15에서 0.05로 개선했습니다! 🚀
-
-최종 결과:
-• LCP: 0.8초
-• FID: 45ms
-• CLS: 0.05
-• Lighthouse: 98점
-
-프로젝트 완료! 다음은 뭘 할까요?`,
-    likes: 32,
-    comments: 12,
-    category: 'WebOptimizer',
-    projectLikes: 42,
-    projectLogo: 'VercelLogoIcon',
-    hashtags: ['완료', 'CLS', 'Lighthouse98점'],
-  },
-
-  // TaskFlow 프로젝트 (2개 로그)
-  {
-    id: '4',
     author: '김개발',
     authorRole: '백엔드 개발자',
     timestamp: '1일 전',
@@ -108,30 +59,10 @@ CLS 점수를 0.15에서 0.05로 개선했습니다! 🚀
     projectLikes: 16,
     projectLogo: 'GitHubLogoIcon',
   },
+
+  // WebPortfolio 프로젝트
   {
-    id: '5',
-    author: '김개발',
-    authorRole: '백엔드 개발자',
-    timestamp: '12시간 전',
-    content: `TaskFlow 프로젝트 업데이트!
-
-사용자 피드백을 반영해서 새로운 기능을 추가했어요:
-• 다크모드 지원
-• 키보드 단축키
-• 할일 템플릿 기능
-
-사용자들이 정말 좋아해주네요! 😊`,
-    likes: 8,
-    comments: 3,
-    category: 'TaskFlow',
-    projectLikes: 16,
-    projectLogo: 'GitHubLogoIcon',
-    hashtags: ['업데이트', '다크모드', '피드백'],
-  },
-
-  // WebPortfolio 프로젝트 (1개 로그)
-  {
-    id: '6',
+    id: '3',
     author: '박포트폴리오',
     authorRole: '프론트엔드 개발자',
     timestamp: '5일 전',
@@ -152,9 +83,6 @@ CLS 점수를 0.15에서 0.05로 개선했습니다! 🚀
 처음엔 3D 라이브러리가 어려웠는데
 이제 보니 정말 멋진 결과가 나왔어요! ✨
 
-포트폴리오 제작 경험 있으신 분들
-피드백 부탁드려요! 🎯
-
 #포트폴리오 #React #ThreeJS #웹개발`,
     likes: 23,
     comments: 16,
@@ -164,9 +92,9 @@ CLS 점수를 0.15에서 0.05로 개선했습니다! 🚀
     hashtags: ['포트폴리오', 'React', 'ThreeJS', '웹개발'],
   },
 
-  // DockerEnv 프로젝트 (2개 로그)
+  // DockerEnv 프로젝트
   {
-    id: '7',
+    id: '4',
     author: '이백엔드',
     authorRole: 'DevOps 엔지니어',
     timestamp: '4일 전',
@@ -185,7 +113,7 @@ Docker 사용 후:
 Docker Compose로 프론트엔드, 백엔드, DB를 한 번에 띄우니까
 정말 편하네요! 
 
-Docker 처음 사용하시는 분들도 금방 익숙해질 거예요 👍`,
+#Docker #DevOps #개발환경 #팀개발`,
     hashtags: ['Docker', 'DevOps', '개발환경', '팀개발'],
     likes: 18,
     comments: 9,
@@ -193,33 +121,10 @@ Docker 처음 사용하시는 분들도 금방 익숙해질 거예요 👍`,
     projectLikes: 8,
     projectLogo: 'NotionLogoIcon',
   },
+
+  // CatDogAI 프로젝트
   {
-    id: '8',
-    author: '이백엔드',
-    authorRole: 'DevOps 엔지니어',
-    timestamp: '2일 전',
-    content: `DockerEnv 프로젝트 두 번째 로그!
-
-Kubernetes로 컨테이너 오케스트레이션을 도입했어요.
-이제 스케일링이 정말 쉬워졌습니다! 🚀
-
-주요 개선사항:
-• 자동 스케일링 설정
-• 헬스체크 구현
-• 로그 수집 시스템 구축
-
-다음은 모니터링 시스템을 구축할 예정이에요!`,
-    likes: 14,
-    comments: 6,
-    category: 'DockerEnv',
-    projectLikes: 8,
-    projectLogo: 'NotionLogoIcon',
-    hashtags: ['Kubernetes', '오케스트레이션', '스케일링'],
-  },
-
-  // CatDogAI 프로젝트 (1개 로그)
-  {
-    id: '9',
+    id: '5',
     author: '강머신러닝',
     authorRole: 'AI 연구원',
     timestamp: '2주 전',
@@ -238,9 +143,6 @@ Kubernetes로 컨테이너 오케스트레이션을 도입했어요.
 머신러닝은 정말 재미있어요!
 다음엔 자연어 처리도 해보고 싶어요.
 
-ML 경험 있으신 분들
-프로젝트 아이디어 공유해주세요! 🧠
-
 #머신러닝 #TensorFlow #CNN #이미지분류`,
     likes: 25,
     comments: 18,
@@ -250,24 +152,9 @@ ML 경험 있으신 분들
     hashtags: ['머신러닝', 'TensorFlow', 'CNN', '이미지분류'],
   },
 
-  // DailyCoding 프로젝트 (1개 로그)
+  // MobileApp 프로젝트
   {
-    id: '10',
-    author: '김짧은글',
-    authorRole: '프론트엔드 개발자',
-    timestamp: '2시간 전',
-    content: `오늘도 열심히 코딩했어요! 💪`,
-    hashtags: ['일상', '코딩'],
-    likes: 3,
-    comments: 1,
-    category: 'DailyCoding',
-    projectLikes: 3,
-    projectLogo: 'GitHubLogoIcon',
-  },
-
-  // MobileApp 프로젝트 (1개 로그)
-  {
-    id: '11',
+    id: '6',
     author: '정모바일',
     authorRole: '모바일 개발자',
     timestamp: '1주 전',
@@ -289,8 +176,6 @@ Flutter:
 결론: 빠른 프로토타이핑은 RN, 
 성능이 중요한 앱은 Flutter 추천!
 
-어떤 기술 스택 사용하고 계신가요?
-
 #ReactNative #Flutter #모바일개발 #크로스플랫폼`,
     likes: 22,
     comments: 15,
@@ -300,28 +185,9 @@ Flutter:
     hashtags: ['ReactNative', 'Flutter', '모바일개발', '크로스플랫폼'],
   },
 
-  // FlexboxGuide 프로젝트 (1개 로그)
+  // AuthSystem 프로젝트
   {
-    id: '12',
-    author: '박간단',
-    authorRole: 'UI/UX 디자이너',
-    timestamp: '4시간 전',
-    content: `flexbox로 가운데 정렬할 때:
-justify-content: center;
-align-items: center;
-
-이거 하나면 끝! ✨`,
-    hashtags: ['CSS', '팁'],
-    likes: 7,
-    comments: 2,
-    category: 'FlexboxGuide',
-    projectLikes: 12,
-    projectLogo: 'FigmaLogoIcon',
-  },
-
-  // AuthSystem 프로젝트 (1개 로그)
-  {
-    id: '13',
+    id: '7',
     author: '윤보안',
     authorRole: '보안 엔지니어',
     timestamp: '1주 전',
@@ -340,9 +206,6 @@ align-items: center;
 처음엔 보안이 걱정됐는데
 적절한 설정으로 안전하게 사용할 수 있네요!
 
-인증/보안 관련 경험 있으신 분들
-조언 부탁드려요! 🔒
-
 #JWT #인증 #보안 #토큰`,
     likes: 19,
     comments: 10,
@@ -352,9 +215,9 @@ align-items: center;
     hashtags: ['JWT', '인증', '보안', '토큰'],
   },
 
-  // LeetCode100 프로젝트 (1개 로그)
+  // LeetCode100 프로젝트
   {
-    id: '14',
+    id: '8',
     author: '이알고리즘',
     authorRole: '알고리즘 엔지니어',
     timestamp: '6일 전',
@@ -373,9 +236,6 @@ align-items: center;
 
 처음엔 정말 어려웠는데
 꾸준히 하니까 실력이 늘어나네요!
-
-알고리즘 공부 방법이나
-추천 문제 있으면 공유해주세요! 🧠
 
 #알고리즘 #LeetCode #코딩테스트 #자료구조`,
     likes: 21,

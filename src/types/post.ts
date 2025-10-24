@@ -15,7 +15,7 @@ export interface Post {
 }
 
 // PostCard 관련 타입
-export interface PostCardData {
+export interface PostCardProps {
   id: string;
   author: string;
   authorRole?: string;
@@ -28,11 +28,6 @@ export interface PostCardData {
   category?: string;
   projectLikes?: number;
   projectLogo?: string;
-}
-
-export interface PostCardLayout {
   isFirst?: boolean;
   isLast?: boolean;
 }
-
-export interface PostCardProps extends PostCardData, PostCardLayout {}

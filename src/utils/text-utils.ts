@@ -3,29 +3,6 @@
  */
 
 /**
- * 텍스트의 줄 수를 계산합니다
- * @param text - 줄 수를 계산할 텍스트
- * @returns 줄 수
- */
-export function getLineCount(text: string | undefined): number {
-  if (!text) return 0;
-  return text.split('\n').length;
-}
-
-/**
- * 텍스트가 지정된 줄 수를 초과하는지 확인합니다
- * @param text - 확인할 텍스트
- * @param maxLines - 최대 줄 수 (기본값: 10)
- * @returns 줄 수 초과 여부
- */
-export function shouldTruncateText(
-  text: string | undefined,
-  maxLines: number = 10
-): boolean {
-  return getLineCount(text) > maxLines;
-}
-
-/**
  * 텍스트를 지정된 줄 수로 자릅니다
  * @param text - 자를 텍스트
  * @param maxLines - 최대 줄 수 (기본값: 10)
