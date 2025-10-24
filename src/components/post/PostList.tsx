@@ -3,7 +3,7 @@ import { samplePosts } from '@/data/samplePosts'
 
 export function PostList() {
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto">
       {samplePosts.map((post, index) => (
         <PostCard
           key={index}
