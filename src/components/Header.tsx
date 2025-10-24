@@ -5,37 +5,28 @@ export function Header() {
     <header className="border-b bg-white">
       <div className="max-w-6xl mx-auto px-4 py-4">
         {/* 상단: 로고 + 아이콘들 */}
-        <div className="flex items-center justify-between mb-4 md:mb-0">
+        <div className="flex items-center justify-between mb-4">
           {/* 왼쪽: Sidyyy 로고 */}
           <div className="flex items-center">
             <h1 className="text-2xl font-bold text-gray-900">Sidyyy</h1>
           </div>
 
-          {/* 오른쪽: 아이콘들 (모바일) */}
-          <div className="flex items-center gap-4 md:hidden">
+          {/* 오른쪽: 아이콘들 */}
+          <div className="flex items-center gap-4">
             <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors">
               <MagnifyingGlassIcon className="w-5 h-5 text-gray-600" />
             </button>
             <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors">
               <HamburgerMenuIcon className="w-5 h-5 text-gray-600" />
             </button>
-          </div>
-
-          {/* 오른쪽: 네비게이션 + 프로필 (데스크톱) */}
-          <div className="hidden md:flex items-center gap-6">
-            <nav className="flex space-x-8">
-              <a href="#" className="text-black font-medium border-b-2 border-black pb-1">피드</a>
-              <a href="#" className="text-gray-500 hover:text-gray-700 font-medium">프로젝트</a>
-              <a href="#" className="text-gray-500 hover:text-gray-700 font-medium">모집</a>
-            </nav>
             <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors">
               <PersonIcon className="w-5 h-5 text-gray-600" />
             </button>
           </div>
         </div>
 
-        {/* 하단: 탭 네비게이션 (모바일) */}
-        <div className="md:hidden">
+        {/* 하단: 탭 네비게이션 */}
+        <div>
           <div className="flex bg-gray-50 rounded-lg p-1">
             <button className="flex-1 py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-md shadow-sm">
               피드
