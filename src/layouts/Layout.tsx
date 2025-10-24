@@ -13,7 +13,7 @@ export function Layout({ children }: LayoutProps) {
       <Header />
       
       <div className="max-w-6xl mx-auto min-h-screen">
-        <main className="flex justify-center gap-x-8 pb-3 md:px-5 md:pb-5 min-h-[calc(100vh-140px)] pt-20">
+        <main className="flex justify-center gap-x-8 pb-3 md:px-5 md:pb-5 min-h-[calc(100vh-140px)] pt-12">
           {/* 중앙 콘텐츠 */}
           <div className="w-full lg:w-3/5 pb-20 md:pb-24 bg-white px-6 md:px-8">
             {children}
