@@ -1,5 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card'
-import { ArrowUpIcon, GitHubLogoIcon, FigmaLogoIcon, NotionLogoIcon, DiscordLogoIcon } from '@radix-ui/react-icons'
+import { ArrowUpIcon, GitHubLogoIcon, FigmaLogoIcon, NotionLogoIcon, DiscordLogoIcon, StarFilledIcon, PersonIcon } from '@radix-ui/react-icons'
 
 export function RightSidebar() {
   return (
@@ -8,7 +8,10 @@ export function RightSidebar() {
         {/* 인기 프로젝트 */}
         <Card>
           <CardContent className="p-6">
-            <h3 className="font-semibold text-gray-900 mb-4">🔥 인기 프로젝트</h3>
+            <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <StarFilledIcon className="w-4 h-4 text-orange-500" />
+              인기 프로젝트
+            </h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 flex items-center justify-center">
@@ -77,7 +80,10 @@ export function RightSidebar() {
         {/* 추천 멤버 */}
         <Card>
           <CardContent className="p-6">
-            <h3 className="font-semibold text-gray-900 mb-4">👥 추천 멤버</h3>
+            <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <PersonIcon className="w-4 h-4 text-blue-500" />
+              추천 멤버
+            </h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center">
