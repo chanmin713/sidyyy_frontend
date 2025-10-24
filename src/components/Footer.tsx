@@ -9,8 +9,8 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-gray-900">Sidyyy</h3>
             <p className="text-sm text-gray-600">
-              주체적인 삶으로 가득한 세상,<br />
-              1200+명의 Sidyyy와 함께해요.
+              나만의 사이드 프로젝트를 자랑하고<br />
+              함께 성장하는 개발자 커뮤니티
             </p>
             <div className="flex gap-3">
               <a target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700" href="#">
