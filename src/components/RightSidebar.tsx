@@ -1,5 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card'
-import { ArrowUpIcon, PlayIcon, PaletteIcon, DesktopIcon, StarIcon } from '@radix-ui/react-icons'
+import { ArrowUpIcon, PlayIcon, CircleIcon, SquareIcon, StarIcon } from '@radix-ui/react-icons'
 
 export function RightSidebar() {
   return (
@@ -26,7 +26,7 @@ export function RightSidebar() {
               
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center">
-                  <PaletteIcon className="w-5 h-5 text-white" />
+                  <CircleIcon className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-medium text-gray-900 text-sm">디자인 가이드</h4>
@@ -40,7 +40,7 @@ export function RightSidebar() {
               
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
-                  <DesktopIcon className="w-5 h-5 text-white" />
+                  <SquareIcon className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-medium text-gray-900 text-sm">맥북 가이드</h4>
