@@ -101,17 +101,17 @@ export const WritePostPage = memo(function WritePostPage() {
 
     console.log('새 글 작성:', newPost);
 
-    // 작성 완료 후 홈으로 이동
-    navigate('/');
+    // 작성 완료 후 로그 페이지로 이동
+    navigate('/log');
   };
 
   const handleCancel = () => {
     if (content.trim() || hashtags.length > 0) {
       if (confirm('작성 중인 내용이 있습니다. 정말 취소하시겠습니까?')) {
-        navigate('/');
+        navigate('/log');
       }
     } else {
-      navigate('/');
+      navigate('/log');
     }
   };
 

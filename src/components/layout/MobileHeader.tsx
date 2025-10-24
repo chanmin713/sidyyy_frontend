@@ -72,7 +72,7 @@ export function MobileHeader() {
           <div className='max-w-6xl mx-auto'>
             <div className='space-y-2'>
               <button
-                onClick={() => handleMenuClick('/')}
+                onClick={() => handleMenuClick('/log')}
                 className='w-full text-left py-2 px-3 text-sm font-medium text-gray-500 hover:text-gray-700 hover:bg-white rounded-md'
               >
                 로그
@@ -87,7 +87,7 @@ export function MobileHeader() {
                 onClick={() => handleMenuClick('/recruit')}
                 className='w-full text-left py-2 px-3 text-sm font-medium text-gray-500 hover:text-gray-700 hover:bg-white rounded-md'
               >
-                팀빌딩
+                모집
               </button>
               <button
                 onClick={() => handleMenuClick('/member')}

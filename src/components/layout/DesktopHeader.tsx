@@ -13,7 +13,7 @@ export function DesktopHeader() {
   useEffect(() => {
     const path = location.pathname;
     switch (path) {
-      case '/':
+      case '/log':
         setActiveTab('home');
         break;
       case '/project':
@@ -34,7 +34,7 @@ export function DesktopHeader() {
     setActiveTab(tab);
     switch (tab) {
       case 'home':
-        navigate('/');
+        navigate('/log');
         break;
       case 'project':
         navigate('/project');
@@ -121,7 +121,7 @@ export function DesktopHeader() {
                     : 'text-gray-500 hover:text-gray-900'
                 }`}
               >
-                팀빌딩
+                모집
               </button>
               <button
                 onClick={() => handleTabClick('member')}

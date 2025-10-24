@@ -152,7 +152,7 @@ export const PostCard = memo(function PostCard({
         </div>
 
         {/* 작성자 정보 */}
-        <div className='mb-4'>
+        <div className='mb-2'>
           <ProfileSection author={author} authorRole={authorRole} size='sm' />
         </div>
 

@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from '@/layouts/Layout';
 import { HomePage } from '@/pages/HomePage';
+import { LogPage } from '@/pages/LogPage';
 import { ProjectPage } from '@/pages/ProjectPage';
 import { RecruitPage } from '@/pages/RecruitPage';
 import { MemberPage } from '@/pages/MemberPage';
@@ -15,6 +16,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path='/' element={<HomePage />} />
+          <Route path='/log' element={<LogPage />} />
           <Route path='/project' element={<ProjectPage />} />
           <Route path='/recruit' element={<RecruitPage />} />
           <Route path='/member' element={<MemberPage />} />

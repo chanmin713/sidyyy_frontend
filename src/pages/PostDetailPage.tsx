@@ -82,7 +82,7 @@ export const PostDetailPage = memo(function PostDetailPage() {
     if (confirm('정말로 이 글을 삭제하시겠습니까?')) {
       console.log('글 삭제');
       // 실제로는 삭제 API 호출 후 목록으로 이동
-      navigate('/');
+      navigate('/log');
     }
   };
 
