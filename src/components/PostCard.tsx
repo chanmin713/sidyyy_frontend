@@ -55,7 +55,7 @@ export function PostCard({
         </div>
         
         <div className="cursor-pointer py-1 pl-[44px]" style={{ marginTop: '-12px' }}>
-          <div className="mb-3 relative">
+          <div className="mb-3">
             <p className="text-sm md:text-base whitespace-pre-wrap" style={{ 
               display: '-webkit-box', 
               WebkitLineClamp: 12, 
@@ -65,9 +65,11 @@ export function PostCard({
             }}>
               {content}
             </p>
-            <button className="text-gray-500 hover:text-gray-700 text-sm md:text-base absolute bottom-0 right-0 pl-4">
-              ...더 보기
-            </button>
+            <div className="mt-2 text-right">
+              <button className="text-gray-500 hover:text-gray-700 text-sm md:text-base">
+                더 보기 →
+              </button>
+            </div>
           </div>
         </div>
         
