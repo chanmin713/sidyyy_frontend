@@ -87,7 +87,13 @@ export function MobileHeader() {
                 onClick={() => handleMenuClick('/recruit')}
                 className='w-full text-left py-2 px-3 text-sm font-medium text-gray-500 hover:text-gray-700 hover:bg-white rounded-md'
               >
-                모집
+                팀빌딩
+              </button>
+              <button
+                onClick={() => handleMenuClick('/member')}
+                className='w-full text-left py-2 px-3 text-sm font-medium text-gray-500 hover:text-gray-700 hover:bg-white rounded-md'
+              >
+                멤버
               </button>
             </div>
           </div>

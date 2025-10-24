@@ -3,6 +3,7 @@ import { Layout } from '@/layouts/Layout';
 import { HomePage } from '@/pages/HomePage';
 import { ProjectPage } from '@/pages/ProjectPage';
 import { RecruitPage } from '@/pages/RecruitPage';
+import { MemberPage } from '@/pages/MemberPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import { PostDetailPage } from '@/pages/PostDetailPage';
 import { WritePostPage } from '@/pages/WritePostPage';
@@ -16,6 +17,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/project' element={<ProjectPage />} />
           <Route path='/recruit' element={<RecruitPage />} />
+          <Route path='/member' element={<MemberPage />} />
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/write' element={<WritePostPage />} />
           <Route path='/post/:id' element={<PostDetailPage />} />

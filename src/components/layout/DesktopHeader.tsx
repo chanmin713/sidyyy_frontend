@@ -22,6 +22,9 @@ export function DesktopHeader() {
       case '/recruit':
         setActiveTab('recruit');
         break;
+      case '/member':
+        setActiveTab('member');
+        break;
       default:
         setActiveTab('home');
     }
@@ -38,6 +41,9 @@ export function DesktopHeader() {
         break;
       case 'recruit':
         navigate('/recruit');
+        break;
+      case 'member':
+        navigate('/member');
         break;
     }
   };
@@ -64,16 +70,20 @@ export function DesktopHeader() {
               <div
                 className={`absolute top-1 bottom-1 bg-white rounded-md shadow-sm transition-all duration-500 ease-out ${
                   hoveredTab === 'home'
-                    ? 'left-1 w-[calc(33.333%-0.25rem)]'
+                    ? 'left-1 w-[calc(25%-0.25rem)]'
                     : hoveredTab === 'project'
-                      ? 'left-[calc(33.333%+0.25rem)] w-[calc(33.333%-0.25rem)]'
+                      ? 'left-[calc(25%+0.25rem)] w-[calc(25%-0.25rem)]'
                       : hoveredTab === 'recruit'
-                        ? 'left-[calc(66.666%+0.25rem)] w-[calc(33.333%-0.25rem)]'
-                        : activeTab === 'home'
-                          ? 'left-1 w-[calc(33.333%-0.25rem)]'
-                          : activeTab === 'project'
-                            ? 'left-[calc(33.333%+0.25rem)] w-[calc(33.333%-0.25rem)]'
-                            : 'left-[calc(66.666%+0.25rem)] w-[calc(33.333%-0.25rem)]'
+                        ? 'left-[calc(50%+0.25rem)] w-[calc(25%-0.25rem)]'
+                        : hoveredTab === 'member'
+                          ? 'left-[calc(75%+0.25rem)] w-[calc(25%-0.25rem)]'
+                          : activeTab === 'home'
+                            ? 'left-1 w-[calc(25%-0.25rem)]'
+                            : activeTab === 'project'
+                              ? 'left-[calc(25%+0.25rem)] w-[calc(25%-0.25rem)]'
+                              : activeTab === 'recruit'
+                                ? 'left-[calc(50%+0.25rem)] w-[calc(25%-0.25rem)]'
+                                : 'left-[calc(75%+0.25rem)] w-[calc(25%-0.25rem)]'
                 }`}
               />
 
@@ -111,7 +121,19 @@ export function DesktopHeader() {
                     : 'text-gray-500 hover:text-gray-900'
                 }`}
               >
-                모집
+                팀빌딩
+              </button>
+              <button
+                onClick={() => handleTabClick('member')}
+                onMouseEnter={() => setHoveredTab('member')}
+                onMouseLeave={() => setHoveredTab(null)}
+                className={`flex-1 py-1.5 px-4 text-sm font-medium transition-all duration-500 relative z-10 ${
+                  activeTab === 'member'
+                    ? 'text-gray-900'
+                    : 'text-gray-500 hover:text-gray-900'
+                }`}
+              >
+                멤버
               </button>
             </div>
           </div>
