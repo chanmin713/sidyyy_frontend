@@ -2,7 +2,7 @@ import { Card, CardContent } from '@/components/ui/card'
 
 export function RightSidebar() {
   return (
-    <div className="hidden lg:block w-80 sticky top-[70px] self-start h-screen">
+    <div className="hidden lg:block w-80 sticky top-[70px] self-start h-screen border-l border-gray-200">
       <div className="space-y-6">
         {/* 인기 프로젝트 */}
         <Card>
