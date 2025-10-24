@@ -8,7 +8,7 @@ export function MobileFooter() {
           {/* 브랜드 정보 */}
           <div className="text-left">
             <div className="flex items-start justify-between gap-3">
-              <h3 className="font-semibold text-gray-900 text-base leading-tight">Sidyyy</h3>
+              <h3 className="font-bold text-gray-900 text-xl leading-tight">Sidyyy</h3>
               <p className="text-xs text-gray-600 leading-tight text-right">
                 나만의 사이드 프로젝트를 자랑하고<br />
                 함께 성장하는 개발자 커뮤니티
