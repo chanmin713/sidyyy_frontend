@@ -18,11 +18,11 @@ export function DesktopFooter() {
           <div className="flex items-center gap-6 text-sm text-gray-600">
             <a href="#" className="hover:text-gray-900 transition-colors">문의하기</a>
             <span className="text-gray-400">|</span>
+            <a href="#" className="hover:text-gray-900 transition-colors">협업 제안</a>
+            <span className="text-gray-400">|</span>
             <a href="#" className="hover:text-gray-900 transition-colors">이용약관</a>
             <span className="text-gray-400">|</span>
             <a href="#" className="hover:text-gray-900 transition-colors">개인정보처리방침</a>
-            <span className="text-gray-400">|</span>
-            <a href="#" className="hover:text-gray-900 transition-colors">서비스 소개</a>
           </div>
         </div>
 
