@@ -1,4 +1,4 @@
-import { ChatBubbleIcon, InstagramLogoIcon, CheckIcon } from '@radix-ui/react-icons'
+import React from 'react'
 
 export function Footer() {
   return (
@@ -12,20 +12,9 @@ export function Footer() {
               나만의 사이드 프로젝트를 자랑하고<br />
               함께 성장하는 개발자 커뮤니티
             </p>
-            <div className="flex gap-3">
-              <a target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700" href="#">
-                <ChatBubbleIcon className="w-5 h-5" />
-              </a>
-              <a target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700" href="#">
-                <InstagramLogoIcon className="w-5 h-5" />
-              </a>
-              <a target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700" href="#">
-                <CheckIcon className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
-          {/* 연락처 정보 */}
+          {/* 연락처 및 법적 정보 */}
           <div className="space-y-4">
             <h3 className="font-semibold text-gray-900">문의하기</h3>
             <div className="space-y-3">
@@ -42,8 +31,8 @@ export function Footer() {
                 <p>github.com/sidyyy</p>
               </div>
             </div>
-            <div className="pt-2">
-              <ul className="space-y-1 text-sm text-gray-600">
+            <div className="pt-4">
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li><a href="#" className="hover:text-gray-900">이용약관</a></li>
                 <li><a href="#" className="hover:text-gray-900">개인정보처리방침</a></li>
               </ul>
