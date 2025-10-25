@@ -2,8 +2,7 @@ import { LAYOUT } from '@/constants';
 
 export function ProfilePage() {
   return (
-    <div className='min-h-screen bg-white'>
-      <div className={LAYOUT.PAGE_CONTAINER_CENTERED}>
+    <div className='py-6'>
         <div className='text-center'>
           <h1 className='text-4xl font-bold text-gray-900 mb-4'>내 프로필</h1>
           <p className='text-lg text-gray-600 mb-8'>
@@ -27,7 +26,7 @@ export function ProfilePage() {
           </div>
         </div>
       </div>
-    </div>
+
   );
 }
 

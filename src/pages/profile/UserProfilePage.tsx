@@ -5,7 +5,7 @@ export function UserProfilePage() {
   const { username } = useParams<{ username: string }>();
 
   return (
-    <div className={LAYOUT.PAGE_CONTAINER}>
+    <div className='py-6'>
       <div className='text-center py-20'>
         <h1 className='text-4xl font-bold text-gray-900 mb-4'>
           {username}의 프로필

@@ -1,76 +1,61 @@
 import { memo, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeftIcon } from '@radix-ui/react-icons';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import { samplePosts } from '@/data/samplePosts';
 import type { Post } from '@/types';
 import { useSearch } from '@/stores';
 import { AccessibleButton } from '@/components/ui/forms/accessible-button';
-import { LAYOUT } from '@/constants';
+import { ProjectSelector } from '@/components/ui/forms/project-selector';
+
+
 export const WritePostPage = memo(function WritePostPage() {
   const navigate = useNavigate();
-  const fileInputRef = useRef<HTMLInputElement>(null);
   const { clearSearch } = useSearch();
 
   const [content, setContent] = useState('');
   const [hashtags, setHashtags] = useState<string[]>([]);
   const [hashtagInput, setHashtagInput] = useState('');
   const [category, setCategory] = useState('');
-  const [images, setImages] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const quillRef = useRef<ReactQuill>(null);
+
+  const handleAddNewProject = () => {
+    // TODO: 프로젝트 추가 모달 열기
+    alert('프로젝트 추가 기능은 추후 구현될 예정입니다.');
+  };
 
   const handleBack = () => {
     navigate(-1);
   };
 
-  const handleImageAttach = () => {
-    fileInputRef.current?.click();
-  };
-
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-    if (files && files.length > 0) {
-      const file = files[0];
-      const reader = new FileReader();
-      reader.onload = e => {
-        const imageUrl = e.target?.result as string;
-        setImages(prev => [...prev, imageUrl]);
-        // 커서 위치에 이미지 삽입
-        insertImageAtCursor(imageUrl);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const insertImageAtCursor = (imageUrl: string) => {
-    const textarea = document.querySelector('textarea') as HTMLTextAreaElement;
-    if (textarea) {
-      const start = textarea.selectionStart;
-      const end = textarea.selectionEnd;
-      const textBefore = content.substring(0, start);
-      const textAfter = content.substring(end);
-      const imageMarkdown = `![이미지](${imageUrl})`;
-      const newContent = textBefore + imageMarkdown + textAfter;
-      setContent(newContent);
-
-      // 커서를 이미지 뒤로 이동
-      setTimeout(() => {
-        textarea.focus();
-        textarea.setSelectionRange(
-          start + imageMarkdown.length,
-          start + imageMarkdown.length
-        );
-      }, 0);
-    }
-  };
-
   const handleHashtagAdd = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === ',' && hashtagInput.trim()) {
+    if ((e.key === ',' || e.key === 'Enter') && hashtagInput.trim()) {
       e.preventDefault();
-      const newHashtag = hashtagInput.trim().replace('#', '');
-      if (!hashtags.includes(newHashtag)) {
-        setHashtags([...hashtags, newHashtag]);
-        setHashtagInput('');
-      }
+      addHashtag(hashtagInput.trim());
+    }
+  };
+
+  const addHashtag = (hashtag: string) => {
+    // # 기호 제거
+    const cleanHashtag = hashtag.replace(/^#+/, '').trim();
+    
+    // 빈 문자열이거나 이미 존재하는 해시태그인지 확인
+    if (cleanHashtag && !hashtags.includes(cleanHashtag)) {
+      setHashtags([...hashtags, cleanHashtag]);
+      setHashtagInput('');
+    }
+  };
+
+  const handleHashtagInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setHashtagInput(value);
+    
+    // 쉼표가 포함된 경우 자동으로 해시태그 추가
+    if (value.includes(',')) {
+      const hashtags = value.split(',').map(tag => tag.trim()).filter(tag => tag);
+      hashtags.forEach(tag => addHashtag(tag));
     }
   };
 
@@ -97,9 +82,9 @@ export const WritePostPage = memo(function WritePostPage() {
         likes: 0,
         comments: 0,
         views: 0,
-        hasImage: images.length > 0,
+        hasImage: content.includes('!['),
         category: (category as any) || undefined,
-        title: content.split('\n')[0] || '새로운 포스트',
+        title: content.replace(/[#*`]/g, '').split('\n')[0] || '새로운 포스트',
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
         tags: hashtags.length > 0 ? hashtags : [],
@@ -132,25 +117,69 @@ export const WritePostPage = memo(function WritePostPage() {
     }
   };
 
+
+  // HTML 텍스트에서 순수 텍스트만 추출하여 글자 수 계산
+  const getTextLength = (htmlContent: string) => {
+    if (!htmlContent || htmlContent === '<p><br></p>' || htmlContent === '<p></p>') return 0;
+    // HTML 태그 제거
+    const textContent = htmlContent.replace(/<[^>]*>/g, '');
+    // 공백 제거 후 글자 수 계산
+    return textContent.trim().length;
+  };
+
+  // ReactQuill 설정 - 안정적인 최대 기능
+  const modules = {
+    toolbar: [
+      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+      [{ 'font': [] }],
+      [{ 'size': ['small', false, 'large', 'huge'] }],
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ 'script': 'sub'}, { 'script': 'super' }],
+      [{ 'color': [] }, { 'background': [] }],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      [{ 'indent': '-1'}, { 'indent': '+1' }],
+      [{ 'direction': 'rtl' }],
+      [{ 'align': [] }],
+      ['blockquote', 'code-block'],
+      ['link', 'image', 'video'],
+      ['clean']
+    ],
+    keyboard: {
+      bindings: {
+        tab: {
+          key: 9,
+          handler: function() {
+            return true;
+          }
+        },
+        'remove tab': {
+          key: 9,
+          shiftKey: true,
+          handler: function() {
+            return true;
+          }
+        }
+      }
+    }
+  };
+
+  const formats = [
+    'header', 'font', 'size',
+    'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
+    'list', 'bullet', 'indent', 'script',
+    'link', 'image', 'video', 'color', 'background',
+    'align', 'direction'
+  ];
+
   return (
-    <>
-      <div className={LAYOUT.PAGE_CONTAINER}>
-        {/* 페이지 제목 */}
-        <div className='mb-6'>
-          <h1 className='text-3xl font-bold text-gray-900 text-white mb-2'>
-            글 작성
-          </h1>
-          <p className='text-lg text-gray-600 text-gray-300'>
-            개발 경험과 프로젝트를 공유하는 글을 작성해보세요.
-          </p>
-        </div>
+    <div className='py-6'>
 
         {/* 헤더 */}
         <div className='flex items-center justify-between mb-6'>
           <AccessibleButton
             onClick={handleBack}
             variant='ghost'
-            className='flex items-center gap-2 text-gray-600 hover:text-gray-800 text-gray-300 hover:text-white transition-colors'
+            className='flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors'
             ariaLabel='이전 페이지로 돌아가기'
           >
             <ArrowLeftIcon className='w-5 h-5' />
@@ -168,7 +197,7 @@ export const WritePostPage = memo(function WritePostPage() {
             </AccessibleButton>
             <AccessibleButton
               onClick={handleSubmit}
-              disabled={isSubmitting || !content.trim()}
+              disabled={isSubmitting}
               variant='primary'
               loading={isSubmitting}
               className='px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors'
@@ -180,59 +209,50 @@ export const WritePostPage = memo(function WritePostPage() {
         </div>
 
         {/* 글 작성 폼 */}
-        <div className='bg-white bg-gray-800 rounded-lg border border-gray-200 border-gray-700 p-6 shadow-sm'>
+        <div className='bg-white rounded-lg border border-gray-200 p-6 shadow-sm'>
           {/* 프로젝트 선택 */}
           <div className='mb-4'>
-            <label className='block text-sm font-medium text-gray-700 text-gray-300 mb-2'>
+            <label className='block text-sm font-medium text-gray-700 mb-2'>
               프로젝트
             </label>
-            <select
+            <ProjectSelector
               value={category}
-              onChange={e => setCategory(e.target.value)}
-              className='w-full p-3 border border-gray-300 border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white bg-gray-700 text-gray-900 text-white'
-            >
-              <option value='' disabled>
-                프로젝트를 선택하세요
-              </option>
-              <option value='웹 개발'>웹 개발</option>
-              <option value='모바일 앱'>모바일 앱</option>
-              <option value='데이터 분석'>데이터 분석</option>
-              <option value='AI/ML'>AI/ML</option>
-              <option value='블록체인'>블록체인</option>
-              <option value='게임 개발'>게임 개발</option>
-              <option value='기타'>기타</option>
-            </select>
+              onChange={setCategory}
+              onAddNew={handleAddNewProject}
+            />
           </div>
 
           {/* 내용 입력 */}
           <div className='mb-4'>
             <label
-              htmlFor='content'
-              className='block text-sm font-medium text-gray-700 text-gray-300 mb-2'
+              className='block text-sm font-medium text-gray-700 mb-2'
             >
               내용
             </label>
-            <textarea
-              id='content'
-              value={content}
-              onChange={e => setContent(e.target.value)}
-              placeholder='무슨 일이 일어나고 있나요?'
-              className='w-full min-h-[300px] p-4 text-lg border border-gray-300 border-gray-600 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500 placeholder-gray-400 bg-white bg-gray-700 text-gray-900 text-white'
-              aria-describedby='content-help'
-            />
-            <p
-              id='content-help'
-              className='mt-1 text-sm text-gray-500 text-gray-400'
-            >
-              마크다운 문법을 사용할 수 있습니다.
-            </p>
+            <div className="quill-editor-container">
+              <ReactQuill
+                ref={quillRef}
+                value={content}
+                onChange={setContent}
+                modules={modules}
+                formats={formats}
+                placeholder="무슨 일이 일어나고 있나요?"
+                style={{ height: 'auto', minHeight: '500px' }}
+                theme="snow"
+              />
+            </div>
+            <div className='mt-1 flex justify-end'>
+              <span className='text-sm text-gray-500'>
+                {getTextLength(content) || 0}자
+              </span>
+            </div>
           </div>
 
           {/* 해시태그 */}
-          <div className='mb-4'>
+          <div className='mb-4 mt-2'>
             <label
               htmlFor='hashtags'
-              className='block text-sm font-medium text-gray-700 text-gray-300 mb-2'
+              className='block text-sm font-medium text-gray-700 mb-2'
             >
               해시태그
             </label>
@@ -240,12 +260,12 @@ export const WritePostPage = memo(function WritePostPage() {
               {hashtags.map((hashtag, index) => (
                 <span
                   key={index}
-                  className='inline-flex items-center gap-1 px-3 py-1 bg-blue-100 bg-blue-900 text-blue-800 text-blue-200 rounded-full text-sm'
+                  className='inline-flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-800 rounded-lg text-sm border border-gray-200'
                 >
                   #{hashtag}
                   <button
                     onClick={() => handleHashtagRemove(hashtag)}
-                    className='ml-1 hover:text-blue-600 hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded'
+                    className='ml-1 hover:text-gray-600 focus:outline-none rounded'
                     aria-label={`${hashtag} 해시태그 제거`}
                   >
                     ×
@@ -257,60 +277,16 @@ export const WritePostPage = memo(function WritePostPage() {
               id='hashtags'
               type='text'
               value={hashtagInput}
-              onChange={e => setHashtagInput(e.target.value)}
-              onKeyPress={handleHashtagAdd}
-              placeholder='해시태그를 ,로 구분하여 입력해주세요'
-              className='w-full p-3 border border-gray-300 border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white bg-gray-700 text-gray-900 text-white placeholder-gray-500 placeholder-gray-400'
+              onChange={handleHashtagInputChange}
+              onKeyDown={handleHashtagAdd}
+              placeholder='해시태그를 입력하고 쉼표(,) 또는 엔터를 눌러주세요'
+              className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none bg-white text-gray-900 placeholder-gray-500'
               maxLength={100}
-              aria-describedby='hashtags-help'
             />
-            <p
-              id='hashtags-help'
-              className='mt-1 text-sm text-gray-500 text-gray-400'
-            >
-              쉼표(,)를 입력하여 해시태그를 추가하세요.
-            </p>
           </div>
 
-          {/* 하단 액션 버튼들 */}
-          <div className='flex items-center justify-between pt-4 border-t border-gray-200 border-gray-700'>
-            <div className='flex items-center gap-4'>
-              <AccessibleButton
-                onClick={handleImageAttach}
-                variant='ghost'
-                size='sm'
-                className='p-2 text-gray-500 text-gray-400 hover:text-blue-500 hover:text-blue-400 hover:bg-blue-50 hover:bg-blue-900/20 rounded-lg transition-colors'
-                ariaLabel='이미지 첨부'
-              >
-                <svg
-                  className='w-5 h-5'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                  aria-hidden='true'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z'
-                  />
-                </svg>
-              </AccessibleButton>
-            </div>
-          </div>
-
-          {/* 숨겨진 파일 input */}
-          <input
-            ref={fileInputRef}
-            type='file'
-            className='hidden'
-            accept='image/*'
-            onChange={handleFileChange}
-          />
         </div>
-      </div>
-    </>
+    </div>
   );
 });
 

@@ -1,7 +1,6 @@
 /**
  * 알림 타입은 common.ts에서 import
  */
-// import type { NotificationType } from '@/types/common'; // TODO: 향후 사용 예정
 
 /**
  * 알림 타입 설정

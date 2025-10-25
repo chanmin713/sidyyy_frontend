@@ -32,12 +32,12 @@ export function Layout({ children }: LayoutProps) {
           isPostDetail ||
           isWritePage ||
           isProjectDetail
-            ? 'max-w-7xl mx-auto'
+            ? 'max-w-4xl mx-auto'
             : 'max-w-7xl mx-auto'
         }
       >
         <main
-          className={`${isHomePage || isMessagePage || isProfilePage || isPostDetail || isWritePage || isProjectDetail ? 'pt-[69px] px-2 md:px-4' : 'flex justify-center gap-x-4 md:px-5 pt-[69px]'}`}
+          className={`${isHomePage || isMessagePage || isProfilePage || isPostDetail || isWritePage || isProjectDetail ? 'pt-[69px] px-4' : 'flex justify-center gap-x-4 md:px-5 pt-[69px]'}`}
         >
           {/* 중앙 콘텐츠 */}
           <div
@@ -61,8 +61,8 @@ export function Layout({ children }: LayoutProps) {
       {/* 맨 위로 버튼 */}
       <ScrollToTopButton />
 
-      {/* 플로팅 로그 쓰기 버튼 (모바일만, 멤버 페이지 제외) */}
-      {!isMemberPage && <FloatingWriteButton />}
+      {/* 플로팅 로그 쓰기 버튼 (모바일만, 멤버 페이지와 글쓰기 페이지 제외) */}
+      {!isMemberPage && !isWritePage && <FloatingWriteButton />}
     </div>
   );
 }

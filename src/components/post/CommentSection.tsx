@@ -86,7 +86,7 @@ export const CommentSection = memo(function CommentSection({
               </div>
               <div className='flex-1'>
                 <div className='flex items-center gap-2 mb-1'>
-                  <span className='font-medium text-sm'>{comment.author}</span>
+                  <span className='font-medium text-sm'>{comment.author.name}</span>
                   <span className='text-xs text-gray-500'>
                     {comment.timestamp}
                   </span>
@@ -116,7 +116,7 @@ export const CommentSection = memo(function CommentSection({
                     <div className='flex-1'>
                       <div className='flex items-center gap-2 mb-1'>
                         <span className='font-medium text-sm text-gray-700'>
-                          {reply.author}
+                          {reply.author.name}
                         </span>
                         <span className='text-xs text-gray-500'>
                           {reply.timestamp}

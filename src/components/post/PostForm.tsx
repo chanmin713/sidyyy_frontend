@@ -1,6 +1,6 @@
 import { memo, useRef } from 'react';
 import { AccessibleButton } from '@/components/ui/forms/accessible-button';
-import { HashtagInput } from './HashtagInput';
+import { ProjectSelector } from '@/components/ui/forms/project-selector';
 
 interface PostFormProps {
   content: string;
@@ -30,6 +30,11 @@ export const PostForm = memo(function PostForm({
     onImageAttach();
   };
 
+  const handleAddNewProject = () => {
+    // TODO: 프로젝트 추가 모달 열기
+    alert('프로젝트 추가 기능은 추후 구현될 예정입니다.');
+  };
+
   return (
     <div className='bg-white bg-gray-800 rounded-lg border border-gray-200 border-gray-700 p-6 shadow-sm'>
       {/* 프로젝트 선택 */}
@@ -37,22 +42,11 @@ export const PostForm = memo(function PostForm({
         <label className='block text-sm font-medium text-gray-700 text-gray-300 mb-2'>
           프로젝트
         </label>
-        <select
+        <ProjectSelector
           value={category}
-          onChange={e => onCategoryChange(e.target.value)}
-          className='w-full p-3 border border-gray-300 border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white bg-gray-700 text-gray-900 text-white'
-        >
-          <option value='' disabled>
-            프로젝트를 선택하세요
-          </option>
-          <option value='웹 개발'>웹 개발</option>
-          <option value='모바일 앱'>모바일 앱</option>
-          <option value='데이터 분석'>데이터 분석</option>
-          <option value='AI/ML'>AI/ML</option>
-          <option value='블록체인'>블록체인</option>
-          <option value='게임 개발'>게임 개발</option>
-          <option value='기타'>기타</option>
-        </select>
+          onChange={onCategoryChange}
+          onAddNew={handleAddNewProject}
+        />
       </div>
 
       {/* 내용 입력 */}
@@ -80,7 +74,18 @@ export const PostForm = memo(function PostForm({
       </div>
 
       {/* 해시태그 */}
-      <HashtagInput hashtags={hashtags} onHashtagsChange={onHashtagsChange} />
+      <div className='mb-4'>
+        <label className='block text-sm font-medium text-gray-700 text-gray-300 mb-2'>
+          해시태그
+        </label>
+        <input
+          type='text'
+          value={hashtags.join(' ')}
+          onChange={e => onHashtagsChange(e.target.value.split(' ').filter(tag => tag.trim()))}
+          placeholder='해시태그를 입력하세요 (공백으로 구분)'
+          className='w-full p-3 border border-gray-300 border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white bg-gray-700 text-gray-900 text-white'
+        />
+      </div>
 
       {/* 하단 액션 버튼들 */}
       <div className='flex items-center justify-between pt-4 border-t border-gray-200 border-gray-700'>

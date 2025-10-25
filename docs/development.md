@@ -65,13 +65,10 @@ npm run test:ci          # CI용 테스트 실행
 2. **WritePostPage.tsx**: 318줄 → 48줄 (85% 감소)
 3. **useNormalizedStore.ts**: 340줄 → 89줄 (74% 감소)
 4. **normalizationUtils.ts**: 289줄 → 31줄 (89% 감소)
-5. **securityUtils.ts**: 313줄 → 38줄 (88% 감소)
 
 # 배포
 
 npm run deploy # GitHub Pages 배포
-npm run sitemap # 사이트맵 생성
-npm run seo:build # SEO 최적화 빌드
 
 # Git 훅
 
@@ -195,12 +192,12 @@ test('calls onClick when clicked', () => {
 ### 유틸리티 테스트
 
 ```tsx
-import { sanitizeInput } from '@/utils/security/securityUtils';
+import { truncateText } from '@/utils/ui/textUtils';
 
-test('sanitizes XSS attacks', () => {
-  const malicious = '<script>alert("xss")</script>';
-  const sanitized = sanitizeInput(malicious);
-  expect(sanitized).not.toContain('<script>');
+test('truncates long text', () => {
+  const longText = 'This is a very long text that should be truncated';
+  const truncated = truncateText(longText, 20);
+  expect(truncated).toHaveLength(20);
 });
 ```
 

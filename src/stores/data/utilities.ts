@@ -1,4 +1,3 @@
-// import type { BaseEntity } from './types';
 
 export function createUtilities() {
   return {

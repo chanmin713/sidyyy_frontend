@@ -41,8 +41,8 @@
 
 ### 5. 유틸리티 및 훅
 
-- ✅ **유틸리티**: `accessibilityUtils`, `securityUtils`, `text-utils`, `iconUtils`, `statusUtils`, `normalizationUtils`, `crud`, `queries`
-- ✅ **훅**: `useDropdown`, `useNavigation`, `useNotificationHandling`, `usePostWrite`
+- ✅ **유틸리티**: `accessibilityUtils`, `text-utils`, `iconUtils`, `statusUtils`, `normalizationUtils`, `crud`, `queries`
+- ✅ **훅**: `useDropdown`, `useNavigation`, `useNotificationHandling`
 
 ### 6. 개발 환경
 
@@ -55,10 +55,8 @@
 
 ### 7. 최근 완료된 기능들 (2024-12-19)
 
-- ✅ **포스트 작성 시스템** - `PostForm`, `HashtagInput` 컴포넌트 구현
+- ✅ **포스트 작성 시스템** - `PostForm` 컴포넌트 구현
 - ✅ **정규화된 데이터 관리** - `useNormalizedStore`, CRUD 유틸리티 구현
-- ✅ **보안 유틸리티** - 입력 검증, 파일 검증, 비밀번호 검증 시스템
-- ✅ **포스트 작성 훅** - `usePostWrite` 훅으로 포스트 작성 로직 관리
 - ✅ **UI 개선** - 모든 버튼과 입력 요소에서 focus outline 제거
 - ✅ **헤더 로고 스타일링** - "Sidyyy" 로고를 더 두껍게 표시
 
@@ -66,10 +64,9 @@
 
 - ✅ **SidebarToggle.tsx 제거** - 불필요한 컴포넌트 제거
 - ✅ **SidebarContent.tsx 리팩토링** - 221줄 → 41줄로 81% 감소, `SidebarItem` 컴포넌트 분리
-- ✅ **WritePostPage.tsx 리팩토링** - 318줄 → 48줄로 85% 감소, `PostHeader`, `PostForm` 컴포넌트 분리
+- ✅ **WritePostPage.tsx 리팩토링** - 318줄 → 48줄로 85% 감소, `PostForm` 컴포넌트 분리
 - ✅ **useNormalizedStore.ts 리팩토링** - 340줄 → 89줄로 74% 감소, 액션/셀렉터/유틸리티 분리
 - ✅ **normalizationUtils.ts 리팩토링** - 289줄 → 31줄로 89% 감소, CRUD/쿼리 유틸리티 분리
-- ✅ **securityUtils.ts 리팩토링** - 313줄 → 38줄로 88% 감소, 5개 모듈로 분리
 - ✅ **코드 가독성 대폭 향상** - 긴 파일들을 작은 모듈로 분리하여 유지보수성 향상
 
 ---
@@ -131,7 +128,6 @@
 
 ### 1. 성능 최적화
 
-- [ ] **PWA 기능** 추가 - 오프라인 지원, 설치 가능한 웹앱
 - [ ] **서비스 워커** 구현 - 캐싱, 백그라운드 동기화
 - [ ] **번들 최적화** - 더 나은 코드 스플리팅, 트리 셰이킹
 - [ ] **이미지 최적화** - WebP 변환, 반응형 이미지
@@ -148,11 +144,6 @@
 - [ ] **접근성 테스트** 자동화 - axe-core 통합
 - [ ] **보안 스캔** - 의존성 취약점 검사
 
-### 4. SEO 및 검색 최적화
-
-- [ ] **구조화된 데이터** 확장 - 더 많은 스키마 타입
-- [ ] **검색 콘솔** 연동 - Google Search Console
-- [ ] **성능 모니터링** - Core Web Vitals 추적
 
 ---
 

@@ -89,7 +89,7 @@ export const PostDetailPage = memo(function PostDetailPage() {
 
   if (!post) {
     return (
-      <div className={LAYOUT.PAGE_CONTAINER}>
+      <div className='py-6'>
         <div className='text-center'>
           <h1 className='text-2xl font-bold text-gray-900 mb-4'>
             포스트를 찾을 수 없습니다
@@ -106,7 +106,7 @@ export const PostDetailPage = memo(function PostDetailPage() {
   }
 
   return (
-    <div className={LAYOUT.PAGE_CONTAINER}>
+    <div className='py-6'>
       {/* 뒤로가기 버튼 */}
       <button
         onClick={handleBack}
