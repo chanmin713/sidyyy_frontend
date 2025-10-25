@@ -3,15 +3,10 @@
  */
 
 import {
-  GlobeIcon,
-  MobileIcon,
-  DesktopIcon,
-  PlayIcon,
-  BarChartIcon,
-  GearIcon,
-  ReaderIcon,
-  FileTextIcon,
-  RocketIcon,
+  GitHubLogoIcon,
+  VercelLogoIcon,
+  NotionLogoIcon,
+  FigmaLogoIcon,
 } from '@radix-ui/react-icons';
 
 /**
@@ -21,18 +16,14 @@ import {
  */
 export const getProjectLogo = (category: string) => {
   const logoMap: Record<string, React.ComponentType<{ className?: string }>> = {
-    '웹 개발': GlobeIcon,
-    '모바일 앱': MobileIcon,
-    'AI & ML': DesktopIcon,
-    게임: PlayIcon,
-    '데이터 분석': BarChartIcon,
-    '개발 도구': GearIcon,
-    교육: ReaderIcon,
-    블로그: FileTextIcon,
-    기타: RocketIcon,
+    // 실제 사용되는 카테고리들만 - 실제 서비스 로고 사용
+    Sidyyy: VercelLogoIcon, // Vercel 로고 (메인 플랫폼)
+    DevTools: GitHubLogoIcon, // GitHub 로고 (개발 도구)
+    CodeShare: FigmaLogoIcon, // Figma 로고 (코드 공유)
+    TechBlog: NotionLogoIcon, // Notion 로고 (기술 블로그)
   };
 
-  const IconComponent = logoMap[category] || RocketIcon;
+  const IconComponent = logoMap[category] || GitHubLogoIcon;
   return IconComponent;
 };
 
