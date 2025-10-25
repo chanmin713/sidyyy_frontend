@@ -22,7 +22,7 @@ export function SidebarActionButton() {
           onClick={handleProjectCreateClick}
           variant='primary'
           fullWidth
-          className='bg-orange-500/20 backdrop-blur-md border border-orange-500/30 hover:bg-orange-500/30 text-orange-700 font-medium py-2.5 px-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:shadow-md text-sm'
+          className='bg-orange-50 border border-orange-200 hover:bg-orange-100 text-orange-700 font-medium py-2.5 px-3 rounded-lg transition-colors duration-150 flex items-center justify-center gap-2 text-sm'
           ariaLabel='새 프로젝트 생성'
         >
           <StarFilledIcon className='w-4 h-4' />
@@ -42,7 +42,7 @@ export function SidebarActionButton() {
         onClick={handleWriteClick}
         variant='primary'
         fullWidth
-        className='bg-blue-500/20 backdrop-blur-md border border-blue-500/30 hover:bg-blue-500/30 text-blue-700 font-medium py-2.5 px-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:shadow-md text-sm'
+        className='bg-blue-50 border border-blue-200 hover:bg-blue-100 text-blue-700 font-medium py-2.5 px-3 rounded-lg transition-colors duration-150 flex items-center justify-center gap-2 text-sm'
         ariaLabel='새 로그 작성'
       >
         <Pencil1Icon className='w-4 h-4' />
