@@ -24,7 +24,7 @@ export interface Post extends BaseEntity {
 // PostCard 관련 타입
 export interface PostCardProps {
   id: string;
-  title?: string; // 기존 호환성을 위해 선택적으로 변경
+  title?: string; // 프로젝트명과 로그번호가 실제 제목 역할
   author: string;
   authorRole?: UserRole;
   timestamp: string;

@@ -74,20 +74,24 @@ export const PostCard = memo(function PostCard({
     >
       <div className='rounded-lg flex flex-col'>
         {/* 프로젝트 제목과 시간 */}
-        <div className='flex items-center justify-between mb-3'>
-          {category && (
-            <AccessibleButton
-              onClick={handleProjectClick}
-              variant='ghost'
-              className='text-left hover:underline group'
-              ariaLabel={`${category} 프로젝트 로그 ${projectLogNumber}번 보기`}
-            >
-              <h2 className='text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors flex items-center gap-2'>
-                <ProjectLogoComponent className='w-5 h-5' />
-                {category} #{projectLogNumber}
-              </h2>
-            </AccessibleButton>
-          )}
+        <div className='flex items-center justify-between mb-2 pr-4'>
+          <div className='flex items-center gap-3 flex-1 min-w-0'>
+            {category && (
+              <AccessibleButton
+                onClick={handleProjectClick}
+                variant='ghost'
+                className='text-left hover:underline group'
+                ariaLabel={`${category} 프로젝트 로그 ${projectLogNumber}번 보기`}
+              >
+                <h2 className='text-2xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors flex items-center gap-2'>
+                  <ProjectLogoComponent className='w-5 h-5' />
+                  {category} #{projectLogNumber}
+                </h2>
+              </AccessibleButton>
+            )}
+            <span className='text-gray-400 text-lg'>by</span>
+            <ProfileSection author={author} authorRole={authorRole} size='sm' />
+          </div>
           <time
             className='text-sm text-gray-500 flex-shrink-0'
             dateTime={timestamp}
@@ -97,13 +101,11 @@ export const PostCard = memo(function PostCard({
           </time>
         </div>
 
-        {/* 작성자 정보 */}
-        <div className='mb-2'>
-          <ProfileSection author={author} authorRole={authorRole} size='sm' />
-        </div>
+        {/* 구분선 */}
+        <div className='border-b border-gray-100 mb-2'></div>
 
         <div
-          className='cursor-pointer py-1 px-4 mt-2'
+          className='cursor-pointer py-1 px-4 mt-1'
           onClick={handlePostClick}
           role='button'
           tabIndex={0}
@@ -131,7 +133,7 @@ export const PostCard = memo(function PostCard({
               )}
             </div>
             {textInfo.shouldTruncate && (
-              <div className='mt-2 text-right'>
+              <div className='mt-2 text-right pr-0'>
                 <AccessibleButton
                   variant='ghost'
                   size='sm'
