@@ -74,7 +74,7 @@ export const PostCard = memo(function PostCard({
     >
       <div className='rounded-lg flex flex-col'>
         {/* 프로젝트 제목과 시간 */}
-        <div className='flex items-center justify-between mb-2 pr-4'>
+        <div className='flex items-center justify-between mb-2 pr-0'>
           <div className='flex items-center gap-3 flex-1 min-w-0'>
             {category && (
               <AccessibleButton
@@ -154,11 +154,11 @@ export const PostCard = memo(function PostCard({
         {/* 해시태그 */}
         {hashtags && hashtags.length > 0 && (
           <div className='px-4 py-2'>
-            <div className='flex flex-wrap gap-1'>
+            <div className='flex flex-wrap gap-2'>
               {hashtags.map((hashtag, index) => (
                 <span
                   key={index}
-                  className='text-xs text-blue-600 hover:text-blue-800 cursor-pointer'
+                  className='inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium text-gray-600 bg-gray-100/60 backdrop-blur-sm border border-gray-200/20 hover:bg-gray-200/80 hover:text-gray-700 hover:border-gray-300/30 cursor-pointer transition-colors duration-150 shadow-sm hover:shadow-sm'
                 >
                   #{hashtag}
                 </span>

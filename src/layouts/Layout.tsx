@@ -4,7 +4,6 @@ import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { RightSidebar } from '../components/layout/RightSidebar';
 import { ScrollToTopButton } from '../components/shared/ScrollToTopButton';
-import { FloatingWriteButton } from '../components/shared/FloatingWriteButton';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -15,7 +14,6 @@ export function Layout({ children }: LayoutProps) {
   const isHomePage = location.pathname === '/';
   const isMessagePage = location.pathname === '/message';
   const isProfilePage = location.pathname === '/profile';
-  const isMemberPage = location.pathname === '/member';
   const isPostDetail = location.pathname.startsWith('/post/');
   const isWritePage = location.pathname.startsWith('/write');
   const isProjectDetail = location.pathname.startsWith('/project/');
@@ -60,9 +58,6 @@ export function Layout({ children }: LayoutProps) {
 
       {/* 맨 위로 버튼 */}
       <ScrollToTopButton />
-
-      {/* 플로팅 로그 쓰기 버튼 (모바일만, 멤버 페이지와 글쓰기 페이지 제외) */}
-      {!isMemberPage && !isWritePage && <FloatingWriteButton />}
     </div>
   );
 }
