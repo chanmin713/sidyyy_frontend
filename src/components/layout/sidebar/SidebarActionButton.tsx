@@ -30,7 +30,7 @@ export function SidebarActionButton() {
           onClick={handleProjectCreateClick}
           variant='primary'
           fullWidth
-          className='bg-orange-500 hover:bg-orange-600 text-white font-medium py-2.5 px-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md text-sm'
+          className='bg-orange-500/20 backdrop-blur-md border border-orange-500/30 hover:bg-orange-500/30 text-orange-700 font-medium py-2.5 px-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:shadow-md text-sm'
           ariaLabel='새 프로젝트 생성'
         >
           <StarFilledIcon className='w-4 h-4' />
@@ -45,7 +45,7 @@ export function SidebarActionButton() {
           onClick={handleRecruitCreateClick}
           variant='primary'
           fullWidth
-          className='bg-green-500 hover:bg-green-600 text-white font-medium py-2.5 px-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md text-sm'
+          className='bg-green-500/20 backdrop-blur-md border border-green-500/30 hover:bg-green-500/30 text-green-700 font-medium py-2.5 px-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:shadow-md text-sm'
           ariaLabel='새 모집 작성'
         >
           <CalendarIcon className='w-4 h-4' />
@@ -65,7 +65,7 @@ export function SidebarActionButton() {
         onClick={handleWriteClick}
         variant='primary'
         fullWidth
-        className='bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 px-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md text-sm'
+        className='bg-blue-500/20 backdrop-blur-md border border-blue-500/30 hover:bg-blue-500/30 text-blue-700 font-medium py-2.5 px-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:shadow-md text-sm'
         ariaLabel='새 로그 작성'
       >
         <Pencil1Icon className='w-4 h-4' />

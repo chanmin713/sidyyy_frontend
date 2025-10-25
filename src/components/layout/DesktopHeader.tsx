@@ -64,13 +64,17 @@ export function DesktopHeader() {
               {/* 움직이는 흰색 배경 */}
               {(hoveredTab || activeTab) && (
                 <div
-                  className={`absolute top-1 bottom-1 bg-white rounded-md shadow-sm transition-all duration-500 ease-out ${
-                    hoveredTab
-                      ? `left-[calc(${NAVIGATION_TABS.findIndex(t => t.id === hoveredTab) * 25}%+0.25rem)] w-[calc(25%-0.25rem)]`
-                      : activeTab
-                        ? `left-[calc(${NAVIGATION_TABS.findIndex(t => t.id === activeTab) * 25}%+0.25rem)] w-[calc(25%-0.25rem)]`
-                        : 'hidden'
-                  }`}
+                  className={`absolute top-1 bottom-1 bg-white rounded-md shadow-sm transition-all duration-500 ease-out ${(() => {
+                    const targetTab = hoveredTab || activeTab;
+                    const index = NAVIGATION_TABS.findIndex(
+                      t => t.id === targetTab
+                    );
+                    if (index === 0) return 'left-0.5 w-[calc(25%-0.25rem)]';
+                    if (index === 1) return 'left-[25%] w-[calc(25%-0.25rem)]';
+                    if (index === 2) return 'left-[50%] w-[calc(25%-0.25rem)]';
+                    if (index === 3) return 'left-[75%] w-[calc(25%-0.25rem)]';
+                    return 'hidden';
+                  })()}`}
                 />
               )}
 

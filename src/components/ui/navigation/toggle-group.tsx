@@ -13,7 +13,7 @@ export function ToggleGroup<T = string>({
 }: ToggleGroupProps<T>) {
   return (
     <div
-      className={`flex bg-gray-50 rounded-lg p-1 shadow-sm relative ${className}`}
+      className={`flex bg-white/20 backdrop-blur-md border border-gray-200 rounded-xl p-1 shadow-sm relative ${className}`}
     >
       {children}
     </div>
@@ -61,8 +61,8 @@ export function ToggleButton<T = string>({
       onClick={() => onValueChange(value)}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className={`flex-1 py-1.5 px-4 text-sm font-medium flex items-center justify-center transition-all duration-500 relative z-10 ${
-        isActive ? 'text-white' : 'text-gray-500 hover:text-gray-900'
+      className={`flex-1 py-1.5 px-4 text-sm font-medium flex items-center justify-center transition-all duration-300 relative z-10 ${
+        isActive ? 'text-blue-700' : 'text-gray-600 hover:text-gray-900'
       } ${className}`}
     >
       {children}
@@ -106,7 +106,7 @@ export function ToggleBackground<T = string>({
 
   return (
     <div
-      className={`absolute top-0.5 bottom-0.5 bg-blue-500 rounded-md shadow-sm transition-all duration-500 ease-out ${getPosition()} ${className}`}
+      className={`absolute top-0.5 bottom-0.5 bg-blue-500/30 backdrop-blur-sm rounded-lg shadow-sm transition-all duration-300 ease-out ${getPosition()} ${className}`}
     />
   );
 }

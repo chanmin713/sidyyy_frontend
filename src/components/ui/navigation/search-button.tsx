@@ -49,7 +49,7 @@ export function SearchButton({
           value={query}
           onChange={e => setQuery(e.target.value)}
           onKeyPress={handleKeyPress}
-          className='w-full py-2.5 px-3 pr-10 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 shadow-lg transition-all duration-500 placeholder:text-gray-600'
+          className='w-full py-2.5 px-3 pr-10 bg-white/20 backdrop-blur-md border border-gray-200 rounded-xl focus:outline-none shadow-sm transition-all duration-500 placeholder:text-gray-600'
           autoFocus
         />
         <button
