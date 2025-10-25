@@ -35,7 +35,9 @@ export function createDataActions<T extends BaseEntity>() {
       const state = get();
       set({
         data: removeItem(state.data, id),
-        selectedIds: state.selectedIds.filter(selectedId => selectedId !== id),
+        selectedIds: state.selectedIds.filter(
+          (selectedId: string) => selectedId !== id
+        ),
       });
     },
 
@@ -44,7 +46,7 @@ export function createDataActions<T extends BaseEntity>() {
       set({
         data: removeItems(state.data, ids),
         selectedIds: state.selectedIds.filter(
-          selectedId => !ids.includes(selectedId)
+          (selectedId: string) => !ids.includes(selectedId)
         ),
       });
     },
