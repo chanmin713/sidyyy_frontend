@@ -76,14 +76,14 @@ export function LogPage() {
   );
 
   const handleFilterChange = useCallback(
-    (value: FilterOption) => {
+    (value: 'all' | 'following' | 'my' | 'liked') => {
       setFilters({ filterBy: value });
     },
     [setFilters]
   );
 
   const handleSortChange = useCallback(
-    (value: SortOption) => {
+    (value: 'popular' | 'latest' | 'trending') => {
       setFilters({ sortBy: value });
     },
     [setFilters]
@@ -146,7 +146,10 @@ export function LogPage() {
 
             {/* 검색 버튼과 필터 아이콘 */}
             <div className='flex items-center gap-1 ml-auto'>
-              <SearchButton onSearch={handleSearch} className='min-w-96' />
+              <SearchButton
+                onSearch={handleSearch}
+                className='min-w-48 md:min-w-96'
+              />
               <Dropdown
                 trigger={
                   <IconButton onClick={() => {}} isActive={isFilterOpen}>

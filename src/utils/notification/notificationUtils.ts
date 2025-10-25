@@ -2,21 +2,32 @@
  * 알림 관련 유틸리티 함수들
  */
 
+import React from 'react';
+import {
+  HeartIcon,
+  ChatBubbleIcon,
+  PersonIcon,
+  SpeakerLoudIcon,
+  BellIcon,
+} from '@radix-ui/react-icons';
+
 /**
- * 알림 타입에 따른 아이콘 반환
+ * 알림 타입에 따른 아이콘 컴포넌트 반환
  * @param type - 알림 타입
- * @returns 아이콘 텍스트
+ * @returns 아이콘 컴포넌트
  */
-export const getNotificationIcon = (type: string): string => {
-  const iconMap: Record<string, string> = {
-    like: '❤️',
-    comment: '💬',
-    follow: '👤',
-    mention: '📢',
-    system: '🔔',
+export const getNotificationIcon = (
+  type: string
+): React.ComponentType<{ className?: string }> => {
+  const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+    like: HeartIcon,
+    comment: ChatBubbleIcon,
+    follow: PersonIcon,
+    mention: SpeakerLoudIcon,
+    system: BellIcon,
   };
 
-  return iconMap[type] || '🔔';
+  return iconMap[type] || BellIcon;
 };
 
 /**

@@ -44,15 +44,16 @@ export const LAYOUT = {
   DIVIDER_MARGIN: 'mt-6',
 
   // 페이지별 컨테이너 클래스
-  PAGE_CONTAINER: 'w-full px-4 py-6',
-  PAGE_CONTAINER_CENTERED: 'w-full max-w-4xl mx-auto px-4 py-20',
+  PAGE_CONTAINER: 'w-full px-2 md:px-4 py-6',
+  PAGE_CONTAINER_CENTERED: 'w-full max-w-4xl mx-auto px-2 md:px-4 py-20',
 
   // 로그 페이지 전용
-  LOG_PAGE_CONTAINER: 'w-full max-w-4xl mx-auto',
-  LOG_PAGE_CONTENT: 'px-container-padding',
+  LOG_PAGE_CONTAINER: 'w-full max-w-4xl mx-auto px-2 md:px-4',
+  LOG_PAGE_CONTENT: 'px-2 md:px-container-padding',
 } as const;
 
 // 새로운 상수들
 export * from './icons';
 export * from './notification';
 export * from './ui';
+export * from './navigation';

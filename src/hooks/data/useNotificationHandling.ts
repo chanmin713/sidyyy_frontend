@@ -1,6 +1,4 @@
 import { useMemo } from 'react';
-import { getNotificationTitle } from '@/utils';
-import { formatTimestamp } from '@/utils';
 import type { NotificationState } from '@/stores/types';
 
 /**
@@ -14,9 +12,9 @@ export const useNotificationHandling = (
   const displayNotifications = useMemo(() => {
     return notifications.map(notification => ({
       id: notification.id,
-      title: getNotificationTitle(notification.type),
+      title: notification.title, // 이미 포맷된 제목을 그대로 사용
       content: notification.content,
-      time: formatTimestamp(notification.time),
+      time: notification.time, // 이미 포맷된 시간을 그대로 사용
       isRead: notification.isRead,
       type: notification.type,
     }));

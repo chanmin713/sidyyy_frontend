@@ -16,8 +16,8 @@ export interface SearchState {
   query: string;
   filters: {
     category: string[];
-    sortBy: 'latest' | 'popular';
-    filterBy: 'all' | 'following';
+    sortBy: 'latest' | 'popular' | 'trending';
+    filterBy: 'all' | 'following' | 'my' | 'liked';
   };
   setQuery: (query: string) => void;
   setFilters: (filters: Partial<SearchState['filters']>) => void;

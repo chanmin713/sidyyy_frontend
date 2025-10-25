@@ -1,4 +1,4 @@
-import { forwardRef, useCallback } from 'react';
+import { forwardRef, useCallback, ReactNode } from 'react';
 import { cn } from '@/utils';
 import {
   isActionKey,
@@ -11,7 +11,7 @@ interface AccessibleButtonProps
   /**
    * 버튼의 시각적 스타일 변형
    */
-  variant?: 'primary' | 'secondary' | 'ghost' | 'danger' | 'link';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'danger' | 'link' | 'success';
   /**
    * 버튼 크기
    */
@@ -24,6 +24,10 @@ interface AccessibleButtonProps
    * 로딩 상태
    */
   loading?: boolean;
+  /**
+   * 아이콘 (ActionButton 호환성)
+   */
+  icon?: ReactNode;
   /**
    * ARIA 상태
    */
@@ -44,16 +48,17 @@ interface AccessibleButtonProps
 
 const variantClasses = {
   primary: 'bg-blue-500 hover:bg-blue-600 text-white focus:ring-blue-500',
-  secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-900 focus:ring-gray-500',
+  secondary: 'bg-gray-500 hover:bg-gray-600 text-white focus:ring-gray-500',
   ghost: 'bg-transparent hover:bg-gray-100 text-gray-700 focus:ring-gray-500',
   danger: 'bg-red-500 hover:bg-red-600 text-white focus:ring-red-500',
+  success: 'bg-green-500 hover:bg-green-600 text-white focus:ring-green-500',
   link: 'bg-transparent hover:bg-transparent text-blue-600 hover:text-blue-800 underline focus:ring-blue-500',
 };
 
 const sizeClasses = {
   sm: 'px-3 py-1.5 text-sm',
-  md: 'px-4 py-2 text-base',
-  lg: 'px-6 py-3 text-lg',
+  md: 'px-4 py-2 text-sm',
+  lg: 'px-6 py-3 text-base',
 };
 
 export const AccessibleButton = forwardRef<
@@ -69,6 +74,7 @@ export const AccessibleButton = forwardRef<
       fullWidth = false,
       loading = false,
       disabled = false,
+      icon,
       ariaState = {},
       ariaLabel,
       ariaDescription,
@@ -147,6 +153,7 @@ export const AccessibleButton = forwardRef<
             />
           </svg>
         )}
+        {icon && !loading && icon}
         {children}
         {ariaDescription && (
           <span className='sr-only' aria-live='polite'>
@@ -159,3 +166,10 @@ export const AccessibleButton = forwardRef<
 );
 
 AccessibleButton.displayName = 'AccessibleButton';
+
+// 타입 export
+export type { AccessibleButtonProps };
+
+// 간단한 별칭 제공
+export const Button = AccessibleButton;
+export type ButtonProps = AccessibleButtonProps;

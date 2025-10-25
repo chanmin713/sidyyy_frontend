@@ -37,11 +37,11 @@ export function Layout({ children }: LayoutProps) {
         }
       >
         <main
-          className={`${isHomePage || isMessagePage || isProfilePage || isPostDetail || isWritePage || isProjectDetail ? 'pt-[69px] px-4' : 'flex justify-center gap-x-4 md:px-5 pt-[69px]'}`}
+          className={`${isHomePage || isMessagePage || isProfilePage || isPostDetail || isWritePage || isProjectDetail ? 'pt-[69px] px-2 md:px-4' : 'flex justify-center gap-x-4 md:px-5 pt-[69px]'}`}
         >
           {/* 중앙 콘텐츠 */}
           <div
-            className={`w-full bg-white ${isHomePage || isMessagePage || isProfilePage || isPostDetail || isWritePage || isProjectDetail ? 'px-0' : 'lg:w-3/4 px-6 md:px-8'}`}
+            className={`w-full bg-white ${isHomePage || isMessagePage || isProfilePage || isPostDetail || isWritePage || isProjectDetail ? 'px-0' : 'lg:w-3/4 px-2 md:px-6 lg:px-8'}`}
           >
             {children}
           </div>

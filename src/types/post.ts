@@ -1,35 +1,41 @@
+import type { BaseEntity, Category, UserRole } from './common';
+
 // 포스트 관련 타입
-export interface Post {
-  id: string;
-  author: string;
-  authorRole?: string;
-  timestamp: string;
+export interface Post extends BaseEntity {
+  title: string;
   content: string;
+  author: string;
+  authorRole?: UserRole;
+  category?: Category;
   hashtags?: string[];
+  tags?: string[];
   likes: number;
   comments: number;
+  views?: number; // 기존 호환성을 위해 선택적으로 변경
   hasImage?: boolean;
-  category?: string;
+  imageUrls?: string[];
   projectLikes?: number;
   projectLogo?: string;
-  title: string;
-  createdAt: string;
-  updatedAt: string;
-  tags?: string[];
+  isPublished?: boolean; // 기존 호환성을 위해 선택적으로 변경
+  publishedAt?: string;
+  timestamp: string; // 기존 호환성을 위해 유지
 }
 
 // PostCard 관련 타입
 export interface PostCardProps {
   id: string;
+  title?: string; // 기존 호환성을 위해 선택적으로 변경
   author: string;
-  authorRole?: string;
+  authorRole?: UserRole;
   timestamp: string;
   content: string;
   hashtags?: string[];
   likes: number;
   comments: number;
+  views?: number; // 기존 호환성을 위해 선택적으로 변경
   hasImage?: boolean;
-  category?: string;
+  imageUrls?: string[];
+  category?: Category;
   projectLikes?: number;
   projectLogo?: string;
   isFirst?: boolean;

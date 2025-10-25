@@ -97,12 +97,14 @@ export const WritePostPage = memo(function WritePostPage() {
         hashtags: hashtags.length > 0 ? hashtags : undefined,
         likes: 0,
         comments: 0,
+        views: 0,
         hasImage: images.length > 0,
-        category: category || undefined,
+        category: (category as any) || undefined,
         title: content.split('\n')[0] || '새로운 포스트',
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
         tags: hashtags.length > 0 ? hashtags : [],
+        isPublished: true,
       };
 
       // 임시로 샘플 데이터에 추가 (실제로는 서버에 저장)
