@@ -40,61 +40,66 @@ export const PostContent = memo(function PostContent({
   const contentWithImages = renderContentWithImages(post.content);
   return (
     <article className='bg-white rounded-lg border border-gray-200 p-6'>
-      {/* 프로젝트 제목과 날짜 */}
+      {/* 프로젝트 제목과 작성자 정보 */}
       {post.category && (
-        <div className='mb-4 flex items-center justify-between'>
-          <button
-            onClick={onProjectClick}
-            className='text-left hover:underline'
-          >
-            <h1 className='text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-3'>
-              <ProjectLogoComponent className='w-6 h-6' />
-              {post.category} #{projectLogNumber}
-            </h1>
-          </button>
-          <span className='text-sm text-gray-500'>{post.timestamp}</span>
+        <div className='mb-4'>
+          <div className='flex items-center justify-between mb-2'>
+            <div className='flex items-center gap-3 flex-1 min-w-0'>
+              <button
+                onClick={onProjectClick}
+                className='text-left hover:underline group'
+              >
+                <h1 className='text-3xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors flex items-center gap-3'>
+                  <ProjectLogoComponent className='w-6 h-6' />
+                  {post.category} #{projectLogNumber}
+                </h1>
+              </button>
+              <span className='text-gray-400 text-lg'>by</span>
+              <ProfileSection
+                author={post.author}
+                authorRole={post.authorRole}
+                size='md'
+              />
+            </div>
+            <div className='flex items-center gap-3 flex-shrink-0'>
+              <span className='text-sm text-gray-500'>{post.timestamp}</span>
+              {/* 더보기 메뉴 */}
+              <Dropdown
+                trigger={
+                  <button
+                    className='p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-colors'
+                    title='더보기'
+                  >
+                    <DotsHorizontalIcon className='w-5 h-5' />
+                  </button>
+                }
+                align='right'
+                className='w-36'
+              >
+                <div className='py-1'>
+                  <button
+                    onClick={onEdit}
+                    className='w-full px-3 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2'
+                  >
+                    <Pencil1Icon className='w-4 h-4' />
+                    수정
+                  </button>
+                  <button
+                    onClick={onDelete}
+                    className='w-full px-3 py-2 text-left text-sm text-red-600 hover:bg-red-50 flex items-center gap-2'
+                  >
+                    <TrashIcon className='w-4 h-4' />
+                    삭제
+                  </button>
+                </div>
+              </Dropdown>
+            </div>
+          </div>
+
+          {/* 구분선 */}
+          <div className='border-b border-gray-100 mb-4'></div>
         </div>
       )}
-
-      {/* 작성자 정보와 더보기 메뉴 */}
-      <div className='flex items-start justify-between mb-4'>
-        <ProfileSection
-          author={post.author}
-          authorRole={post.authorRole}
-          size='md'
-        />
-
-        {/* 더보기 메뉴 */}
-        <Dropdown
-          trigger={
-            <button
-              className='p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-colors'
-              title='더보기'
-            >
-              <DotsHorizontalIcon className='w-5 h-5' />
-            </button>
-          }
-          align='right'
-          className='w-36'
-        >
-          <div className='py-1'>
-            <button
-              onClick={onEdit}
-              className='w-full px-3 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2'
-            >
-              <Pencil1Icon className='w-4 h-4' />
-              수정
-            </button>
-            <button
-              onClick={onDelete}
-              className='w-full px-3 py-2 text-left text-sm text-red-600 hover:bg-red-50 flex items-center gap-2'
-            >
-              <TrashIcon className='w-4 h-4' />
-              삭제
-            </button>
-          </div>
-        </Dropdown>
-      </div>
 
       {/* 글 본문 */}
       <div className='mb-6'>

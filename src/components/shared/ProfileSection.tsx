@@ -58,22 +58,24 @@ export const ProfileSection = memo(function ProfileSection({
   return (
     <div
       onClick={handleProfileClick}
-      className={`inline-flex items-center gap-3 group hover:bg-gray-50 rounded-lg px-2 py-1 transition-colors cursor-pointer ${className}`}
+      className={`inline-flex items-center gap-3 group hover:bg-gray-50/80 hover:scale-[1.02] rounded-lg px-3 py-2 transition-all duration-200 cursor-pointer ${className}`}
     >
       <div
-        className={`${styles.container} rounded-full flex items-center justify-center border-2 border-gray-300 flex-shrink-0`}
+        className={`${styles.container} rounded-full flex items-center justify-center border-2 border-gray-300 group-hover:border-gray-400 flex-shrink-0 transition-all duration-200`}
       >
         <PersonIcon
-          className={`${styles.icon} text-gray-500 group-hover:text-gray-700 transition-colors`}
+          className={`${styles.icon} text-gray-500 group-hover:text-gray-700 transition-colors duration-200`}
         />
       </div>
       <div className='flex flex-col flex-shrink-0'>
-        <p className={`font-semibold whitespace-nowrap ${styles.name}`}>
+        <p
+          className={`font-semibold whitespace-nowrap ${styles.name} group-hover:text-gray-800 transition-colors duration-200`}
+        >
           {author}
         </p>
         {authorRole && (
           <p
-            className={`text-gray-500 group-hover:text-gray-700 transition-colors whitespace-nowrap ${styles.role}`}
+            className={`text-gray-500 group-hover:text-gray-600 transition-colors duration-200 whitespace-nowrap ${styles.role}`}
           >
             {authorRole}
           </p>

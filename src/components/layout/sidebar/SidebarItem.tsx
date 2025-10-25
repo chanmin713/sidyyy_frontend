@@ -20,10 +20,10 @@ interface SidebarItemProps {
 export function SidebarItem({ type, data, onClick }: SidebarItemProps) {
   const renderProjectItem = () => (
     <>
-      <div className='w-7 h-7 flex items-center justify-center group-hover:scale-110 transition-transform duration-200'>
+      <div className='w-7 h-7 flex items-center justify-center group-hover:scale-105 transition-transform duration-200'>
         {React.createElement(getIcon(data.icon as string), {
           className:
-            'w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors duration-200',
+            'w-5 h-5 text-gray-600 group-hover:text-gray-800 transition-colors duration-200',
         })}
       </div>
       <div className='flex-1 min-w-0'>
@@ -59,8 +59,8 @@ export function SidebarItem({ type, data, onClick }: SidebarItemProps) {
 
   const renderMemberItem = () => (
     <>
-      <div className='w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200'>
-        <span className='text-sm font-medium text-blue-600'>
+      <div className='w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-200'>
+        <span className='text-sm font-medium text-blue-600 group-hover:text-blue-700 transition-colors duration-200'>
           {data.initial as string}
         </span>
       </div>
@@ -89,8 +89,8 @@ export function SidebarItem({ type, data, onClick }: SidebarItemProps) {
 
   const renderLogItem = () => (
     <>
-      <div className='w-7 h-7 bg-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200'>
-        <FileTextIcon className='w-4 h-4 text-purple-600' />
+      <div className='w-7 h-7 bg-purple-100 rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-200'>
+        <FileTextIcon className='w-4 h-4 text-purple-600 group-hover:text-purple-700 transition-colors duration-200' />
       </div>
       <div className='flex-1 min-w-0'>
         <div className='flex items-center justify-between'>
@@ -131,7 +131,7 @@ export function SidebarItem({ type, data, onClick }: SidebarItemProps) {
 
   return (
     <div
-      className='flex items-center space-x-2 px-1 py-1.5 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group shadow-sm hover:shadow-md'
+      className='flex items-center space-x-2 px-3 py-2.5 rounded-lg hover:bg-gray-50/80 hover:scale-[1.02] transition-all duration-200 cursor-pointer group'
       onClick={onClick}
     >
       {renderContent()}
