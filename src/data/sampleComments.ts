@@ -11,7 +11,6 @@ export const sampleComments: Comment[] = [
       avatar: '/avatars/kim-dev.jpg',
       role: 'developer',
     },
-    content: '정말 멋진 프로젝트네요! 어떤 기술 스택을 사용하셨나요?',
     timestamp: '2주 전',
     likes: 5,
     replies: [

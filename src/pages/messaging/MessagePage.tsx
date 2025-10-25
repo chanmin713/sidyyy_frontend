@@ -1,5 +1,3 @@
-import { LAYOUT } from '@/constants';
-
 export function MessagePage() {
   return (
     <div className='py-6'>

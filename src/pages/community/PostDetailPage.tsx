@@ -5,7 +5,6 @@ import { samplePosts } from '@/data/samplePosts';
 import { sampleComments } from '@/data/sampleComments';
 import { PostContent } from '@/components/post/PostContent';
 import { CommentSection } from '@/components/post/CommentSection';
-import { LAYOUT } from '@/constants';
 
 export const PostDetailPage = memo(function PostDetailPage() {
   const navigate = useNavigate();

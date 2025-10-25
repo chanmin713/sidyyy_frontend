@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import { LAYOUT } from '@/constants';
 
 export function UserProfilePage() {
   const { username } = useParams<{ username: string }>();
