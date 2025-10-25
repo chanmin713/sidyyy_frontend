@@ -26,11 +26,10 @@
 
 ### 3. 컴포넌트 시스템
 
-- ✅ **Layout**: `DesktopHeader`, `MobileHeader`, `Footer`, `RightSidebar`
-- ✅ **Common**: `ProfileSection`, `FloatingWriteButton`, `ScrollToTopButton`, `ErrorBoundary`
-- ✅ **Post**: `PostCard`, `PostContent`, `CommentSection`
-- ✅ **Project**: `ProjectComments`, `ProjectInteractions`, `ProjectPropertiesPanel`
-- ✅ **UI**: `AccessibleButton`, `SecureInput`, `OptimizedImage`, `LoadingSpinner`, `Dropdown`
+- ✅ **Layout**: `DesktopHeader`, `MobileHeader`, `Footer`, `RightSidebar`, `SidebarContent`
+- ✅ **Shared**: `ProfileSection`, `FloatingWriteButton`, `ScrollToTopButton`
+- ✅ **Post**: `PostCard`, `PostContent`, `CommentSection`, `PostForm`
+- ✅ **UI**: `AccessibleButton`, `LoadingSpinner`, `Dropdown`, `IconButton`, `SearchButton`, `ToggleGroup`
 
 ### 4. 상태 관리 (Zustand)
 
@@ -42,8 +41,8 @@
 
 ### 5. 유틸리티 및 훅
 
-- ✅ **유틸리티**: `accessibilityUtils`, `securityUtils`, `text-utils`, `iconUtils`, `statusUtils`, `normalizationUtils`
-- ✅ **훅**: `useDebounce`, `useThrottle`, `useDropdown`, `useNavigation`, `useNotificationHandling`
+- ✅ **유틸리티**: `accessibilityUtils`, `securityUtils`, `text-utils`, `iconUtils`, `statusUtils`, `normalizationUtils`, `crud`, `queries`
+- ✅ **훅**: `useDropdown`, `useNavigation`, `useNotificationHandling`, `usePostWrite`
 
 ### 6. 개발 환경
 
@@ -51,6 +50,8 @@
 - ✅ **Husky, lint-staged** Git 훅 설정
 - ✅ **TypeScript** 타입 안전성 보장
 - ✅ **코드 스플리팅** React.lazy를 사용한 페이지 지연 로딩
+- ✅ **Jest + React Testing Library** 테스트 환경 설정
+- ✅ **Tailwind CSS** 스타일링 시스템 구축
 
 ---
 
