@@ -61,16 +61,14 @@ export const ProfileSection = memo(function ProfileSection({
       className={`inline-flex items-center gap-3 group hover:bg-gray-50 rounded-lg px-2 py-1 transition-colors cursor-pointer ${className}`}
     >
       <div
-        className={`${styles.container} rounded-full flex items-center justify-center border-2 border-gray-300 group-hover:border-gray-400 transition-colors flex-shrink-0`}
+        className={`${styles.container} rounded-full flex items-center justify-center border-2 border-gray-300 flex-shrink-0`}
       >
         <PersonIcon
           className={`${styles.icon} text-gray-500 group-hover:text-gray-700 transition-colors`}
         />
       </div>
       <div className='flex flex-col flex-shrink-0'>
-        <p
-          className={`font-semibold group-hover:underline whitespace-nowrap ${styles.name}`}
-        >
+        <p className={`font-semibold whitespace-nowrap ${styles.name}`}>
           {author}
         </p>
         {authorRole && (
