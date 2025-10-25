@@ -39,7 +39,7 @@ export function MobileHeader() {
               <AccessibleButton
                 onClick={() => navigateToPath('/')}
                 variant='ghost'
-                className='text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors'
+                className='text-2xl font-black text-gray-900 transition-colors'
                 ariaLabel='Sidyyy 홈페이지로 이동'
               >
                 Sidyyy

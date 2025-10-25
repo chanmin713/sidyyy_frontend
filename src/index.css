@@ -64,6 +64,11 @@
     @apply border-border;
   }
 
+  /* 모든 요소의 focus outline 제거 */
+  *:focus {
+    outline: none !important;
+  }
+
   /* 스크롤바 숨기기 */
   * {
     scrollbar-width: none; /* Firefox */

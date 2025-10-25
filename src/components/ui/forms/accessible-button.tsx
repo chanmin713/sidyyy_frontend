@@ -47,12 +47,12 @@ interface AccessibleButtonProps
 }
 
 const variantClasses = {
-  primary: 'bg-blue-500 hover:bg-blue-600 text-white focus:ring-blue-500',
-  secondary: 'bg-gray-500 hover:bg-gray-600 text-white focus:ring-gray-500',
-  ghost: 'bg-transparent hover:bg-gray-100 text-gray-700 focus:ring-gray-500',
-  danger: 'bg-red-500 hover:bg-red-600 text-white focus:ring-red-500',
-  success: 'bg-green-500 hover:bg-green-600 text-white focus:ring-green-500',
-  link: 'bg-transparent hover:bg-transparent text-blue-600 hover:text-blue-800 underline focus:ring-blue-500',
+  primary: 'bg-blue-500 hover:bg-blue-600 text-white',
+  secondary: 'bg-gray-500 hover:bg-gray-600 text-white',
+  ghost: 'bg-transparent hover:bg-gray-100 text-gray-700',
+  danger: 'bg-red-500 hover:bg-red-600 text-white',
+  success: 'bg-green-500 hover:bg-green-600 text-white',
+  link: 'bg-transparent hover:bg-transparent text-blue-600 hover:text-blue-800 underline',
 };
 
 const sizeClasses = {
@@ -111,7 +111,7 @@ export const AccessibleButton = forwardRef<
         className={cn(
           // 기본 스타일
           'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200',
-          'focus:outline-none focus:ring-2 focus:ring-offset-2',
+          'focus:outline-none',
           'disabled:opacity-50 disabled:cursor-not-allowed',
           'active:scale-95',
           // 변형 스타일
