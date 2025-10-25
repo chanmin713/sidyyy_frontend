@@ -148,7 +148,7 @@ export function LogPage() {
             <div className='flex items-center gap-1 ml-auto'>
               <SearchButton
                 onSearch={handleSearch}
-                className='min-w-48 md:min-w-96'
+                className='min-w-80 md:min-w-[36rem] lg:min-w-[40rem] xl:min-w-[44rem]'
               />
               <Dropdown
                 trigger={
