@@ -4,7 +4,6 @@ import { ArrowLeftIcon } from '@radix-ui/react-icons';
 import { samplePosts } from '@/data/samplePosts';
 import type { Post } from '@/types';
 import { useSearch } from '@/stores';
-import { SecureInput } from '@/components/ui/forms/secure-input';
 import { AccessibleButton } from '@/components/ui/forms/accessible-button';
 import { LAYOUT } from '@/constants';
 export const WritePostPage = memo(function WritePostPage() {
@@ -254,7 +253,7 @@ export const WritePostPage = memo(function WritePostPage() {
                 </span>
               ))}
             </div>
-            <SecureInput
+            <input
               id='hashtags'
               type='text'
               value={hashtagInput}
@@ -263,8 +262,6 @@ export const WritePostPage = memo(function WritePostPage() {
               placeholder='해시태그를 ,로 구분하여 입력해주세요'
               className='w-full p-3 border border-gray-300 border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white bg-gray-700 text-gray-900 text-white placeholder-gray-500 placeholder-gray-400'
               maxLength={100}
-              checkXSS={true}
-              showErrorMessage={true}
               aria-describedby='hashtags-help'
             />
             <p
