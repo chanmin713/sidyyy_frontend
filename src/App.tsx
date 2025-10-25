@@ -7,11 +7,12 @@ import { LoadingSpinner } from '@/components/ui/feedback/loading-spinner';
 const HomePage = lazy(() => import('@/pages/main/HomePage'));
 const LogPage = lazy(() => import('@/pages/log/LogPage'));
 const WritePostPage = lazy(() => import('@/pages/write/WritePostPage'));
+const WriteProjectPage = lazy(() => import('@/pages/write/WriteProjectPage'));
+const WriteRecruitPage = lazy(() => import('@/pages/write/WriteRecruitPage'));
 const ProjectPage = lazy(() => import('@/pages/project/ProjectPage'));
 const ProjectDetailPage = lazy(
   () => import('@/pages/project/ProjectDetailPage')
 );
-const RecruitPage = lazy(() => import('@/pages/recruit/RecruitPage'));
 const MemberPage = lazy(() => import('@/pages/member/MemberPage'));
 const PostDetailPage = lazy(() => import('@/pages/community/PostDetailPage'));
 const ProfilePage = lazy(() => import('@/pages/profile/ProfilePage'));
@@ -29,12 +30,13 @@ function App() {
             <Route path='/' element={<HomePage />} />
             <Route path='/log' element={<LogPage />} />
             <Route path='/project' element={<ProjectPage />} />
-            <Route path='/recruit' element={<RecruitPage />} />
             <Route path='/member' element={<MemberPage />} />
             <Route path='/profile' element={<ProfilePage />} />
             <Route path='/user/:username' element={<UserProfilePage />} />
             <Route path='/message' element={<MessagePage />} />
             <Route path='/write' element={<WritePostPage />} />
+            <Route path='/write/project' element={<WriteProjectPage />} />
+            <Route path='/write/recruit' element={<WriteRecruitPage />} />
             <Route path='/post/:id' element={<PostDetailPage />} />
             <Route
               path='/project/:projectName'

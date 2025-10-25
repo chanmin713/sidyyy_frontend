@@ -1,76 +1,5 @@
 # 📋 Sidyyy Frontend 개발 TODO
 
-## ✅ 완료된 기능들
-
-### 1. 기본 프로젝트 구조
-
-- ✅ **React 18 + TypeScript + Vite** 설정 완료
-- ✅ **Tailwind CSS** 스타일링 시스템 구축
-- ✅ **Zustand** 상태 관리 시스템 구현
-- ✅ **React Router** 라우팅 시스템 구축
-- ✅ **Jest + React Testing Library** 테스트 환경 설정
-
-### 2. 페이지 구조 (11개 페이지)
-
-- ✅ **HomePage**: 메인 페이지
-- ✅ **LogPage**: 로그 페이지 (개발 로그) - 필터링, 검색, 정렬 기능 포함
-- ✅ **ProjectPage**: 프로젝트 목록 페이지 (기본 구조)
-- ✅ **ProjectDetailPage**: 프로젝트 상세 페이지
-- ✅ **RecruitPage**: 모집 페이지 (기본 구조)
-- ✅ **MemberPage**: 멤버 페이지 (기본 구조)
-- ✅ **ProfilePage**: 내 프로필 페이지 (기본 구조)
-- ✅ **UserProfilePage**: 다른 사용자 프로필 페이지 (기본 구조)
-- ✅ **MessagePage**: DM 페이지 (기본 구조)
-- ✅ **PostDetailPage**: 포스트 상세 페이지 - 댓글 시스템 포함
-- ✅ **WritePostPage**: 포스트 작성 페이지 - 이미지 업로드, 해시태그 기능 포함
-
-### 3. 컴포넌트 시스템
-
-- ✅ **Layout**: `DesktopHeader`, `MobileHeader`, `Footer`, `RightSidebar`, `SidebarContent`
-- ✅ **Shared**: `ProfileSection`, `FloatingWriteButton`, `ScrollToTopButton`
-- ✅ **Post**: `PostCard`, `PostContent`, `CommentSection`, `PostForm`
-- ✅ **UI**: `AccessibleButton`, `LoadingSpinner`, `Dropdown`, `IconButton`, `SearchButton`, `ToggleGroup`
-
-### 4. 상태 관리 (Zustand)
-
-- ✅ **useUserStore**: 사용자 인증 및 프로필 관리
-- ✅ **useSearchStore**: 검색 쿼리 및 필터 상태
-- ✅ **useUIStore**: UI 상태 (사이드바, 모달 등)
-- ✅ **useNotificationStore**: 알림 관리
-- ✅ **useNormalizedStore**: 정규화된 데이터 관리 (CRUD, 필터링, 검색, 페이지네이션 포함)
-
-### 5. 유틸리티 및 훅
-
-- ✅ **유틸리티**: `accessibilityUtils`, `text-utils`, `iconUtils`, `statusUtils`, `normalizationUtils`, `crud`, `queries`
-- ✅ **훅**: `useDropdown`, `useNavigation`, `useNotificationHandling`
-
-### 6. 개발 환경
-
-- ✅ **ESLint, Prettier** 코드 품질 도구 설정
-- ✅ **Husky, lint-staged** Git 훅 설정
-- ✅ **TypeScript** 타입 안전성 보장
-- ✅ **코드 스플리팅** React.lazy를 사용한 페이지 지연 로딩
-- ✅ **Jest + React Testing Library** 테스트 환경 설정
-- ✅ **Tailwind CSS** 스타일링 시스템 구축
-
-### 7. 최근 완료된 기능들 (2024-12-19)
-
-- ✅ **포스트 작성 시스템** - `PostForm` 컴포넌트 구현
-- ✅ **정규화된 데이터 관리** - `useNormalizedStore`, CRUD 유틸리티 구현
-- ✅ **UI 개선** - 모든 버튼과 입력 요소에서 focus outline 제거
-- ✅ **헤더 로고 스타일링** - "Sidyyy" 로고를 더 두껍게 표시
-
-### 8. 코드 리팩토링 완료 (2024-12-19)
-
-- ✅ **SidebarToggle.tsx 제거** - 불필요한 컴포넌트 제거
-- ✅ **SidebarContent.tsx 리팩토링** - 221줄 → 41줄로 81% 감소, `SidebarItem` 컴포넌트 분리
-- ✅ **WritePostPage.tsx 리팩토링** - 318줄 → 48줄로 85% 감소, `PostForm` 컴포넌트 분리
-- ✅ **useNormalizedStore.ts 리팩토링** - 340줄 → 89줄로 74% 감소, 액션/셀렉터/유틸리티 분리
-- ✅ **normalizationUtils.ts 리팩토링** - 289줄 → 31줄로 89% 감소, CRUD/쿼리 유틸리티 분리
-- ✅ **코드 가독성 대폭 향상** - 긴 파일들을 작은 모듈로 분리하여 유지보수성 향상
-
----
-
 ## 📝 구현해야 할 기능
 
 ### 1. 사용자 인터페이스 개선 (최우선)
@@ -116,11 +45,28 @@
 - [ ] **공유 기능** - 로그, 프로젝트, 모집 공유
 - [ ] **좋아요/북마크** - 콘텐츠 좋아요 및 북마크
 - [ ] **해시태그 시스템** - 해시태그 생성 및 팔로우
+- [ ] **설문 기능** - 설문조사 생성, 참여, 결과 확인
 
-### 10. 다국어 지원 제거 작업 (완료됨)
+### 10. 다국어 지원
 
-- ✅ **i18n 관련 코드 제거 완료** - 실제로는 i18n이 구현되지 않았음
-- ✅ **하드코딩된 한국어 텍스트 사용** - 모든 컴포넌트에서 한국어 텍스트 직접 사용
+- [ ] **i18next 설정** - React i18next를 사용한 다국어 지원 시스템 구축
+- [ ] **언어 감지** - 브라우저 언어 자동 감지 및 로컬 스토리지 저장
+- [ ] **언어 전환 컴포넌트** - 언어 선택 드롭다운 또는 토글 버튼
+- [ ] **번역 파일 관리** - 한국어(ko), 영어(en) 번역 파일 구조화
+- [ ] **동적 번역** - 컴포넌트에서 useTranslation 훅 사용
+- [ ] **네임스페이스 분리** - common, navigation, forms 등 기능별 번역 분리
+
+### 11. SEO 최적화
+
+- [ ] **메타데이터 관리** - 페이지별 동적 title, description, keywords 설정
+- [ ] **Open Graph 태그** - 소셜 미디어 공유를 위한 OG 태그 구현
+- [ ] **구조화된 데이터** - JSON-LD를 사용한 스키마 마크업
+- [ ] **사이트맵 생성** - 동적 사이트맵 생성 및 업데이트
+- [ ] **robots.txt** - 검색 엔진 크롤링 가이드 설정
+- [ ] **URL 최적화** - SEO 친화적인 URL 구조 설계
+- [ ] **이미지 최적화** - alt 텍스트, lazy loading, WebP 변환
+- [ ] **페이지 속도 최적화** - Core Web Vitals 개선
+- [ ] **모바일 최적화** - 반응형 디자인 및 모바일 성능 최적화
 
 ---
 
@@ -143,7 +89,6 @@
 - [ ] **CSP** (Content Security Policy) 구현
 - [ ] **접근성 테스트** 자동화 - axe-core 통합
 - [ ] **보안 스캔** - 의존성 취약점 검사
-
 
 ---
 

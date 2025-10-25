@@ -5,7 +5,6 @@
 export const NAVIGATION_TABS = [
   { id: 'home', label: '로그', path: '/log' },
   { id: 'project', label: '프로젝트', path: '/project' },
-  { id: 'recruit', label: '모집', path: '/recruit' },
   { id: 'member', label: '멤버', path: '/member' },
 ] as const;
 
@@ -13,7 +12,6 @@ export const NAVIGATION_PATHS = {
   HOME: '/',
   LOG: '/log',
   PROJECT: '/project',
-  RECRUIT: '/recruit',
   MEMBER: '/member',
   MESSAGE: '/message',
   PROFILE: '/profile',

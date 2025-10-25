@@ -1,4 +1,3 @@
-import { Card, CardContent } from '@/components/ui/media/card';
 import { SidebarActionButton } from './sidebar/SidebarActionButton';
 import { SidebarContent } from './sidebar/SidebarContent';
 
@@ -10,11 +9,9 @@ export function RightSidebar() {
         <SidebarActionButton />
 
         {/* 동적 사이드바 콘텐츠 */}
-        <Card>
-          <CardContent className='p-6'>
-            <SidebarContentRenderer />
-          </CardContent>
-        </Card>
+        <div className='bg-white border border-gray-200 rounded-lg p-6'>
+          <SidebarContentRenderer />
+        </div>
       </div>
     </div>
   );

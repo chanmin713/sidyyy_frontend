@@ -1,17 +1,16 @@
 import React from 'react';
-import { PersonIcon, CalendarIcon, FileTextIcon } from '@radix-ui/react-icons';
+import { PersonIcon, FileTextIcon } from '@radix-ui/react-icons';
 import {
   popularProjects,
   recommendedMembers,
   popularLogs,
-  popularRecruits,
 } from '@/data/sidebarData';
 
 export interface SidebarConfig {
   title: string;
   icon: React.ReactNode;
   data: any[];
-  type: 'project' | 'member' | 'recruit' | 'log';
+  type: 'project' | 'member' | 'log';
   moreLink: string;
 }
 
@@ -39,18 +38,6 @@ export const getSidebarConfig = (pathname: string): SidebarConfig => {
       data: recommendedMembers.slice(0, displayCount),
       type: 'member' as const,
       moreLink: '/member',
-    };
-  }
-
-  if (pathname === '/recruit') {
-    return {
-      title: '인기 모집',
-      icon: React.createElement(CalendarIcon, {
-        className: 'w-4 h-4 text-green-500',
-      }),
-      data: popularRecruits.slice(0, displayCount),
-      type: 'recruit' as const,
-      moreLink: '/recruit',
     };
   }
 

@@ -1,10 +1,6 @@
 import { useMemo, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import {
-  StarFilledIcon,
-  Pencil1Icon,
-  CalendarIcon,
-} from '@radix-ui/react-icons';
+import { StarFilledIcon, Pencil1Icon } from '@radix-ui/react-icons';
 import { AccessibleButton } from '@/components/ui/forms/accessible-button';
 
 export function SidebarActionButton() {
@@ -19,10 +15,6 @@ export function SidebarActionButton() {
     navigate('/project/create');
   }, [navigate]);
 
-  const handleRecruitCreateClick = useCallback(() => {
-    navigate('/recruit/create');
-  }, [navigate]);
-
   const actionButton = useMemo(() => {
     if (location.pathname === '/project') {
       return (
@@ -35,21 +27,6 @@ export function SidebarActionButton() {
         >
           <StarFilledIcon className='w-4 h-4' />
           프로젝트 생성
-        </AccessibleButton>
-      );
-    }
-
-    if (location.pathname === '/recruit') {
-      return (
-        <AccessibleButton
-          onClick={handleRecruitCreateClick}
-          variant='primary'
-          fullWidth
-          className='bg-green-500/20 backdrop-blur-md border border-green-500/30 hover:bg-green-500/30 text-green-700 font-medium py-2.5 px-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:shadow-md text-sm'
-          ariaLabel='새 모집 작성'
-        >
-          <CalendarIcon className='w-4 h-4' />
-          모집 작성
         </AccessibleButton>
       );
     }
@@ -72,12 +49,7 @@ export function SidebarActionButton() {
         로그 쓰기
       </AccessibleButton>
     );
-  }, [
-    location.pathname,
-    handleProjectCreateClick,
-    handleRecruitCreateClick,
-    handleWriteClick,
-  ]);
+  }, [location.pathname, handleProjectCreateClick, handleWriteClick]);
 
   return actionButton;
 }

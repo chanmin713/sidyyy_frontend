@@ -12,7 +12,6 @@ export default defineConfig({
   server: {
     port: 5173,
     host: true,
-    historyApiFallback: true,
   },
   build: {
     // 번들 크기 최적화

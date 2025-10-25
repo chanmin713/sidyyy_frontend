@@ -28,8 +28,10 @@ export interface SearchState {
 export interface UIState {
   sidebarOpen: boolean;
   mobileMenuOpen: boolean;
+  content: string;
   setSidebarOpen: (open: boolean) => void;
   setMobileMenuOpen: (open: boolean) => void;
+  setContent: (content: string) => void;
   toggleSidebar: () => void;
   toggleMobileMenu: () => void;
 }
@@ -51,6 +53,13 @@ export interface NotificationState {
   markAsRead: (id: string) => void;
   markAllAsRead: () => void;
   clearNotifications: () => void;
+}
+
+// 기본 엔티티 타입
+export interface BaseEntity {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 // 전체 앱 상태 타입

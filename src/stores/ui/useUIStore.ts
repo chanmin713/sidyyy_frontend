@@ -7,8 +7,10 @@ export const useUIStore = create<UIState>()(
     set => ({
       sidebarOpen: true,
       mobileMenuOpen: false,
+      content: '',
       setSidebarOpen: sidebarOpen => set({ sidebarOpen }),
       setMobileMenuOpen: mobileMenuOpen => set({ mobileMenuOpen }),
+      setContent: content => set({ content }),
       toggleSidebar: () => set(state => ({ sidebarOpen: !state.sidebarOpen })),
       toggleMobileMenu: () =>
         set(state => ({ mobileMenuOpen: !state.mobileMenuOpen })),

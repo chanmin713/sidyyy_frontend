@@ -54,11 +54,6 @@ export function useNavigation() {
     }
   };
 
-  // 모집 페이지로 이동
-  const navigateToRecruit = () => {
-    navigate(NAVIGATION_PATHS.RECRUIT);
-  };
-
   // 멤버 페이지로 이동
   const navigateToMember = () => {
     navigate(NAVIGATION_PATHS.MEMBER);
@@ -102,7 +97,6 @@ export function useNavigation() {
     navigateToHome,
     navigateToLog,
     navigateToProject,
-    navigateToRecruit,
     navigateToMember,
     navigateToMessage,
     navigateToProfile,

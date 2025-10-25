@@ -6,7 +6,7 @@ import {
   removeItems,
   reorderItems,
 } from '@/utils';
-import type { BaseEntity } from './types';
+import type { BaseEntity } from '../types';
 
 export function createDataActions<T extends BaseEntity>() {
   return {

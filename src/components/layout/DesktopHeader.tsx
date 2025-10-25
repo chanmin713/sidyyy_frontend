@@ -59,22 +59,27 @@ export function DesktopHeader() {
             <nav
               role='tablist'
               aria-label='메인 네비게이션'
-              className='flex bg-gray-50 rounded-lg p-1 shadow-sm relative animate-in fade-in-0 slide-in-from-top-2 duration-500'
+              className='flex bg-gray-50 rounded-lg p-1 shadow-sm relative overflow-hidden'
             >
               {/* 움직이는 흰색 배경 */}
               {(hoveredTab || activeTab) && (
                 <div
-                  className={`absolute top-1 bottom-1 bg-white rounded-md shadow-sm transition-all duration-500 ease-out ${(() => {
-                    const targetTab = hoveredTab || activeTab;
-                    const index = NAVIGATION_TABS.findIndex(
-                      t => t.id === targetTab
-                    );
-                    if (index === 0) return 'left-0.5 w-[calc(25%-0.25rem)]';
-                    if (index === 1) return 'left-[25%] w-[calc(25%-0.25rem)]';
-                    if (index === 2) return 'left-[50%] w-[calc(25%-0.25rem)]';
-                    if (index === 3) return 'left-[75%] w-[calc(25%-0.25rem)]';
-                    return 'hidden';
-                  })()}`}
+                  className='absolute top-1 bottom-1 bg-white rounded-md shadow-sm transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] transform'
+                  style={{
+                    transform: 'translateZ(0)', // GPU 가속 활성화
+                    left: (() => {
+                      const targetTab = hoveredTab || activeTab;
+                      const index = NAVIGATION_TABS.findIndex(
+                        t => t.id === targetTab
+                      );
+                      const tabWidth = 100 / NAVIGATION_TABS.length;
+                      return `${index * tabWidth + 0.5}%`;
+                    })(),
+                    width: (() => {
+                      const tabWidth = 100 / NAVIGATION_TABS.length;
+                      return `${tabWidth - 0.5}%`;
+                    })(),
+                  }}
                 />
               )}
 
@@ -89,10 +94,10 @@ export function DesktopHeader() {
                   onKeyDown={e => handleKeyDown(e, tab.id)}
                   onMouseEnter={() => setHoveredTab(tab.id)}
                   onMouseLeave={() => setHoveredTab(null)}
-                  className={`flex-1 py-1.5 px-4 text-sm font-medium transition-all duration-500 relative z-10 ${
+                  className={`flex-1 py-1.5 px-4 text-sm font-medium transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] relative z-10 transform ${
                     activeTab === tab.id
-                      ? 'text-gray-900'
-                      : 'text-gray-500 hover:text-gray-900'
+                      ? 'text-gray-900 scale-105'
+                      : 'text-gray-500 hover:text-gray-900 hover:scale-105'
                   }`}
                 >
                   {tab.label}
@@ -107,18 +112,18 @@ export function DesktopHeader() {
             <AccessibleButton
               onClick={navigateToMessage}
               variant='ghost'
-              className='w-8 h-8 p-0 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group'
+              className='w-8 h-8 p-0 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-110 hover:shadow-sm group'
               ariaLabel='메시지'
             >
-              <PaperPlaneIcon className='w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300' />
+              <PaperPlaneIcon className='w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-all duration-300 group-hover:rotate-12' />
             </AccessibleButton>
             <AccessibleButton
               onClick={navigateToProfile}
               variant='ghost'
-              className='w-8 h-8 p-0 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-sm group'
+              className='w-8 h-8 p-0 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-110 hover:shadow-sm group'
               ariaLabel='프로필'
             >
-              <PersonIcon className='w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-300' />
+              <PersonIcon className='w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-all duration-300 group-hover:scale-110' />
             </AccessibleButton>
           </div>
         </div>
