@@ -48,15 +48,36 @@ npm run test             # 테스트 실행
 npm run test:watch       # 테스트 감시 모드
 npm run test:coverage    # 커버리지 포함 테스트
 npm run test:ci          # CI용 테스트 실행
+```
+
+## 🔧 최근 리팩토링 완료 (2024-12-19)
+
+### 코드 구조 개선
+
+- **긴 파일 분리**: 300줄 이상의 파일들을 작은 모듈로 분리
+- **컴포넌트 분리**: 단일 책임 원칙에 따라 컴포넌트 분리
+- **유틸리티 모듈화**: 기능별로 유틸리티 함수 분리
+- **타입 안전성 향상**: TypeScript 타입 정의 개선
+
+### 리팩토링된 파일들
+
+1. **SidebarContent.tsx**: 221줄 → 41줄 (81% 감소)
+2. **WritePostPage.tsx**: 318줄 → 48줄 (85% 감소)
+3. **useNormalizedStore.ts**: 340줄 → 89줄 (74% 감소)
+4. **normalizationUtils.ts**: 289줄 → 31줄 (89% 감소)
+5. **securityUtils.ts**: 313줄 → 38줄 (88% 감소)
 
 # 배포
-npm run deploy           # GitHub Pages 배포
-npm run sitemap          # 사이트맵 생성
-npm run seo:build        # SEO 최적화 빌드
+
+npm run deploy # GitHub Pages 배포
+npm run sitemap # 사이트맵 생성
+npm run seo:build # SEO 최적화 빌드
 
 # Git 훅
-npm run prepare          # Husky 설치
-```
+
+npm run prepare # Husky 설치
+
+````
 
 ## 🛠️ 개발 도구
 
@@ -147,7 +168,7 @@ export const ComponentName = memo(function ComponentName({
   // 11. JSX
   return <div>{/* JSX content */}</div>;
 });
-```
+````
 
 ## 🧪 테스트 작성
 

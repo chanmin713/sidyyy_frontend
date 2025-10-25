@@ -53,6 +53,25 @@
 - ✅ **Jest + React Testing Library** 테스트 환경 설정
 - ✅ **Tailwind CSS** 스타일링 시스템 구축
 
+### 7. 최근 완료된 기능들 (2024-12-19)
+
+- ✅ **포스트 작성 시스템** - `PostForm`, `HashtagInput` 컴포넌트 구현
+- ✅ **정규화된 데이터 관리** - `useNormalizedStore`, CRUD 유틸리티 구현
+- ✅ **보안 유틸리티** - 입력 검증, 파일 검증, 비밀번호 검증 시스템
+- ✅ **포스트 작성 훅** - `usePostWrite` 훅으로 포스트 작성 로직 관리
+- ✅ **UI 개선** - 모든 버튼과 입력 요소에서 focus outline 제거
+- ✅ **헤더 로고 스타일링** - "Sidyyy" 로고를 더 두껍게 표시
+
+### 8. 코드 리팩토링 완료 (2024-12-19)
+
+- ✅ **SidebarToggle.tsx 제거** - 불필요한 컴포넌트 제거
+- ✅ **SidebarContent.tsx 리팩토링** - 221줄 → 41줄로 81% 감소, `SidebarItem` 컴포넌트 분리
+- ✅ **WritePostPage.tsx 리팩토링** - 318줄 → 48줄로 85% 감소, `PostHeader`, `PostForm` 컴포넌트 분리
+- ✅ **useNormalizedStore.ts 리팩토링** - 340줄 → 89줄로 74% 감소, 액션/셀렉터/유틸리티 분리
+- ✅ **normalizationUtils.ts 리팩토링** - 289줄 → 31줄로 89% 감소, CRUD/쿼리 유틸리티 분리
+- ✅ **securityUtils.ts 리팩토링** - 313줄 → 38줄로 88% 감소, 5개 모듈로 분리
+- ✅ **코드 가독성 대폭 향상** - 긴 파일들을 작은 모듈로 분리하여 유지보수성 향상
+
 ---
 
 ## 📝 구현해야 할 기능
