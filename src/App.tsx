@@ -4,19 +4,19 @@ import { Layout } from '@/layouts/Layout';
 import { LoadingSpinner } from '@/components/ui/feedback/loading-spinner';
 
 // 코드 스플리팅을 위한 lazy loading
-const HomePage = lazy(() => import('@/pages/content/HomePage'));
-const LogPage = lazy(() => import('@/pages/content/LogPage'));
-const ProjectPage = lazy(() => import('@/pages/content/ProjectPage'));
-const RecruitPage = lazy(() => import('@/pages/content/RecruitPage'));
-const MemberPage = lazy(() => import('@/pages/content/MemberPage'));
+const HomePage = lazy(() => import('@/pages/main/HomePage'));
+const LogPage = lazy(() => import('@/pages/log/LogPage'));
+const WritePostPage = lazy(() => import('@/pages/write/WritePostPage'));
+const ProjectPage = lazy(() => import('@/pages/project/ProjectPage'));
+const ProjectDetailPage = lazy(
+  () => import('@/pages/project/ProjectDetailPage')
+);
+const RecruitPage = lazy(() => import('@/pages/recruit/RecruitPage'));
+const MemberPage = lazy(() => import('@/pages/member/MemberPage'));
+const PostDetailPage = lazy(() => import('@/pages/community/PostDetailPage'));
 const ProfilePage = lazy(() => import('@/pages/profile/ProfilePage'));
 const UserProfilePage = lazy(() => import('@/pages/profile/UserProfilePage'));
-const MessagePage = lazy(() => import('@/pages/auth/MessagePage'));
-const PostDetailPage = lazy(() => import('@/pages/content/PostDetailPage'));
-const WritePostPage = lazy(() => import('@/pages/content/WritePostPage'));
-const ProjectDetailPage = lazy(
-  () => import('@/pages/content/ProjectDetailPage')
-);
+const MessagePage = lazy(() => import('@/pages/messaging/MessagePage'));
 
 function App() {
   return (
