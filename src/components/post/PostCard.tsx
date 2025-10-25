@@ -52,8 +52,11 @@ export const PostCard = memo(function PostCard({
     }
   }, [category, navigateToProject]);
 
-  // 프로젝트 로고 아이콘 반환
-  const ProjectLogo = useMemo(() => getProjectLogo(projectLogo), [projectLogo]);
+  // 프로젝트 로고 아이콘 컴포넌트 반환
+  const ProjectLogoComponent = useMemo(
+    () => getProjectLogo(projectLogo || ''),
+    [projectLogo]
+  );
 
   // 프로젝트별 로그 번호 계산
   const projectLogNumber = useMemo(
@@ -81,7 +84,7 @@ export const PostCard = memo(function PostCard({
               ariaLabel={`${category} 프로젝트 로그 ${projectLogNumber}번 보기`}
             >
               <h2 className='text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors flex items-center gap-2'>
-                <ProjectLogo className='w-5 h-5' />
+                <ProjectLogoComponent className='w-5 h-5 text-blue-600' />
                 {category} #{projectLogNumber}
               </h2>
             </AccessibleButton>

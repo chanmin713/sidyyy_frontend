@@ -54,6 +54,5 @@ export const LAYOUT = {
 
 // 새로운 상수들
 export * from './icons';
-export * from './project';
 export * from './notification';
 export * from './ui';

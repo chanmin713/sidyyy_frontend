@@ -30,8 +30,8 @@ export const PostContent = memo(function PostContent({
   onDelete,
   onCommentClick,
 }: PostContentProps) {
-  // 프로젝트 로고 아이콘 반환
-  const ProjectLogo = getProjectLogo(post.projectLogo);
+  // 프로젝트 로고 아이콘 컴포넌트 반환
+  const ProjectLogoComponent = getProjectLogo(post.projectLogo || '');
 
   // 프로젝트별 로그 번호 계산
   const projectLogNumber = getProjectLogNumber(post.id, post.category);
@@ -48,7 +48,7 @@ export const PostContent = memo(function PostContent({
             className='text-left hover:underline'
           >
             <h1 className='text-3xl font-bold text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-3'>
-              <ProjectLogo className='w-6 h-6' />
+              <ProjectLogoComponent className='w-6 h-6 text-blue-600' />
               {post.category} #{projectLogNumber}
             </h1>
           </button>
