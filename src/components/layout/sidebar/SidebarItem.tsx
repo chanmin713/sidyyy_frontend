@@ -164,7 +164,7 @@ export function SidebarItem({ type, data, onClick }: SidebarItemProps) {
 
   return (
     <div
-      className='flex items-center space-x-2 px-1 py-1.5 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group'
+      className='flex items-center space-x-2 px-1 py-1.5 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer group shadow-sm hover:shadow-md'
       onClick={onClick}
     >
       {renderContent()}
