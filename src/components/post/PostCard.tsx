@@ -7,7 +7,7 @@ import {
   getProjectLogNumber,
   renderContentWithImages,
 } from '@/utils';
-import { ProfileSection } from '@/components/common/ProfileSection';
+import { ProfileSection } from '@/components/shared/ProfileSection';
 import { AccessibleButton } from '@/components/ui/forms/accessible-button';
 import { useNavigation } from '@/hooks';
 import { LAYOUT } from '@/constants';

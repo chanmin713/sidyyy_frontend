@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
-import type { NotificationState } from './types';
+import type { NotificationState } from '../types';
 import { SAMPLE_NOTIFICATIONS } from '@/constants/notification';
 
 // 헬퍼 함수들

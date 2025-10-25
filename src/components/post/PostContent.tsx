@@ -6,8 +6,8 @@ import {
   HeartIcon,
   ChatBubbleIcon,
 } from '@radix-ui/react-icons';
-import { Dropdown } from '@/components/ui/navigation/dropdown';
-import { ProfileSection } from '@/components/common/ProfileSection';
+import { Dropdown } from '@/components/ui/dropdown';
+import { ProfileSection } from '@/components/shared/ProfileSection';
 import { Post } from '@/types';
 import {
   getProjectLogo,

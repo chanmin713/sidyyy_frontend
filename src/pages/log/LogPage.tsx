@@ -3,7 +3,7 @@ import { useState, useMemo, useCallback } from 'react';
 import { PostCard } from '@/components/post/PostCard';
 import { samplePosts } from '@/data/samplePosts';
 import { MixerHorizontalIcon } from '@radix-ui/react-icons';
-import { Dropdown } from '@/components/ui/navigation/dropdown';
+import { Dropdown } from '@/components/ui/dropdown';
 import {
   ToggleGroup,
   ToggleItem,

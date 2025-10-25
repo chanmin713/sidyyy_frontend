@@ -1,10 +1,6 @@
 import { ReactNode, useCallback, useRef, useEffect } from 'react';
 import { useDropdown } from '@/hooks';
-import {
-  trapFocus,
-  getFocusableElements,
-  KEYBOARD_KEYS,
-} from '@/utils/accessibility';
+import { trapFocus, getFocusableElements, KEYBOARD_KEYS } from '@/utils';
 import { cn } from '@/utils';
 
 interface DropdownProps {

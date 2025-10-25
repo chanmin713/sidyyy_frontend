@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
-import type { SearchState } from './types';
+import type { SearchState } from '../types';
 
 const initialFilters = {
   category: [],

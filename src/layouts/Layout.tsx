@@ -3,8 +3,8 @@ import { useLocation } from 'react-router-dom';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { RightSidebar } from '../components/layout/RightSidebar';
-import { ScrollToTopButton } from '../components/common/ScrollToTopButton';
-import { FloatingWriteButton } from '../components/common/FloatingWriteButton';
+import { ScrollToTopButton } from '../components/shared/ScrollToTopButton';
+import { FloatingWriteButton } from '../components/shared/FloatingWriteButton';
 
 interface LayoutProps {
   children: React.ReactNode;

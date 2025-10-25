@@ -3,6 +3,7 @@ export * from './accessibility';
 export * from './security';
 export * from './data';
 export * from './ui';
+export * from './notification';
 
 // 개별 함수 export (기존 호환성 유지)
 export { truncateText, renderContentWithImages } from './ui/textUtils';
@@ -11,4 +12,4 @@ export {
   getNotificationIcon,
   getNotificationTitle,
   formatTimestamp,
-} from './notificationUtils';
+} from './notification/notificationUtils';
